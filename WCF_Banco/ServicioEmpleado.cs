@@ -32,29 +32,6 @@ namespace WCF_Banco
             try
             {
                 EmpleadoDC objEmpleado = new EmpleadoDC();
-                // con LINQ
-                //var query = (from emp in MiBanco.Tb_Empleado
-                //             where emp.Cod_Emp == strCodigo
-                //             select emp).FirstOrDefault();
-
-                //if (objEmpleado == null)
-                //{
-                //    objEmpleado.Cod_Emp = String.Empty;
-                //}
-                //else
-                //{
-                //    objEmpleado.Cod_Emp = query.Cod_Emp;
-                //    objEmpleado.Num_doc_Emp = query.Num_doc_Emp;
-                //    objEmpleado.Tip_doc_Emp = Convert.ToInt16(query.Tip_doc_Emp);
-                //    objEmpleado.Nom_Emp = query.Nom_Emp;
-                //    objEmpleado.Ape_pat_Emp = query.Ape_pat_Emp;
-                //    objEmpleado.Ape_mat_Emp = query.Ape_mat_Emp;
-                //    objEmpleado.Tel_Emp = query.Tel_Emp;
-                //    objEmpleado.Cor_Emp = query.Cor_Emp;
-                //    objEmpleado.Img_Emp = query.Img_Emp;
-                //    objEmpleado.Id_Ubigeo = query.Id_Ubigeo;
-                //    objEmpleado.Est_Emp = Convert.ToInt16(query.Est_Emp);
-                //}
 
                 var query = MiBanco.usp_ConsultarEmpleado(strCodigo);
 
@@ -129,31 +106,6 @@ namespace WCF_Banco
                     objEmpleado.Add(objEmpleadoDC);
                 }
 
-                //var query = MiBanco.usp_ListarEmpleado().ToList();
-
-                //foreach (var resultado in query)
-                //{
-                //    EmpleadoDC objEmpleadoDC = new EmpleadoDC();
-
-                //    objEmpleadoDC.Cod_Emp = resultado.Codigo;
-                //    objEmpleadoDC.Num_doc_Emp = resultado.Numero_Documento;
-                //    objEmpleadoDC.Tip_doc_Emp = Convert.ToInt16(resultado.Tip_doc_Emp);
-                //    objEmpleadoDC.Nom_Emp = resultado.Nombre;
-                //    objEmpleadoDC.Ape_pat_Emp = resultado.Apellido_Paterno;
-                //    objEmpleadoDC.Ape_mat_Emp = resultado.Apellido_Materno;
-                //    objEmpleadoDC.Tel_Emp = resultado.Telefono;
-                //    objEmpleadoDC.Cor_Emp = resultado.Correo;
-                //    // objEmpleadoDC.Img_Emp = resultado.Imagen;
-                //    objEmpleadoDC.Id_Ubigeo = resultado.Id_Ubigeo;
-                //    objEmpleadoDC.Est_Emp = Convert.ToInt16(resultado.Est_Emp);
-                //    objEmpleadoDC.Usu_Registro = resultado.Usu_Registro;
-                //    objEmpleadoDC.Fec_Registro = Convert.ToDateTime(resultado.Fec_Registro);
-                //    objEmpleadoDC.Usu_Ult_Mod = resultado.Usu_Ult_Mod;
-                //    objEmpleadoDC.Fec_Ult_Mod = Convert.ToDateTime(resultado.Fec_Ult_Mod);
-
-                //    objEmpleado.Add(objEmpleadoDC);
-                //}
-
                 return objEmpleado;
             }
             catch (Exception ex)
@@ -161,7 +113,6 @@ namespace WCF_Banco
                 throw new Exception(ex.Message);
             }
 
-            
         }
     }
 }
