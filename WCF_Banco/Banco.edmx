@@ -1,0 +1,1201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BancoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tb_Agencia">
+          <Key>
+            <PropertyRef Name="Cod_Age" />
+          </Key>
+          <Property Name="Cod_Age" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Nom_Age" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Dir_Age" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Id_Ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tb_Cliente">
+          <Key>
+            <PropertyRef Name="Cod_Cli" />
+          </Key>
+          <Property Name="Cod_Cli" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Num_doc_Cli" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Tip_doc_Cli" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Nom_Cli" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Ape_pat_Cli" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ape_mat_Cli" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Tel_Cli" Type="nchar" MaxLength="9" Nullable="false" />
+          <Property Name="Cor_Cli" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Dir_Cli" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fec_nac_Cli" Type="date" Nullable="false" />
+          <Property Name="Id_Ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="Est_Cli" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Usu_Registro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fec_Registro" Type="smalldatetime" Nullable="false" />
+          <Property Name="Usu_Ult_Mod" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fec_Ult_Mod" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Tb_Cuenta">
+          <Key>
+            <PropertyRef Name="Num_Cuen" />
+          </Key>
+          <Property Name="Num_Cuen" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="Tip_Mon" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Sal_Cuen" Type="money" />
+          <Property Name="Tipo" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Fec_Aper" Type="smalldatetime" />
+          <Property Name="Cod_Cli" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Cod_Age" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Est_Cuen" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Usu_Registro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fec_Registro" Type="smalldatetime" Nullable="false" />
+          <Property Name="Usu_Ult_Mod" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fec_Ult_Mod" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Tb_Empleado">
+          <Key>
+            <PropertyRef Name="Cod_Emp" />
+          </Key>
+          <Property Name="Cod_Emp" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Num_doc_Emp" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Tip_doc_Emp" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Nom_Emp" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Ape_pat_Emp" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ape_mat_Emp" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Tel_Emp" Type="nchar" MaxLength="9" Nullable="false" />
+          <Property Name="Cor_Emp" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Img_Emp" Type="image" Nullable="false" />
+          <Property Name="Id_Ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="Est_Emp" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Usu_Registro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fec_Registro" Type="smalldatetime" Nullable="false" />
+          <Property Name="Usu_Ult_Mod" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fec_Ult_Mod" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Tb_Pago">
+          <Key>
+            <PropertyRef Name="Cod_Pag" />
+          </Key>
+          <Property Name="Cod_Pag" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Num_cuot_Pag" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Mon_Pag" Type="money" Nullable="false" />
+          <Property Name="Fec_pro_Pag" Type="date" Nullable="false" />
+          <Property Name="Fec_real_Pag" Type="smalldatetime" Nullable="false" />
+          <Property Name="Cod_Pre" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Est_Pag" Type="int" Nullable="false" />
+          <Property Name="Usu_Registro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fec_Registro" Type="smalldatetime" Nullable="false" />
+          <Property Name="Usu_Ult_Mod" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fec_Ult_Mod" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Tb_Prestamo">
+          <Key>
+            <PropertyRef Name="Cod_Pre" />
+          </Key>
+          <Property Name="Cod_Pre" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Mon_Pre" Type="money" Nullable="false" />
+          <Property Name="Cuot_Pre" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Fec_Sol" Type="smalldatetime" Nullable="false" />
+          <Property Name="Fec_Rech" Type="smalldatetime" />
+          <Property Name="Fec_Can" Type="smalldatetime" />
+          <Property Name="Pre_Est" Type="int" Nullable="false" />
+          <Property Name="Com_Deu" Type="int" Nullable="false" />
+          <Property Name="Cod_Cli" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Cod_Emp" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Cod_Age" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Est_Pre" Type="int" Nullable="false" />
+          <Property Name="Usu_Registro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fec_Registro" Type="smalldatetime" Nullable="false" />
+          <Property Name="Usu_Ult_Mod" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fec_Ult_Mod" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Tb_Seguro">
+          <Key>
+            <PropertyRef Name="Cod_Seg" />
+          </Key>
+          <Property Name="Cod_Seg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cos_Seg" Type="money" Nullable="false" />
+          <Property Name="Tipo" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Fec_Adq" Type="smalldatetime" />
+          <Property Name="Cod_Cli" Type="nchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tb_Transferencia">
+          <Key>
+            <PropertyRef Name="Cod_Tran" />
+          </Key>
+          <Property Name="Cod_Tran" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Mon_Tran" Type="money" Nullable="false" />
+          <Property Name="Cuen_Dest" Type="nvarchar" MaxLength="23" Nullable="false" />
+          <Property Name="Cuen_Orig" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="Tran_Int" Type="int" />
+          <Property Name="Fec_Tran" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Tb_Ubigeo">
+          <Key>
+            <PropertyRef Name="Id_Ubigeo" />
+          </Key>
+          <Property Name="Id_Ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="IdDepa" Type="nchar" MaxLength="2" />
+          <Property Name="IdProv" Type="nchar" MaxLength="2" />
+          <Property Name="IdDist" Type="nchar" MaxLength="2" />
+          <Property Name="Departamento" Type="nvarchar" MaxLength="40" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="40" />
+          <Property Name="Distrito" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="Tb_Usuario">
+          <Key>
+            <PropertyRef Name="Login_Usuario" />
+          </Key>
+          <Property Name="Login_Usuario" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Pass_Usuario" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Niv_Usuario" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Est_Usuario" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Fec_Registro" Type="datetime" Nullable="false" />
+          <Property Name="Usu_Registro" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Banco.dbo.vw_VistaEmpleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_VistaEmpleados">
+          <Key>
+            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Apellido Paterno" />
+            <PropertyRef Name="Apellido Materno" />
+            <PropertyRef Name="Numero Documento" />
+            <PropertyRef Name="Tip_doc_Emp" />
+            <PropertyRef Name="Telefono" />
+            <PropertyRef Name="Correo" />
+            <PropertyRef Name="Imagen" />
+            <PropertyRef Name="Id_Ubigeo" />
+            <PropertyRef Name="Est_Emp" />
+            <PropertyRef Name="Usu_Registro" />
+            <PropertyRef Name="Fec_Registro" />
+          </Key>
+          <Property Name="Codigo" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Apellido Paterno" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Apellido Materno" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Numero Documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Tip_doc_Emp" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Tipo Documento" Type="varchar" MaxLength="21" />
+          <Property Name="Telefono" Type="nchar" MaxLength="9" Nullable="false" />
+          <Property Name="Correo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Imagen" Type="image" Nullable="false" />
+          <Property Name="Departamento" Type="nvarchar" MaxLength="40" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="40" />
+          <Property Name="Distrito" Type="nvarchar" MaxLength="40" />
+          <Property Name="Id_Ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="Est_Emp" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="8" />
+          <Property Name="Usu_Registro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fec_Registro" Type="smalldatetime" Nullable="false" />
+          <Property Name="Usu_Ult_Mod" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fec_Ult_Mod" Type="smalldatetime" />
+        </EntityType>
+        <Association Name="FK__Tb_Agenci__Id_Ub__6477ECF3">
+          <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1" />
+          <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Ubigeo">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Principal>
+            <Dependent Role="Tb_Agencia">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Client__Id_Ub__5AEE82B9">
+          <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Ubigeo">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Principal>
+            <Dependent Role="Tb_Cliente">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B">
+          <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Cuenta" Type="Self.Tb_Cuenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Agencia">
+              <PropertyRef Name="Cod_Age" />
+            </Principal>
+            <Dependent Role="Tb_Cuenta">
+              <PropertyRef Name="Cod_Age" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Cuenta__Cod_C__5DCAEF64">
+          <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Cuenta" Type="Self.Tb_Cuenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cliente">
+              <PropertyRef Name="Cod_Cli" />
+            </Principal>
+            <Dependent Role="Tb_Cuenta">
+              <PropertyRef Name="Cod_Cli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2">
+          <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Empleado" Type="Self.Tb_Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Ubigeo">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Principal>
+            <Dependent Role="Tb_Empleado">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Pago__Cod_Pre__628FA481">
+          <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Pago" Type="Self.Tb_Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Prestamo">
+              <PropertyRef Name="Cod_Pre" />
+            </Principal>
+            <Dependent Role="Tb_Pago">
+              <PropertyRef Name="Cod_Pre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Presta__Cod_A__619B8048">
+          <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Agencia">
+              <PropertyRef Name="Cod_Age" />
+            </Principal>
+            <Dependent Role="Tb_Prestamo">
+              <PropertyRef Name="Cod_Age" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Presta__Cod_C__5FB337D6">
+          <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1" />
+          <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cliente">
+              <PropertyRef Name="Cod_Cli" />
+            </Principal>
+            <Dependent Role="Tb_Prestamo">
+              <PropertyRef Name="Cod_Cli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Presta__Cod_E__60A75C0F">
+          <End Role="Tb_Empleado" Type="Self.Tb_Empleado" Multiplicity="1" />
+          <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Empleado">
+              <PropertyRef Name="Cod_Emp" />
+            </Principal>
+            <Dependent Role="Tb_Prestamo">
+              <PropertyRef Name="Cod_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Seguro__Cod_C__6383C8BA">
+          <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Seguro" Type="Self.Tb_Seguro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cliente">
+              <PropertyRef Name="Cod_Cli" />
+            </Principal>
+            <Dependent Role="Tb_Seguro">
+              <PropertyRef Name="Cod_Cli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Transf__Cuen___5EBF139D">
+          <End Role="Tb_Cuenta" Type="Self.Tb_Cuenta" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Transferencia" Type="Self.Tb_Transferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cuenta">
+              <PropertyRef Name="Num_Cuen" />
+            </Principal>
+            <Dependent Role="Tb_Transferencia">
+              <PropertyRef Name="Cuen_Orig" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="usp_ActualizarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cod_Emp" Type="nchar" Mode="In" />
+          <Parameter Name="Num_doc_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tip_doc_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nom_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ape_pat_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ape_mat_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tel_Emp" Type="nchar" Mode="In" />
+          <Parameter Name="Cor_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Img_Emp" Type="image" Mode="In" />
+          <Parameter Name="Id_Ubigeo" Type="nchar" Mode="In" />
+          <Parameter Name="Est_Emp" Type="nchar" Mode="In" />
+          <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_ConsultarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_EliminarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Num_doc_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tip_doc_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nom_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ape_pat_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ape_mat_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tel_Emp" Type="nchar" Mode="In" />
+          <Parameter Name="Cor_Emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="Img_Emp" Type="image" Mode="In" />
+          <Parameter Name="Id_Ubigeo" Type="nchar" Mode="In" />
+          <Parameter Name="Est_Emp" Type="nchar" Mode="In" />
+          <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_ListarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="BancoModelStoreContainer">
+          <EntitySet Name="Tb_Agencia" EntityType="Self.Tb_Agencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Cliente" EntityType="Self.Tb_Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Cuenta" EntityType="Self.Tb_Cuenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Empleado" EntityType="Self.Tb_Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Pago" EntityType="Self.Tb_Pago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Prestamo" EntityType="Self.Tb_Prestamo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Seguro" EntityType="Self.Tb_Seguro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Transferencia" EntityType="Self.Tb_Transferencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Ubigeo" EntityType="Self.Tb_Ubigeo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Usuario" EntityType="Self.Tb_Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_VistaEmpleados" EntityType="Self.vw_VistaEmpleados" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_VistaEmpleados].[Codigo] AS [Codigo], 
+    [vw_VistaEmpleados].[Nombre] AS [Nombre], 
+    [vw_VistaEmpleados].[Apellido Paterno] AS [Apellido Paterno], 
+    [vw_VistaEmpleados].[Apellido Materno] AS [Apellido Materno], 
+    [vw_VistaEmpleados].[Numero Documento] AS [Numero Documento], 
+    [vw_VistaEmpleados].[Tip_doc_Emp] AS [Tip_doc_Emp], 
+    [vw_VistaEmpleados].[Tipo Documento] AS [Tipo Documento], 
+    [vw_VistaEmpleados].[Telefono] AS [Telefono], 
+    [vw_VistaEmpleados].[Correo] AS [Correo], 
+    [vw_VistaEmpleados].[Imagen] AS [Imagen], 
+    [vw_VistaEmpleados].[Departamento] AS [Departamento], 
+    [vw_VistaEmpleados].[Provincia] AS [Provincia], 
+    [vw_VistaEmpleados].[Distrito] AS [Distrito], 
+    [vw_VistaEmpleados].[Id_Ubigeo] AS [Id_Ubigeo], 
+    [vw_VistaEmpleados].[Est_Emp] AS [Est_Emp], 
+    [vw_VistaEmpleados].[Estado] AS [Estado], 
+    [vw_VistaEmpleados].[Usu_Registro] AS [Usu_Registro], 
+    [vw_VistaEmpleados].[Fec_Registro] AS [Fec_Registro], 
+    [vw_VistaEmpleados].[Usu_Ult_Mod] AS [Usu_Ult_Mod], 
+    [vw_VistaEmpleados].[Fec_Ult_Mod] AS [Fec_Ult_Mod]
+    FROM [dbo].[vw_VistaEmpleados] AS [vw_VistaEmpleados]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Tb_Agenci__Id_Ub__6477ECF3" Association="Self.FK__Tb_Agenci__Id_Ub__6477ECF3">
+            <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
+            <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Client__Id_Ub__5AEE82B9" Association="Self.FK__Tb_Client__Id_Ub__5AEE82B9">
+            <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
+            <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B" Association="Self.FK__Tb_Cuenta__Cod_A__5CD6CB2B">
+            <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
+            <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Cuenta__Cod_C__5DCAEF64" Association="Self.FK__Tb_Cuenta__Cod_C__5DCAEF64">
+            <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
+            <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2" Association="Self.FK__Tb_Emplea__Id_Ub__5BE2A6F2">
+            <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
+            <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Pago__Cod_Pre__628FA481" Association="Self.FK__Tb_Pago__Cod_Pre__628FA481">
+            <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
+            <End Role="Tb_Pago" EntitySet="Tb_Pago" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Presta__Cod_A__619B8048" Association="Self.FK__Tb_Presta__Cod_A__619B8048">
+            <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
+            <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Presta__Cod_C__5FB337D6" Association="Self.FK__Tb_Presta__Cod_C__5FB337D6">
+            <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
+            <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Presta__Cod_E__60A75C0F" Association="Self.FK__Tb_Presta__Cod_E__60A75C0F">
+            <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
+            <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Seguro__Cod_C__6383C8BA" Association="Self.FK__Tb_Seguro__Cod_C__6383C8BA">
+            <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
+            <End Role="Tb_Seguro" EntitySet="Tb_Seguro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Transf__Cuen___5EBF139D" Association="Self.FK__Tb_Transf__Cuen___5EBF139D">
+            <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
+            <End Role="Tb_Transferencia" EntitySet="Tb_Transferencia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BancoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tb_Agencia">
+          <Key>
+            <PropertyRef Name="Cod_Age" />
+          </Key>
+          <Property Name="Cod_Age" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nom_Age" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dir_Age" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id_Ubigeo" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tb_Ubigeo" Relationship="Self.FK__Tb_Agenci__Id_Ub__6477ECF3" FromRole="Tb_Agencia" ToRole="Tb_Ubigeo" />
+          <NavigationProperty Name="Tb_Cuenta" Relationship="Self.FK__Tb_Cuenta__Cod_A__5CD6CB2B" FromRole="Tb_Agencia" ToRole="Tb_Cuenta" />
+          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Presta__Cod_A__619B8048" FromRole="Tb_Agencia" ToRole="Tb_Prestamo" />
+        </EntityType>
+        <EntityType Name="Tb_Cliente">
+          <Key>
+            <PropertyRef Name="Cod_Cli" />
+          </Key>
+          <Property Name="Cod_Cli" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Num_doc_Cli" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tip_doc_Cli" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nom_Cli" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ape_pat_Cli" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ape_mat_Cli" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tel_Cli" Type="String" MaxLength="9" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Cor_Cli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dir_Cli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fec_nac_Cli" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Id_Ubigeo" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Est_Cli" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Usu_Registro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Tb_Ubigeo" Relationship="Self.FK__Tb_Client__Id_Ub__5AEE82B9" FromRole="Tb_Cliente" ToRole="Tb_Ubigeo" />
+          <NavigationProperty Name="Tb_Cuenta" Relationship="Self.FK__Tb_Cuenta__Cod_C__5DCAEF64" FromRole="Tb_Cliente" ToRole="Tb_Cuenta" />
+          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Presta__Cod_C__5FB337D6" FromRole="Tb_Cliente" ToRole="Tb_Prestamo" />
+          <NavigationProperty Name="Tb_Seguro" Relationship="Self.FK__Tb_Seguro__Cod_C__6383C8BA" FromRole="Tb_Cliente" ToRole="Tb_Seguro" />
+        </EntityType>
+        <EntityType Name="Tb_Cuenta">
+          <Key>
+            <PropertyRef Name="Num_Cuen" />
+          </Key>
+          <Property Name="Num_Cuen" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tip_Mon" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Sal_Cuen" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Fec_Aper" Type="DateTime" Precision="0" />
+          <Property Name="Cod_Cli" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Cod_Age" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Est_Cuen" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Usu_Registro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Tb_Agencia" Relationship="Self.FK__Tb_Cuenta__Cod_A__5CD6CB2B" FromRole="Tb_Cuenta" ToRole="Tb_Agencia" />
+          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Cuenta__Cod_C__5DCAEF64" FromRole="Tb_Cuenta" ToRole="Tb_Cliente" />
+          <NavigationProperty Name="Tb_Transferencia" Relationship="Self.FK__Tb_Transf__Cuen___5EBF139D" FromRole="Tb_Cuenta" ToRole="Tb_Transferencia" />
+        </EntityType>
+        <EntityType Name="Tb_Empleado">
+          <Key>
+            <PropertyRef Name="Cod_Emp" />
+          </Key>
+          <Property Name="Cod_Emp" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Num_doc_Emp" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tip_doc_Emp" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nom_Emp" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ape_pat_Emp" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ape_mat_Emp" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tel_Emp" Type="String" MaxLength="9" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Cor_Emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img_Emp" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Id_Ubigeo" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Est_Emp" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Usu_Registro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Tb_Ubigeo" Relationship="Self.FK__Tb_Emplea__Id_Ub__5BE2A6F2" FromRole="Tb_Empleado" ToRole="Tb_Ubigeo" />
+          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Presta__Cod_E__60A75C0F" FromRole="Tb_Empleado" ToRole="Tb_Prestamo" />
+        </EntityType>
+        <EntityType Name="Tb_Pago">
+          <Key>
+            <PropertyRef Name="Cod_Pag" />
+          </Key>
+          <Property Name="Cod_Pag" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Num_cuot_Pag" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mon_Pag" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Fec_pro_Pag" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fec_real_Pag" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Cod_Pre" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Est_Pag" Type="Int32" Nullable="false" />
+          <Property Name="Usu_Registro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Pago__Cod_Pre__628FA481" FromRole="Tb_Pago" ToRole="Tb_Prestamo" />
+        </EntityType>
+        <EntityType Name="Tb_Prestamo">
+          <Key>
+            <PropertyRef Name="Cod_Pre" />
+          </Key>
+          <Property Name="Cod_Pre" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Mon_Pre" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Cuot_Pre" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fec_Sol" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fec_Rech" Type="DateTime" Precision="0" />
+          <Property Name="Fec_Can" Type="DateTime" Precision="0" />
+          <Property Name="Pre_Est" Type="Int32" Nullable="false" />
+          <Property Name="Com_Deu" Type="Int32" Nullable="false" />
+          <Property Name="Cod_Cli" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Cod_Emp" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Cod_Age" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Est_Pre" Type="Int32" Nullable="false" />
+          <Property Name="Usu_Registro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Tb_Agencia" Relationship="Self.FK__Tb_Presta__Cod_A__619B8048" FromRole="Tb_Prestamo" ToRole="Tb_Agencia" />
+          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Presta__Cod_C__5FB337D6" FromRole="Tb_Prestamo" ToRole="Tb_Cliente" />
+          <NavigationProperty Name="Tb_Empleado" Relationship="Self.FK__Tb_Presta__Cod_E__60A75C0F" FromRole="Tb_Prestamo" ToRole="Tb_Empleado" />
+          <NavigationProperty Name="Tb_Pago" Relationship="Self.FK__Tb_Pago__Cod_Pre__628FA481" FromRole="Tb_Prestamo" ToRole="Tb_Pago" />
+        </EntityType>
+        <EntityType Name="Tb_Seguro">
+          <Key>
+            <PropertyRef Name="Cod_Seg" />
+          </Key>
+          <Property Name="Cod_Seg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cos_Seg" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Fec_Adq" Type="DateTime" Precision="0" />
+          <Property Name="Cod_Cli" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Seguro__Cod_C__6383C8BA" FromRole="Tb_Seguro" ToRole="Tb_Cliente" />
+        </EntityType>
+        <EntityType Name="Tb_Transferencia">
+          <Key>
+            <PropertyRef Name="Cod_Tran" />
+          </Key>
+          <Property Name="Cod_Tran" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Mon_Tran" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Cuen_Dest" Type="String" MaxLength="23" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cuen_Orig" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tran_Int" Type="Int32" />
+          <Property Name="Fec_Tran" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Tb_Cuenta" Relationship="Self.FK__Tb_Transf__Cuen___5EBF139D" FromRole="Tb_Transferencia" ToRole="Tb_Cuenta" />
+        </EntityType>
+        <EntityType Name="Tb_Ubigeo">
+          <Key>
+            <PropertyRef Name="Id_Ubigeo" />
+          </Key>
+          <Property Name="Id_Ubigeo" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdDepa" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="IdProv" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="IdDist" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="Departamento" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Distrito" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tb_Agencia" Relationship="Self.FK__Tb_Agenci__Id_Ub__6477ECF3" FromRole="Tb_Ubigeo" ToRole="Tb_Agencia" />
+          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Client__Id_Ub__5AEE82B9" FromRole="Tb_Ubigeo" ToRole="Tb_Cliente" />
+          <NavigationProperty Name="Tb_Empleado" Relationship="Self.FK__Tb_Emplea__Id_Ub__5BE2A6F2" FromRole="Tb_Ubigeo" ToRole="Tb_Empleado" />
+        </EntityType>
+        <EntityType Name="Tb_Usuario">
+          <Key>
+            <PropertyRef Name="Login_Usuario" />
+          </Key>
+          <Property Name="Login_Usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pass_Usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Niv_Usuario" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Est_Usuario" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Usu_Registro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Tb_Agenci__Id_Ub__6477ECF3">
+          <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1" />
+          <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Ubigeo">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Principal>
+            <Dependent Role="Tb_Agencia">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B">
+          <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Cuenta" Type="Self.Tb_Cuenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Agencia">
+              <PropertyRef Name="Cod_Age" />
+            </Principal>
+            <Dependent Role="Tb_Cuenta">
+              <PropertyRef Name="Cod_Age" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Presta__Cod_A__619B8048">
+          <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Agencia">
+              <PropertyRef Name="Cod_Age" />
+            </Principal>
+            <Dependent Role="Tb_Prestamo">
+              <PropertyRef Name="Cod_Age" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Client__Id_Ub__5AEE82B9">
+          <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Ubigeo">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Principal>
+            <Dependent Role="Tb_Cliente">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Cuenta__Cod_C__5DCAEF64">
+          <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Cuenta" Type="Self.Tb_Cuenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cliente">
+              <PropertyRef Name="Cod_Cli" />
+            </Principal>
+            <Dependent Role="Tb_Cuenta">
+              <PropertyRef Name="Cod_Cli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Presta__Cod_C__5FB337D6">
+          <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1" />
+          <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cliente">
+              <PropertyRef Name="Cod_Cli" />
+            </Principal>
+            <Dependent Role="Tb_Prestamo">
+              <PropertyRef Name="Cod_Cli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Seguro__Cod_C__6383C8BA">
+          <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Seguro" Type="Self.Tb_Seguro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cliente">
+              <PropertyRef Name="Cod_Cli" />
+            </Principal>
+            <Dependent Role="Tb_Seguro">
+              <PropertyRef Name="Cod_Cli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Transf__Cuen___5EBF139D">
+          <End Role="Tb_Cuenta" Type="Self.Tb_Cuenta" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Transferencia" Type="Self.Tb_Transferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Cuenta">
+              <PropertyRef Name="Num_Cuen" />
+            </Principal>
+            <Dependent Role="Tb_Transferencia">
+              <PropertyRef Name="Cuen_Orig" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2">
+          <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Empleado" Type="Self.Tb_Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Ubigeo">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Principal>
+            <Dependent Role="Tb_Empleado">
+              <PropertyRef Name="Id_Ubigeo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Presta__Cod_E__60A75C0F">
+          <End Role="Tb_Empleado" Type="Self.Tb_Empleado" Multiplicity="1" />
+          <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Empleado">
+              <PropertyRef Name="Cod_Emp" />
+            </Principal>
+            <Dependent Role="Tb_Prestamo">
+              <PropertyRef Name="Cod_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tb_Pago__Cod_Pre__628FA481">
+          <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tb_Pago" Type="Self.Tb_Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Prestamo">
+              <PropertyRef Name="Cod_Pre" />
+            </Principal>
+            <Dependent Role="Tb_Pago">
+              <PropertyRef Name="Cod_Pre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BancoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tb_Agencia" EntityType="Self.Tb_Agencia" />
+          <EntitySet Name="Tb_Cliente" EntityType="Self.Tb_Cliente" />
+          <EntitySet Name="Tb_Cuenta" EntityType="Self.Tb_Cuenta" />
+          <EntitySet Name="Tb_Empleado" EntityType="Self.Tb_Empleado" />
+          <EntitySet Name="Tb_Pago" EntityType="Self.Tb_Pago" />
+          <EntitySet Name="Tb_Prestamo" EntityType="Self.Tb_Prestamo" />
+          <EntitySet Name="Tb_Seguro" EntityType="Self.Tb_Seguro" />
+          <EntitySet Name="Tb_Transferencia" EntityType="Self.Tb_Transferencia" />
+          <EntitySet Name="Tb_Ubigeo" EntityType="Self.Tb_Ubigeo" />
+          <EntitySet Name="Tb_Usuario" EntityType="Self.Tb_Usuario" />
+          <AssociationSet Name="FK__Tb_Agenci__Id_Ub__6477ECF3" Association="Self.FK__Tb_Agenci__Id_Ub__6477ECF3">
+            <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
+            <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B" Association="Self.FK__Tb_Cuenta__Cod_A__5CD6CB2B">
+            <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
+            <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Presta__Cod_A__619B8048" Association="Self.FK__Tb_Presta__Cod_A__619B8048">
+            <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
+            <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Client__Id_Ub__5AEE82B9" Association="Self.FK__Tb_Client__Id_Ub__5AEE82B9">
+            <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
+            <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Cuenta__Cod_C__5DCAEF64" Association="Self.FK__Tb_Cuenta__Cod_C__5DCAEF64">
+            <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
+            <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Presta__Cod_C__5FB337D6" Association="Self.FK__Tb_Presta__Cod_C__5FB337D6">
+            <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
+            <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Seguro__Cod_C__6383C8BA" Association="Self.FK__Tb_Seguro__Cod_C__6383C8BA">
+            <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
+            <End Role="Tb_Seguro" EntitySet="Tb_Seguro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Transf__Cuen___5EBF139D" Association="Self.FK__Tb_Transf__Cuen___5EBF139D">
+            <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
+            <End Role="Tb_Transferencia" EntitySet="Tb_Transferencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2" Association="Self.FK__Tb_Emplea__Id_Ub__5BE2A6F2">
+            <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
+            <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Presta__Cod_E__60A75C0F" Association="Self.FK__Tb_Presta__Cod_E__60A75C0F">
+            <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
+            <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tb_Pago__Cod_Pre__628FA481" Association="Self.FK__Tb_Pago__Cod_Pre__628FA481">
+            <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
+            <End Role="Tb_Pago" EntitySet="Tb_Pago" />
+          </AssociationSet>
+          <FunctionImport Name="usp_ActualizarEmpleado">
+            <Parameter Name="Cod_Emp" Mode="In" Type="String" />
+            <Parameter Name="Num_doc_Emp" Mode="In" Type="String" />
+            <Parameter Name="Tip_doc_Emp" Mode="In" Type="String" />
+            <Parameter Name="Nom_Emp" Mode="In" Type="String" />
+            <Parameter Name="Ape_pat_Emp" Mode="In" Type="String" />
+            <Parameter Name="Ape_mat_Emp" Mode="In" Type="String" />
+            <Parameter Name="Tel_Emp" Mode="In" Type="String" />
+            <Parameter Name="Cor_Emp" Mode="In" Type="String" />
+            <Parameter Name="Img_Emp" Mode="In" Type="Binary" />
+            <Parameter Name="Id_Ubigeo" Mode="In" Type="String" />
+            <Parameter Name="Est_Emp" Mode="In" Type="String" />
+            <Parameter Name="Usu_Ult_Mod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarEmpleado" ReturnType="Collection(BancoModel.usp_ConsultarEmpleado_Result)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_EliminarEmpleado">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertarEmpleado">
+            <Parameter Name="Num_doc_Emp" Mode="In" Type="String" />
+            <Parameter Name="Tip_doc_Emp" Mode="In" Type="String" />
+            <Parameter Name="Nom_Emp" Mode="In" Type="String" />
+            <Parameter Name="Ape_pat_Emp" Mode="In" Type="String" />
+            <Parameter Name="Ape_mat_Emp" Mode="In" Type="String" />
+            <Parameter Name="Tel_Emp" Mode="In" Type="String" />
+            <Parameter Name="Cor_Emp" Mode="In" Type="String" />
+            <Parameter Name="Img_Emp" Mode="In" Type="Binary" />
+            <Parameter Name="Id_Ubigeo" Mode="In" Type="String" />
+            <Parameter Name="Est_Emp" Mode="In" Type="String" />
+            <Parameter Name="Usu_Registro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ListarEmpleado" ReturnType="Collection(BancoModel.usp_ListarEmpleado_Result)" />
+          <EntitySet Name="vw_VistaEmpleados" EntityType="BancoModel.vw_VistaEmpleados" />
+        </EntityContainer>
+        <ComplexType Name="usp_ConsultarEmpleado_Result">
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Numero_Documento" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="Tip_doc_Emp" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="Imagen" Nullable="false" MaxLength="Max" />
+          <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Est_Emp" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="usp_ListarEmpleado_Result">
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Numero_Documento" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="Tip_doc_Emp" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Tipo_Documento" Nullable="true" MaxLength="21" />
+          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="Imagen" Nullable="false" MaxLength="Max" />
+          <Property Type="String" Name="Departamento" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Distrito" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Est_Emp" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="Usu_Registro" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="Fec_Registro" Nullable="false" Precision="16" />
+          <Property Type="String" Name="Usu_Ult_Mod" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="Fec_Ult_Mod" Nullable="true" Precision="16" />
+        </ComplexType>
+        <EntityType Name="vw_VistaEmpleados">
+          <Key>
+            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Apellido_Paterno" />
+            <PropertyRef Name="Apellido_Materno" />
+            <PropertyRef Name="Numero_Documento" />
+            <PropertyRef Name="Tip_doc_Emp" />
+            <PropertyRef Name="Telefono" />
+            <PropertyRef Name="Correo" />
+            <PropertyRef Name="Imagen" />
+            <PropertyRef Name="Id_Ubigeo" />
+            <PropertyRef Name="Est_Emp" />
+            <PropertyRef Name="Usu_Registro" />
+            <PropertyRef Name="Fec_Registro" />
+          </Key>
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido_Paterno" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido_Materno" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Numero_Documento" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Tip_doc_Emp" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Tipo_Documento" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Name="Correo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imagen" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Departamento" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Distrito" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Ubigeo" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="Est_Emp" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Estado" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Usu_Registro" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BancoModelStoreContainer" CdmEntityContainer="BancoEntities">
+          <EntitySetMapping Name="Tb_Agencia">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Agencia">
+              <MappingFragment StoreEntitySet="Tb_Agencia">
+                <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+                <ScalarProperty Name="Nom_Age" ColumnName="Nom_Age" />
+                <ScalarProperty Name="Dir_Age" ColumnName="Dir_Age" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Cliente">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Cliente">
+              <MappingFragment StoreEntitySet="Tb_Cliente">
+                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+                <ScalarProperty Name="Num_doc_Cli" ColumnName="Num_doc_Cli" />
+                <ScalarProperty Name="Tip_doc_Cli" ColumnName="Tip_doc_Cli" />
+                <ScalarProperty Name="Nom_Cli" ColumnName="Nom_Cli" />
+                <ScalarProperty Name="Ape_pat_Cli" ColumnName="Ape_pat_Cli" />
+                <ScalarProperty Name="Ape_mat_Cli" ColumnName="Ape_mat_Cli" />
+                <ScalarProperty Name="Tel_Cli" ColumnName="Tel_Cli" />
+                <ScalarProperty Name="Cor_Cli" ColumnName="Cor_Cli" />
+                <ScalarProperty Name="Dir_Cli" ColumnName="Dir_Cli" />
+                <ScalarProperty Name="Fec_nac_Cli" ColumnName="Fec_nac_Cli" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+                <ScalarProperty Name="Est_Cli" ColumnName="Est_Cli" />
+                <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Cuenta">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Cuenta">
+              <MappingFragment StoreEntitySet="Tb_Cuenta">
+                <ScalarProperty Name="Num_Cuen" ColumnName="Num_Cuen" />
+                <ScalarProperty Name="Tip_Mon" ColumnName="Tip_Mon" />
+                <ScalarProperty Name="Sal_Cuen" ColumnName="Sal_Cuen" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Fec_Aper" ColumnName="Fec_Aper" />
+                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+                <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+                <ScalarProperty Name="Est_Cuen" ColumnName="Est_Cuen" />
+                <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Empleado">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Empleado">
+              <MappingFragment StoreEntitySet="Tb_Empleado">
+                <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+                <ScalarProperty Name="Num_doc_Emp" ColumnName="Num_doc_Emp" />
+                <ScalarProperty Name="Tip_doc_Emp" ColumnName="Tip_doc_Emp" />
+                <ScalarProperty Name="Nom_Emp" ColumnName="Nom_Emp" />
+                <ScalarProperty Name="Ape_pat_Emp" ColumnName="Ape_pat_Emp" />
+                <ScalarProperty Name="Ape_mat_Emp" ColumnName="Ape_mat_Emp" />
+                <ScalarProperty Name="Tel_Emp" ColumnName="Tel_Emp" />
+                <ScalarProperty Name="Cor_Emp" ColumnName="Cor_Emp" />
+                <ScalarProperty Name="Img_Emp" ColumnName="Img_Emp" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+                <ScalarProperty Name="Est_Emp" ColumnName="Est_Emp" />
+                <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Pago">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Pago">
+              <MappingFragment StoreEntitySet="Tb_Pago">
+                <ScalarProperty Name="Cod_Pag" ColumnName="Cod_Pag" />
+                <ScalarProperty Name="Num_cuot_Pag" ColumnName="Num_cuot_Pag" />
+                <ScalarProperty Name="Mon_Pag" ColumnName="Mon_Pag" />
+                <ScalarProperty Name="Fec_pro_Pag" ColumnName="Fec_pro_Pag" />
+                <ScalarProperty Name="Fec_real_Pag" ColumnName="Fec_real_Pag" />
+                <ScalarProperty Name="Cod_Pre" ColumnName="Cod_Pre" />
+                <ScalarProperty Name="Est_Pag" ColumnName="Est_Pag" />
+                <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Prestamo">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Prestamo">
+              <MappingFragment StoreEntitySet="Tb_Prestamo">
+                <ScalarProperty Name="Cod_Pre" ColumnName="Cod_Pre" />
+                <ScalarProperty Name="Mon_Pre" ColumnName="Mon_Pre" />
+                <ScalarProperty Name="Cuot_Pre" ColumnName="Cuot_Pre" />
+                <ScalarProperty Name="Fec_Sol" ColumnName="Fec_Sol" />
+                <ScalarProperty Name="Fec_Rech" ColumnName="Fec_Rech" />
+                <ScalarProperty Name="Fec_Can" ColumnName="Fec_Can" />
+                <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
+                <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
+                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+                <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+                <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+                <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
+                <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Seguro">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Seguro">
+              <MappingFragment StoreEntitySet="Tb_Seguro">
+                <ScalarProperty Name="Cod_Seg" ColumnName="Cod_Seg" />
+                <ScalarProperty Name="Cos_Seg" ColumnName="Cos_Seg" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Fec_Adq" ColumnName="Fec_Adq" />
+                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Transferencia">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Transferencia">
+              <MappingFragment StoreEntitySet="Tb_Transferencia">
+                <ScalarProperty Name="Cod_Tran" ColumnName="Cod_Tran" />
+                <ScalarProperty Name="Mon_Tran" ColumnName="Mon_Tran" />
+                <ScalarProperty Name="Cuen_Dest" ColumnName="Cuen_Dest" />
+                <ScalarProperty Name="Cuen_Orig" ColumnName="Cuen_Orig" />
+                <ScalarProperty Name="Tran_Int" ColumnName="Tran_Int" />
+                <ScalarProperty Name="Fec_Tran" ColumnName="Fec_Tran" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Ubigeo">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Ubigeo">
+              <MappingFragment StoreEntitySet="Tb_Ubigeo">
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+                <ScalarProperty Name="IdDepa" ColumnName="IdDepa" />
+                <ScalarProperty Name="IdProv" ColumnName="IdProv" />
+                <ScalarProperty Name="IdDist" ColumnName="IdDist" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Usuario">
+            <EntityTypeMapping TypeName="BancoModel.Tb_Usuario">
+              <MappingFragment StoreEntitySet="Tb_Usuario">
+                <ScalarProperty Name="Login_Usuario" ColumnName="Login_Usuario" />
+                <ScalarProperty Name="Pass_Usuario" ColumnName="Pass_Usuario" />
+                <ScalarProperty Name="Niv_Usuario" ColumnName="Niv_Usuario" />
+                <ScalarProperty Name="Est_Usuario" ColumnName="Est_Usuario" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_ActualizarEmpleado" FunctionName="BancoModel.Store.usp_ActualizarEmpleado" />
+          <FunctionImportMapping FunctionImportName="usp_ConsultarEmpleado" FunctionName="BancoModel.Store.usp_ConsultarEmpleado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_ConsultarEmpleado_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
+                <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido Materno" />
+                <ScalarProperty Name="Numero_Documento" ColumnName="Numero Documento" />
+                <ScalarProperty Name="Tip_doc_Emp" ColumnName="Tip_doc_Emp" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+                <ScalarProperty Name="Est_Emp" ColumnName="Est_Emp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_EliminarEmpleado" FunctionName="BancoModel.Store.usp_EliminarEmpleado" />
+          <FunctionImportMapping FunctionImportName="usp_InsertarEmpleado" FunctionName="BancoModel.Store.usp_InsertarEmpleado" />
+          <FunctionImportMapping FunctionImportName="usp_ListarEmpleado" FunctionName="BancoModel.Store.usp_ListarEmpleado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_ListarEmpleado_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
+                <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido Materno" />
+                <ScalarProperty Name="Numero_Documento" ColumnName="Numero Documento" />
+                <ScalarProperty Name="Tip_doc_Emp" ColumnName="Tip_doc_Emp" />
+                <ScalarProperty Name="Tipo_Documento" ColumnName="Tipo Documento" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+                <ScalarProperty Name="Est_Emp" ColumnName="Est_Emp" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="vw_VistaEmpleados">
+            <EntityTypeMapping TypeName="BancoModel.vw_VistaEmpleados">
+              <MappingFragment StoreEntitySet="vw_VistaEmpleados">
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Est_Emp" ColumnName="Est_Emp" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+                <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Tipo_Documento" ColumnName="Tipo Documento" />
+                <ScalarProperty Name="Tip_doc_Emp" ColumnName="Tip_doc_Emp" />
+                <ScalarProperty Name="Numero_Documento" ColumnName="Numero Documento" />
+                <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido Materno" />
+                <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

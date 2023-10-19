@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BancoModelStoreContainer" CdmEntityContainer="BancoEntities">
+    <EntitySetMapping Name="Tb_Agencia">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Agencia">
+        <MappingFragment StoreEntitySet="Tb_Agencia">
+          <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+          <ScalarProperty Name="Nom_Age" ColumnName="Nom_Age" />
+          <ScalarProperty Name="Dir_Age" ColumnName="Dir_Age" />
+          <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Cliente">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Cliente">
+        <MappingFragment StoreEntitySet="Tb_Cliente">
+          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+          <ScalarProperty Name="Num_doc_Cli" ColumnName="Num_doc_Cli" />
+          <ScalarProperty Name="Tip_doc_Cli" ColumnName="Tip_doc_Cli" />
+          <ScalarProperty Name="Nom_Cli" ColumnName="Nom_Cli" />
+          <ScalarProperty Name="Ape_pat_Cli" ColumnName="Ape_pat_Cli" />
+          <ScalarProperty Name="Ape_mat_Cli" ColumnName="Ape_mat_Cli" />
+          <ScalarProperty Name="Tel_Cli" ColumnName="Tel_Cli" />
+          <ScalarProperty Name="Cor_Cli" ColumnName="Cor_Cli" />
+          <ScalarProperty Name="Dir_Cli" ColumnName="Dir_Cli" />
+          <ScalarProperty Name="Fec_nac_Cli" ColumnName="Fec_nac_Cli" />
+          <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+          <ScalarProperty Name="Est_Cli" ColumnName="Est_Cli" />
+          <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+          <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+          <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+          <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Cuenta">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Cuenta">
+        <MappingFragment StoreEntitySet="Tb_Cuenta">
+          <ScalarProperty Name="Num_Cuen" ColumnName="Num_Cuen" />
+          <ScalarProperty Name="Tip_Mon" ColumnName="Tip_Mon" />
+          <ScalarProperty Name="Sal_Cuen" ColumnName="Sal_Cuen" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Fec_Aper" ColumnName="Fec_Aper" />
+          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+          <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+          <ScalarProperty Name="Est_Cuen" ColumnName="Est_Cuen" />
+          <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+          <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+          <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+          <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Empleado">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Empleado">
+        <MappingFragment StoreEntitySet="Tb_Empleado">
+          <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+          <ScalarProperty Name="Num_doc_Emp" ColumnName="Num_doc_Emp" />
+          <ScalarProperty Name="Tip_doc_Emp" ColumnName="Tip_doc_Emp" />
+          <ScalarProperty Name="Nom_Emp" ColumnName="Nom_Emp" />
+          <ScalarProperty Name="Ape_pat_Emp" ColumnName="Ape_pat_Emp" />
+          <ScalarProperty Name="Ape_mat_Emp" ColumnName="Ape_mat_Emp" />
+          <ScalarProperty Name="Tel_Emp" ColumnName="Tel_Emp" />
+          <ScalarProperty Name="Cor_Emp" ColumnName="Cor_Emp" />
+          <ScalarProperty Name="Img_Emp" ColumnName="Img_Emp" />
+          <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+          <ScalarProperty Name="Est_Emp" ColumnName="Est_Emp" />
+          <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+          <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+          <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+          <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Pago">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Pago">
+        <MappingFragment StoreEntitySet="Tb_Pago">
+          <ScalarProperty Name="Cod_Pag" ColumnName="Cod_Pag" />
+          <ScalarProperty Name="Num_cuot_Pag" ColumnName="Num_cuot_Pag" />
+          <ScalarProperty Name="Mon_Pag" ColumnName="Mon_Pag" />
+          <ScalarProperty Name="Fec_pro_Pag" ColumnName="Fec_pro_Pag" />
+          <ScalarProperty Name="Fec_real_Pag" ColumnName="Fec_real_Pag" />
+          <ScalarProperty Name="Cod_Pre" ColumnName="Cod_Pre" />
+          <ScalarProperty Name="Est_Pag" ColumnName="Est_Pag" />
+          <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+          <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+          <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+          <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Prestamo">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Prestamo">
+        <MappingFragment StoreEntitySet="Tb_Prestamo">
+          <ScalarProperty Name="Cod_Pre" ColumnName="Cod_Pre" />
+          <ScalarProperty Name="Mon_Pre" ColumnName="Mon_Pre" />
+          <ScalarProperty Name="Cuot_Pre" ColumnName="Cuot_Pre" />
+          <ScalarProperty Name="Fec_Sol" ColumnName="Fec_Sol" />
+          <ScalarProperty Name="Fec_Rech" ColumnName="Fec_Rech" />
+          <ScalarProperty Name="Fec_Can" ColumnName="Fec_Can" />
+          <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
+          <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
+          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+          <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+          <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+          <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
+          <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+          <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+          <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+          <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Seguro">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Seguro">
+        <MappingFragment StoreEntitySet="Tb_Seguro">
+          <ScalarProperty Name="Cod_Seg" ColumnName="Cod_Seg" />
+          <ScalarProperty Name="Cos_Seg" ColumnName="Cos_Seg" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Fec_Adq" ColumnName="Fec_Adq" />
+          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Transferencia">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Transferencia">
+        <MappingFragment StoreEntitySet="Tb_Transferencia">
+          <ScalarProperty Name="Cod_Tran" ColumnName="Cod_Tran" />
+          <ScalarProperty Name="Mon_Tran" ColumnName="Mon_Tran" />
+          <ScalarProperty Name="Cuen_Dest" ColumnName="Cuen_Dest" />
+          <ScalarProperty Name="Cuen_Orig" ColumnName="Cuen_Orig" />
+          <ScalarProperty Name="Tran_Int" ColumnName="Tran_Int" />
+          <ScalarProperty Name="Fec_Tran" ColumnName="Fec_Tran" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Ubigeo">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Ubigeo">
+        <MappingFragment StoreEntitySet="Tb_Ubigeo">
+          <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+          <ScalarProperty Name="IdDepa" ColumnName="IdDepa" />
+          <ScalarProperty Name="IdProv" ColumnName="IdProv" />
+          <ScalarProperty Name="IdDist" ColumnName="IdDist" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Usuario">
+      <EntityTypeMapping TypeName="BancoModel.Tb_Usuario">
+        <MappingFragment StoreEntitySet="Tb_Usuario">
+          <ScalarProperty Name="Login_Usuario" ColumnName="Login_Usuario" />
+          <ScalarProperty Name="Pass_Usuario" ColumnName="Pass_Usuario" />
+          <ScalarProperty Name="Niv_Usuario" ColumnName="Niv_Usuario" />
+          <ScalarProperty Name="Est_Usuario" ColumnName="Est_Usuario" />
+          <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+          <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_ActualizarEmpleado" FunctionName="BancoModel.Store.usp_ActualizarEmpleado" />
+    <FunctionImportMapping FunctionImportName="usp_ConsultarEmpleado" FunctionName="BancoModel.Store.usp_ConsultarEmpleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoModel.usp_ConsultarEmpleado_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
+          <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido Materno" />
+          <ScalarProperty Name="Numero_Documento" ColumnName="Numero Documento" />
+          <ScalarProperty Name="Tip_doc_Emp" ColumnName="Tip_doc_Emp" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+          <ScalarProperty Name="Est_Emp" ColumnName="Est_Emp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_EliminarEmpleado" FunctionName="BancoModel.Store.usp_EliminarEmpleado" />
+    <FunctionImportMapping FunctionImportName="usp_InsertarEmpleado" FunctionName="BancoModel.Store.usp_InsertarEmpleado" />
+    <FunctionImportMapping FunctionImportName="usp_ListarEmpleado" FunctionName="BancoModel.Store.usp_ListarEmpleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoModel.usp_ListarEmpleado_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
+          <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido Materno" />
+          <ScalarProperty Name="Numero_Documento" ColumnName="Numero Documento" />
+          <ScalarProperty Name="Tip_doc_Emp" ColumnName="Tip_doc_Emp" />
+          <ScalarProperty Name="Tipo_Documento" ColumnName="Tipo Documento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+          <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+          <ScalarProperty Name="Est_Emp" ColumnName="Est_Emp" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+          <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+          <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+          <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="vw_VistaEmpleados">
+      <EntityTypeMapping TypeName="BancoModel.vw_VistaEmpleados">
+        <MappingFragment StoreEntitySet="vw_VistaEmpleados">
+          <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+          <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+          <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+          <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Est_Emp" ColumnName="Est_Emp" />
+          <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+          <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Tipo_Documento" ColumnName="Tipo Documento" />
+          <ScalarProperty Name="Tip_doc_Emp" ColumnName="Tip_doc_Emp" />
+          <ScalarProperty Name="Numero_Documento" ColumnName="Numero Documento" />
+          <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido Materno" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

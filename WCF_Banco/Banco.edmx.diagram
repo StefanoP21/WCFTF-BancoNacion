@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="efb8dabd501e47bebfead8f61dd9bc6b" Name="Diagram1">
+        <EntityTypeShape EntityType="BancoModel.Tb_Agencia" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Tb_Cliente" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Tb_Cuenta" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Tb_Empleado" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Tb_Pago" Width="1.5" PointX="10.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Tb_Prestamo" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Tb_Seguro" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Tb_Transferencia" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Tb_Ubigeo" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Tb_Usuario" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Agenci__Id_Ub__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Cuenta__Cod_A__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Presta__Cod_A__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Client__Id_Ub__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Cuenta__Cod_C__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Presta__Cod_C__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Seguro__Cod_C__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Transf__Cuen___5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Emplea__Id_Ub__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Presta__Cod_E__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoModel.FK__Tb_Pago__Cod_Pre__628FA481" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BancoModel.vw_VistaEmpleados" Width="1.5" PointX="10.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
