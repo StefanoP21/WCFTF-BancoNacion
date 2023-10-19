@@ -67,9 +67,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Banco.edmx</DependentUpon>
     </Compile>
+    <Compile Include="IServicioCliente.cs" />
+    <Compile Include="IServicioCuenta.cs" />
     <Compile Include="IServicioEmpleado.cs" />
+    <Compile Include="IServicioPrestamo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioCliente.cs" />
+    <Compile Include="ServicioCuenta.cs" />
     <Compile Include="ServicioEmpleado.cs" />
+    <Compile Include="ServicioPrestamo.cs" />
     <Compile Include="Tb_Agencia.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
