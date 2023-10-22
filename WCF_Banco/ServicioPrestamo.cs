@@ -66,10 +66,18 @@ namespace WCF_Banco
                 {
                     PrestamoDC objPrestamoDC = new PrestamoDC();
                     objPrestamoDC.Cod_Pre = resultado.Codigo;
+                    objPrestamoDC.Cod_Cli = resultado.Cod_Cli;
+                    objPrestamoDC.Cod_Emp = resultado.Cod_Emp;
+                    objPrestamoDC.Cod_Age = resultado.Cod_Age;
+                    objPrestamoDC.Nom_cli = resultado.Cliente;
+                    objPrestamoDC.Nom_emp = resultado.Empleado;
+                    objPrestamoDC.Nom_age = resultado.Agencia;
+                    objPrestamoDC.EstadoPrestamo = resultado.Estado_Prestamo;
                     objPrestamoDC.Fec_Sol = resultado.Fecha_Solicitud;
                     objPrestamoDC.Fec_Can = resultado.Fecha_Cancelacion;
                     objPrestamoDC.Fec_Rech = resultado.Fecha_Rechazo;
                     objPrestamoDC.PrestamoEstudio = resultado.Prestamo_Estudio;
+                    objPrestamoDC.CompraDeuda = resultado.Compra_Deuda;
                     objPrestamoDC.Cuot_Pre = Convert.ToInt16(resultado.Cuotas);
                     objPrestamoDC.Mon_Pre = Convert.ToSingle(resultado.Monto);
 

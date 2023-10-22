@@ -347,5 +347,29 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Ubigeo_Departamentos" FunctionName="BancoModel.Store.usp_Ubigeo_Departamentos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoModel.usp_Ubigeo_Departamentos_Result">
+          <ScalarProperty Name="ID_Departamento" ColumnName="ID_Departamento" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Ubigeo_DistritosProvinciaDepartamento" FunctionName="BancoModel.Store.usp_Ubigeo_DistritosProvinciaDepartamento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoModel.usp_Ubigeo_DistritosProvinciaDepartamento_Result">
+          <ScalarProperty Name="ID_Distrito" ColumnName="ID_Distrito" />
+          <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Ubigeo_ProvinciasDepartamento" FunctionName="BancoModel.Store.usp_Ubigeo_ProvinciasDepartamento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoModel.usp_Ubigeo_ProvinciasDepartamento_Result">
+          <ScalarProperty Name="ID_Provincia" ColumnName="ID_Provincia" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

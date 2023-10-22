@@ -460,6 +460,14 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
           <Parameter Name="Cod_Emp" Type="nchar" Mode="In" />
         </Function>
+        <Function Name="usp_Ubigeo_Departamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_Ubigeo_DistritosProvinciaDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idDep" Type="nchar" Mode="In" />
+          <Parameter Name="idProv" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Ubigeo_ProvinciasDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idDep" Type="nchar" Mode="In" />
+        </Function>
         <EntityContainer Name="BancoModelStoreContainer">
           <EntitySet Name="Tb_Agencia" EntityType="Self.Tb_Agencia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tb_Cliente" EntityType="Self.Tb_Cliente" Schema="dbo" store:Type="Tables" />
@@ -999,13 +1007,13 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             <Parameter Name="Usu_Ult_Mod" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultarCliente" ReturnType="Collection(BancoModel.usp_ConsultarCliente_Result)">
-            <Parameter Name="codigo" Mode="In" Type="String" />
+          <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultarClienteDNI" ReturnType="Collection(BancoModel.usp_ConsultarClienteDNI_Result)">
-            <Parameter Name="DNI" Mode="In" Type="String" />
+          <Parameter Name="DNI" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_EliminarCliente">
-            <Parameter Name="codigo" Mode="In" Type="String" />
+          <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_InsertarCliente">
             <Parameter Name="Num_doc_Cli" Mode="In" Type="String" />
@@ -1022,6 +1030,14 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             <Parameter Name="Usu_Registro" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarCliente" ReturnType="Collection(BancoModel.usp_ListarCliente_Result)" />
+          <FunctionImport Name="usp_Ubigeo_Departamentos" ReturnType="Collection(BancoModel.usp_Ubigeo_Departamentos_Result)" />
+          <FunctionImport Name="usp_Ubigeo_DistritosProvinciaDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_DistritosProvinciaDepartamento_Result)">
+            <Parameter Name="idDep" Mode="In" Type="String" />
+            <Parameter Name="idProv" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_Ubigeo_ProvinciasDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_ProvinciasDepartamento_Result)">
+            <Parameter Name="idDep" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="usp_ConsultarEmpleado_Result">
           <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
@@ -1204,6 +1220,18 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Type="DateTime" Name="Fec_Registro" Nullable="false" Precision="16" />
           <Property Type="String" Name="Usu_Ult_Mod" Nullable="true" MaxLength="20" />
           <Property Type="DateTime" Name="Fec_Ult_Mod" Nullable="true" Precision="16" />
+        </ComplexType>
+        <ComplexType Name="usp_Ubigeo_Departamentos_Result">
+          <Property Type="String" Name="ID_Departamento" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="Departamento" Nullable="true" MaxLength="40" />
+        </ComplexType>
+        <ComplexType Name="usp_Ubigeo_DistritosProvinciaDepartamento_Result">
+          <Property Type="String" Name="ID_Distrito" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="Distrito" Nullable="true" MaxLength="40" />
+        </ComplexType>
+        <ComplexType Name="usp_Ubigeo_ProvinciasDepartamento_Result">
+          <Property Type="String" Name="ID_Provincia" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1554,6 +1582,30 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
                 <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
                 <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
                 <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_Ubigeo_Departamentos" FunctionName="BancoModel.Store.usp_Ubigeo_Departamentos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_Ubigeo_Departamentos_Result">
+                <ScalarProperty Name="ID_Departamento" ColumnName="ID_Departamento" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_Ubigeo_DistritosProvinciaDepartamento" FunctionName="BancoModel.Store.usp_Ubigeo_DistritosProvinciaDepartamento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_Ubigeo_DistritosProvinciaDepartamento_Result">
+                <ScalarProperty Name="ID_Distrito" ColumnName="ID_Distrito" />
+                <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_Ubigeo_ProvinciasDepartamento" FunctionName="BancoModel.Store.usp_Ubigeo_ProvinciasDepartamento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_Ubigeo_ProvinciasDepartamento_Result">
+                <ScalarProperty Name="ID_Provincia" ColumnName="ID_Provincia" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

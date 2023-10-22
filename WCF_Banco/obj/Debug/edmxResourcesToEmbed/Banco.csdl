@@ -452,6 +452,14 @@
       <Parameter Name="Usu_Registro" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="usp_ListarCliente" ReturnType="Collection(BancoModel.usp_ListarCliente_Result)" />
+    <FunctionImport Name="usp_Ubigeo_Departamentos" ReturnType="Collection(BancoModel.usp_Ubigeo_Departamentos_Result)" />
+    <FunctionImport Name="usp_Ubigeo_DistritosProvinciaDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_DistritosProvinciaDepartamento_Result)">
+      <Parameter Name="idDep" Mode="In" Type="String" />
+      <Parameter Name="idProv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Ubigeo_ProvinciasDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_ProvinciasDepartamento_Result)">
+      <Parameter Name="idDep" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="usp_ConsultarEmpleado_Result">
     <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
@@ -634,5 +642,17 @@
     <Property Type="DateTime" Name="Fec_Registro" Nullable="false" Precision="16" />
     <Property Type="String" Name="Usu_Ult_Mod" Nullable="true" MaxLength="20" />
     <Property Type="DateTime" Name="Fec_Ult_Mod" Nullable="true" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="usp_Ubigeo_Departamentos_Result">
+    <Property Type="String" Name="ID_Departamento" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Departamento" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="usp_Ubigeo_DistritosProvinciaDepartamento_Result">
+    <Property Type="String" Name="ID_Distrito" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Distrito" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="usp_Ubigeo_ProvinciasDepartamento_Result">
+    <Property Type="String" Name="ID_Provincia" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
   </ComplexType>
 </Schema>

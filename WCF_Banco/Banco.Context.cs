@@ -319,5 +319,32 @@ namespace WCF_Banco
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarCliente_Result>("usp_ListarCliente");
         }
+    
+        public virtual ObjectResult<usp_Ubigeo_Departamentos_Result> usp_Ubigeo_Departamentos()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_Departamentos_Result>("usp_Ubigeo_Departamentos");
+        }
+    
+        public virtual ObjectResult<usp_Ubigeo_DistritosProvinciaDepartamento_Result> usp_Ubigeo_DistritosProvinciaDepartamento(string idDep, string idProv)
+        {
+            var idDepParameter = idDep != null ?
+                new ObjectParameter("idDep", idDep) :
+                new ObjectParameter("idDep", typeof(string));
+    
+            var idProvParameter = idProv != null ?
+                new ObjectParameter("idProv", idProv) :
+                new ObjectParameter("idProv", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_DistritosProvinciaDepartamento_Result>("usp_Ubigeo_DistritosProvinciaDepartamento", idDepParameter, idProvParameter);
+        }
+    
+        public virtual ObjectResult<usp_Ubigeo_ProvinciasDepartamento_Result> usp_Ubigeo_ProvinciasDepartamento(string idDep)
+        {
+            var idDepParameter = idDep != null ?
+                new ObjectParameter("idDep", idDep) :
+                new ObjectParameter("idDep", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_ProvinciasDepartamento_Result>("usp_Ubigeo_ProvinciasDepartamento", idDepParameter);
+        }
     }
 }

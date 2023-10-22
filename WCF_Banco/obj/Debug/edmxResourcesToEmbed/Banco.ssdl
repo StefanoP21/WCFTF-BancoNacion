@@ -455,6 +455,14 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
     <Parameter Name="Cod_Emp" Type="nchar" Mode="In" />
   </Function>
+  <Function Name="usp_Ubigeo_Departamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_Ubigeo_DistritosProvinciaDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idDep" Type="nchar" Mode="In" />
+    <Parameter Name="idProv" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Ubigeo_ProvinciasDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idDep" Type="nchar" Mode="In" />
+  </Function>
   <EntityContainer Name="BancoModelStoreContainer">
     <EntitySet Name="Tb_Agencia" EntityType="Self.Tb_Agencia" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tb_Cliente" EntityType="Self.Tb_Cliente" Schema="dbo" store:Type="Tables" />

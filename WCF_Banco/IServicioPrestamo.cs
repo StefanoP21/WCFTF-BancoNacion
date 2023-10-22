@@ -40,6 +40,7 @@ namespace WCF_Banco
         public String Cod_Emp { get; set; }
         [DataMember]
         public String Cod_Age { get; set; }
+
         //nuevos
         [DataMember]
         public String Nom_cli { get; set; }
