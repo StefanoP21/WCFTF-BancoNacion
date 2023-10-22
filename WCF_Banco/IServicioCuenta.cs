@@ -51,5 +51,19 @@ namespace WCF_Banco
         public String Usu_Ult_Mod { get; set; }
         [DataMember]
         public DateTime Fec_Ult_Mod { get; set; }
+
+        // News
+        [DataMember]
+        public String Nom_Cli { get; set; }
+        [DataMember]
+        public string Ape_Pat_Cli { get; set; }
+        [DataMember]
+        public string Ape_Mat_Cli { get; set; }
+        [DataMember]
+        public string Tipo_Moneda { get; set; }
+        [DataMember]
+        public string Tipo_Cuenta { get; set; }
+        [DataMember]
+        public string Estado_Cuenta { get; set; }
     }
 }

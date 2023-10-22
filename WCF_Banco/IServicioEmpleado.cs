@@ -34,6 +34,8 @@ namespace WCF_Banco
         [DataMember]
         public Int16 Tip_doc_Emp { get; set; }
         [DataMember]
+        public string Tipo_Documento { get; set; }
+        [DataMember]
         public String Nom_Emp { get; set; }
         [DataMember]
         public String Ape_pat_Emp { get; set; }
@@ -49,6 +51,8 @@ namespace WCF_Banco
         public String Id_Ubigeo { get; set; }
         [DataMember]
         public Int16 Est_Emp { get; set; }
+        [DataMember]
+        public string Estado { get; set; }
         [DataMember]
         public String Usu_Registro { get; set; }
         [DataMember]

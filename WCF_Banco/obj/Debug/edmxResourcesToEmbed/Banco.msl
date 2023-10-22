@@ -371,5 +371,46 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ActualizarCuenta" FunctionName="BancoModel.Store.usp_ActualizarCuenta" />
+    <FunctionImportMapping FunctionImportName="usp_ConsultarCuenta" FunctionName="BancoModel.Store.usp_ConsultarCuenta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoModel.usp_ConsultarCuenta_Result">
+          <ScalarProperty Name="Numero_Cuenta" ColumnName="Numero Cuenta" />
+          <ScalarProperty Name="Tip_Mon" ColumnName="Tip_Mon" />
+          <ScalarProperty Name="Saldo_Cuenta" ColumnName="Saldo Cuenta" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Fecha_Apertura" ColumnName="Fecha Apertura" />
+          <ScalarProperty Name="Codigo_Cliente" ColumnName="Codigo Cliente" />
+          <ScalarProperty Name="Codigo_Agencia" ColumnName="Codigo Agencia" />
+          <ScalarProperty Name="Est_Cuen" ColumnName="Est_Cuen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_EliminarCuenta" FunctionName="BancoModel.Store.usp_EliminarCuenta" />
+    <FunctionImportMapping FunctionImportName="usp_InsertarCuenta" FunctionName="BancoModel.Store.usp_InsertarCuenta" />
+    <FunctionImportMapping FunctionImportName="usp_ListarCuenta" FunctionName="BancoModel.Store.usp_ListarCuenta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoModel.usp_ListarCuenta_Result">
+          <ScalarProperty Name="Numero_Cuenta" ColumnName="Numero Cuenta" />
+          <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre Cliente" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
+          <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido Materno" />
+          <ScalarProperty Name="Tip_Mon" ColumnName="Tip_Mon" />
+          <ScalarProperty Name="Tipo_Moneda" ColumnName="Tipo Moneda" />
+          <ScalarProperty Name="Saldo_Cuenta" ColumnName="Saldo Cuenta" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Tipo_Cuenta" ColumnName="Tipo Cuenta" />
+          <ScalarProperty Name="Fecha_Apertura" ColumnName="Fecha Apertura" />
+          <ScalarProperty Name="Codigo_Cliente" ColumnName="Codigo Cliente" />
+          <ScalarProperty Name="Codigo_Agencia" ColumnName="Codigo Agencia" />
+          <ScalarProperty Name="Est_Cuen" ColumnName="Est_Cuen" />
+          <ScalarProperty Name="Estado_Cuenta" ColumnName="Estado Cuenta" />
+          <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
+          <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
+          <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+          <ScalarProperty Name="Fec_ult_Mod" ColumnName="Fec_ult_Mod" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -60,18 +60,32 @@ namespace WCF_Banco
 
         public Boolean EliminarEmpleado(string strCodigo)
         {
-            MiBanco.usp_EliminarEmpleado(strCodigo);
+            try
+            {
+                MiBanco.usp_EliminarEmpleado(strCodigo);
 
-            MiBanco.SaveChanges();
-            return true;
+                MiBanco.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Boolean InsertarEmpleado(EmpleadoDC objEmpleado)
         {
-            MiBanco.usp_InsertarEmpleado(objEmpleado.Num_doc_Emp, objEmpleado.Tip_doc_Emp.ToString(), objEmpleado.Nom_Emp, objEmpleado.Ape_pat_Emp, objEmpleado.Ape_mat_Emp, objEmpleado.Tel_Emp, objEmpleado.Cor_Emp, objEmpleado.Img_Emp, objEmpleado.Id_Ubigeo, objEmpleado.Est_Emp.ToString(), objEmpleado.Usu_Registro);
+            try
+            {
+                MiBanco.usp_InsertarEmpleado(objEmpleado.Num_doc_Emp, objEmpleado.Tip_doc_Emp.ToString(), objEmpleado.Nom_Emp, objEmpleado.Ape_pat_Emp, objEmpleado.Ape_mat_Emp, objEmpleado.Tel_Emp, objEmpleado.Cor_Emp, objEmpleado.Img_Emp, objEmpleado.Id_Ubigeo, objEmpleado.Est_Emp.ToString(), objEmpleado.Usu_Registro);
 
-            MiBanco.SaveChanges();
-            return true;
+                MiBanco.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public List<EmpleadoDC> ListarEmpleado()
@@ -79,25 +93,25 @@ namespace WCF_Banco
             try
             {
                 List<EmpleadoDC> objEmpleado = new List<EmpleadoDC>();
-                // con LINQ
-                var query = (from emp in MiBanco.Tb_Empleado
-                             orderby emp.Cod_Emp 
-                             select emp).ToList();
+
+                var query = MiBanco.usp_ListarEmpleado();
 
                 foreach (var resultado in query)
                 {
                     EmpleadoDC objEmpleadoDC = new EmpleadoDC();
-                    objEmpleadoDC.Cod_Emp = resultado.Cod_Emp;
-                    objEmpleadoDC.Num_doc_Emp = resultado.Num_doc_Emp;
+                    objEmpleadoDC.Cod_Emp = resultado.Codigo;
+                    objEmpleadoDC.Num_doc_Emp = resultado.Numero_Documento;
                     objEmpleadoDC.Tip_doc_Emp = Convert.ToInt16(resultado.Tip_doc_Emp);
-                    objEmpleadoDC.Nom_Emp = resultado.Nom_Emp;
-                    objEmpleadoDC.Ape_pat_Emp = resultado.Ape_pat_Emp;
-                    objEmpleadoDC.Ape_mat_Emp = resultado.Ape_mat_Emp;
-                    objEmpleadoDC.Tel_Emp = resultado.Tel_Emp;
-                    objEmpleadoDC.Cor_Emp = resultado.Cor_Emp;
+                    objEmpleadoDC.Tipo_Documento = resultado.Tipo_Documento;
+                    objEmpleadoDC.Nom_Emp = resultado.Nombre;
+                    objEmpleadoDC.Ape_pat_Emp = resultado.Apellido_Paterno;
+                    objEmpleadoDC.Ape_mat_Emp = resultado.Apellido_Materno;
+                    objEmpleadoDC.Tel_Emp = resultado.Telefono;
+                    objEmpleadoDC.Cor_Emp = resultado.Correo;
                     // objEmpleadoDC.Img_Emp = resultado.Img_Emp;
                     objEmpleadoDC.Id_Ubigeo = resultado.Id_Ubigeo;
                     objEmpleadoDC.Est_Emp = Convert.ToInt16(resultado.Est_Emp);
+                    objEmpleadoDC.Estado = resultado.Estado;
                     objEmpleadoDC.Usu_Registro = resultado.Usu_Registro;
                     objEmpleadoDC.Fec_Registro = Convert.ToDateTime(resultado.Fec_Registro);
                     objEmpleadoDC.Usu_Ult_Mod = resultado.Usu_Ult_Mod;

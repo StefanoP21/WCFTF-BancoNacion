@@ -460,6 +460,33 @@
     <FunctionImport Name="usp_Ubigeo_ProvinciasDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_ProvinciasDepartamento_Result)">
       <Parameter Name="idDep" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="usp_ActualizarCuenta">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+      <Parameter Name="tipoMoneda" Mode="In" Type="String" />
+      <Parameter Name="saldoCuenta" Mode="In" Type="Decimal" />
+      <Parameter Name="tipoCuenta" Mode="In" Type="String" />
+      <Parameter Name="codigoCliente" Mode="In" Type="String" />
+      <Parameter Name="codigoAgencia" Mode="In" Type="String" />
+      <Parameter Name="estadoCuenta" Mode="In" Type="String" />
+      <Parameter Name="UsuarioUltMod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ConsultarCuenta" ReturnType="Collection(BancoModel.usp_ConsultarCuenta_Result)">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_EliminarCuenta">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_InsertarCuenta">
+      <Parameter Name="tipoMoneda" Mode="In" Type="String" />
+      <Parameter Name="saldoCuenta" Mode="In" Type="Decimal" />
+      <Parameter Name="tipoCuenta" Mode="In" Type="String" />
+      <Parameter Name="fecApertura" Mode="In" Type="DateTime" />
+      <Parameter Name="codigoCliente" Mode="In" Type="String" />
+      <Parameter Name="codigoAgencia" Mode="In" Type="String" />
+      <Parameter Name="estadoCuenta" Mode="In" Type="String" />
+      <Parameter Name="usuRegistro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarCuenta" ReturnType="Collection(BancoModel.usp_ListarCuenta_Result)" />
   </EntityContainer>
   <ComplexType Name="usp_ConsultarEmpleado_Result">
     <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
@@ -654,5 +681,35 @@
   <ComplexType Name="usp_Ubigeo_ProvinciasDepartamento_Result">
     <Property Type="String" Name="ID_Provincia" Nullable="true" MaxLength="2" />
     <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="usp_ConsultarCuenta_Result">
+    <Property Type="String" Name="Numero_Cuenta" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="Tip_Mon" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="Saldo_Cuenta" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Tipo" Nullable="false" MaxLength="1" />
+    <Property Type="DateTime" Name="Fecha_Apertura" Nullable="true" Precision="16" />
+    <Property Type="String" Name="Codigo_Cliente" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Codigo_Agencia" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Est_Cuen" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarCuenta_Result">
+    <Property Type="String" Name="Numero_Cuenta" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="Nombre_Cliente" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Tip_Mon" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Tipo_Moneda" Nullable="true" MaxLength="7" />
+    <Property Type="Decimal" Name="Saldo_Cuenta" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Tipo" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Tipo_Cuenta" Nullable="true" MaxLength="9" />
+    <Property Type="DateTime" Name="Fecha_Apertura" Nullable="true" Precision="16" />
+    <Property Type="String" Name="Codigo_Cliente" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Codigo_Agencia" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Est_Cuen" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Estado_Cuenta" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="Usuario_Registro" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="Fecha_Registro" Nullable="false" Precision="16" />
+    <Property Type="String" Name="Usu_Ult_Mod" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="Fec_ult_Mod" Nullable="true" Precision="16" />
   </ComplexType>
 </Schema>

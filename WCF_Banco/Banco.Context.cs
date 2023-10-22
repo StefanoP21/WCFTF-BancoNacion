@@ -346,5 +346,102 @@ namespace WCF_Banco
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_ProvinciasDepartamento_Result>("usp_Ubigeo_ProvinciasDepartamento", idDepParameter);
         }
+    
+        public virtual int usp_ActualizarCuenta(string codigo, string tipoMoneda, Nullable<decimal> saldoCuenta, string tipoCuenta, string codigoCliente, string codigoAgencia, string estadoCuenta, string usuarioUltMod)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            var tipoMonedaParameter = tipoMoneda != null ?
+                new ObjectParameter("tipoMoneda", tipoMoneda) :
+                new ObjectParameter("tipoMoneda", typeof(string));
+    
+            var saldoCuentaParameter = saldoCuenta.HasValue ?
+                new ObjectParameter("saldoCuenta", saldoCuenta) :
+                new ObjectParameter("saldoCuenta", typeof(decimal));
+    
+            var tipoCuentaParameter = tipoCuenta != null ?
+                new ObjectParameter("tipoCuenta", tipoCuenta) :
+                new ObjectParameter("tipoCuenta", typeof(string));
+    
+            var codigoClienteParameter = codigoCliente != null ?
+                new ObjectParameter("codigoCliente", codigoCliente) :
+                new ObjectParameter("codigoCliente", typeof(string));
+    
+            var codigoAgenciaParameter = codigoAgencia != null ?
+                new ObjectParameter("codigoAgencia", codigoAgencia) :
+                new ObjectParameter("codigoAgencia", typeof(string));
+    
+            var estadoCuentaParameter = estadoCuenta != null ?
+                new ObjectParameter("estadoCuenta", estadoCuenta) :
+                new ObjectParameter("estadoCuenta", typeof(string));
+    
+            var usuarioUltModParameter = usuarioUltMod != null ?
+                new ObjectParameter("UsuarioUltMod", usuarioUltMod) :
+                new ObjectParameter("UsuarioUltMod", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarCuenta", codigoParameter, tipoMonedaParameter, saldoCuentaParameter, tipoCuentaParameter, codigoClienteParameter, codigoAgenciaParameter, estadoCuentaParameter, usuarioUltModParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarCuenta_Result> usp_ConsultarCuenta(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarCuenta_Result>("usp_ConsultarCuenta", codigoParameter);
+        }
+    
+        public virtual int usp_EliminarCuenta(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarCuenta", codigoParameter);
+        }
+    
+        public virtual int usp_InsertarCuenta(string tipoMoneda, Nullable<decimal> saldoCuenta, string tipoCuenta, Nullable<System.DateTime> fecApertura, string codigoCliente, string codigoAgencia, string estadoCuenta, string usuRegistro)
+        {
+            var tipoMonedaParameter = tipoMoneda != null ?
+                new ObjectParameter("tipoMoneda", tipoMoneda) :
+                new ObjectParameter("tipoMoneda", typeof(string));
+    
+            var saldoCuentaParameter = saldoCuenta.HasValue ?
+                new ObjectParameter("saldoCuenta", saldoCuenta) :
+                new ObjectParameter("saldoCuenta", typeof(decimal));
+    
+            var tipoCuentaParameter = tipoCuenta != null ?
+                new ObjectParameter("tipoCuenta", tipoCuenta) :
+                new ObjectParameter("tipoCuenta", typeof(string));
+    
+            var fecAperturaParameter = fecApertura.HasValue ?
+                new ObjectParameter("fecApertura", fecApertura) :
+                new ObjectParameter("fecApertura", typeof(System.DateTime));
+    
+            var codigoClienteParameter = codigoCliente != null ?
+                new ObjectParameter("codigoCliente", codigoCliente) :
+                new ObjectParameter("codigoCliente", typeof(string));
+    
+            var codigoAgenciaParameter = codigoAgencia != null ?
+                new ObjectParameter("codigoAgencia", codigoAgencia) :
+                new ObjectParameter("codigoAgencia", typeof(string));
+    
+            var estadoCuentaParameter = estadoCuenta != null ?
+                new ObjectParameter("estadoCuenta", estadoCuenta) :
+                new ObjectParameter("estadoCuenta", typeof(string));
+    
+            var usuRegistroParameter = usuRegistro != null ?
+                new ObjectParameter("usuRegistro", usuRegistro) :
+                new ObjectParameter("usuRegistro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarCuenta", tipoMonedaParameter, saldoCuentaParameter, tipoCuentaParameter, fecAperturaParameter, codigoClienteParameter, codigoAgenciaParameter, estadoCuentaParameter, usuRegistroParameter);
+        }
+    
+        public virtual ObjectResult<usp_ListarCuenta_Result> usp_ListarCuenta()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarCuenta_Result>("usp_ListarCuenta");
+        }
     }
 }

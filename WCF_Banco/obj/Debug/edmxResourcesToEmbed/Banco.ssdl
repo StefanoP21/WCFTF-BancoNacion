@@ -393,6 +393,16 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     <Parameter Name="Est_Cli" Type="nchar" Mode="In" />
     <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="usp_ActualizarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="tipoMoneda" Type="nchar" Mode="In" />
+    <Parameter Name="saldoCuenta" Type="money" Mode="In" />
+    <Parameter Name="tipoCuenta" Type="nchar" Mode="In" />
+    <Parameter Name="codigoCliente" Type="nchar" Mode="In" />
+    <Parameter Name="codigoAgencia" Type="nchar" Mode="In" />
+    <Parameter Name="estadoCuenta" Type="nchar" Mode="In" />
+    <Parameter Name="UsuarioUltMod" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="usp_ActualizarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Cod_Emp" Type="nchar" Mode="In" />
     <Parameter Name="Num_doc_Emp" Type="nvarchar" Mode="In" />
@@ -413,11 +423,17 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
   <Function Name="usp_ConsultarClienteDNI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="DNI" Type="nchar" Mode="In" />
   </Function>
+  <Function Name="usp_ConsultarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="usp_ConsultarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="codigo" Type="nchar" Mode="In" />
   </Function>
   <Function Name="usp_EliminarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="codigo" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="usp_EliminarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="usp_EliminarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="codigo" Type="nchar" Mode="In" />
@@ -436,6 +452,16 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     <Parameter Name="Est_Cli" Type="nchar" Mode="In" />
     <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="usp_InsertarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipoMoneda" Type="nchar" Mode="In" />
+    <Parameter Name="saldoCuenta" Type="money" Mode="In" />
+    <Parameter Name="tipoCuenta" Type="nchar" Mode="In" />
+    <Parameter Name="fecApertura" Type="smalldatetime" Mode="In" />
+    <Parameter Name="codigoCliente" Type="nchar" Mode="In" />
+    <Parameter Name="codigoAgencia" Type="nchar" Mode="In" />
+    <Parameter Name="estadoCuenta" Type="nchar" Mode="In" />
+    <Parameter Name="usuRegistro" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="usp_InsertarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Num_doc_Emp" Type="nvarchar" Mode="In" />
     <Parameter Name="Tip_doc_Emp" Type="nvarchar" Mode="In" />
@@ -450,6 +476,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="usp_ListarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ListarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="usp_ListarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="usp_ListarPrestamos_Cli_Emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />

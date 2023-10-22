@@ -398,6 +398,16 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Parameter Name="Est_Cli" Type="nchar" Mode="In" />
           <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="usp_ActualizarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="tipoMoneda" Type="nchar" Mode="In" />
+          <Parameter Name="saldoCuenta" Type="money" Mode="In" />
+          <Parameter Name="tipoCuenta" Type="nchar" Mode="In" />
+          <Parameter Name="codigoCliente" Type="nchar" Mode="In" />
+          <Parameter Name="codigoAgencia" Type="nchar" Mode="In" />
+          <Parameter Name="estadoCuenta" Type="nchar" Mode="In" />
+          <Parameter Name="UsuarioUltMod" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="usp_ActualizarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cod_Emp" Type="nchar" Mode="In" />
           <Parameter Name="Num_doc_Emp" Type="nvarchar" Mode="In" />
@@ -418,11 +428,17 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
         <Function Name="usp_ConsultarClienteDNI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="DNI" Type="nchar" Mode="In" />
         </Function>
+        <Function Name="usp_ConsultarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="usp_ConsultarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nchar" Mode="In" />
         </Function>
         <Function Name="usp_EliminarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_EliminarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="usp_EliminarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nchar" Mode="In" />
@@ -441,6 +457,16 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Parameter Name="Est_Cli" Type="nchar" Mode="In" />
           <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="usp_InsertarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tipoMoneda" Type="nchar" Mode="In" />
+          <Parameter Name="saldoCuenta" Type="money" Mode="In" />
+          <Parameter Name="tipoCuenta" Type="nchar" Mode="In" />
+          <Parameter Name="fecApertura" Type="smalldatetime" Mode="In" />
+          <Parameter Name="codigoCliente" Type="nchar" Mode="In" />
+          <Parameter Name="codigoAgencia" Type="nchar" Mode="In" />
+          <Parameter Name="estadoCuenta" Type="nchar" Mode="In" />
+          <Parameter Name="usuRegistro" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="usp_InsertarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Num_doc_Emp" Type="nvarchar" Mode="In" />
           <Parameter Name="Tip_doc_Emp" Type="nvarchar" Mode="In" />
@@ -455,6 +481,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="usp_ListarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_ListarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarPrestamos_Cli_Emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
@@ -1036,8 +1063,35 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             <Parameter Name="idProv" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_Ubigeo_ProvinciasDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_ProvinciasDepartamento_Result)">
-            <Parameter Name="idDep" Mode="In" Type="String" />
+          <Parameter Name="idDep" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="usp_ActualizarCuenta">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="tipoMoneda" Mode="In" Type="String" />
+            <Parameter Name="saldoCuenta" Mode="In" Type="Decimal" />
+            <Parameter Name="tipoCuenta" Mode="In" Type="String" />
+            <Parameter Name="codigoCliente" Mode="In" Type="String" />
+            <Parameter Name="codigoAgencia" Mode="In" Type="String" />
+            <Parameter Name="estadoCuenta" Mode="In" Type="String" />
+            <Parameter Name="UsuarioUltMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarCuenta" ReturnType="Collection(BancoModel.usp_ConsultarCuenta_Result)">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_EliminarCuenta">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertarCuenta">
+            <Parameter Name="tipoMoneda" Mode="In" Type="String" />
+            <Parameter Name="saldoCuenta" Mode="In" Type="Decimal" />
+            <Parameter Name="tipoCuenta" Mode="In" Type="String" />
+            <Parameter Name="fecApertura" Mode="In" Type="DateTime" />
+            <Parameter Name="codigoCliente" Mode="In" Type="String" />
+            <Parameter Name="codigoAgencia" Mode="In" Type="String" />
+            <Parameter Name="estadoCuenta" Mode="In" Type="String" />
+            <Parameter Name="usuRegistro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ListarCuenta" ReturnType="Collection(BancoModel.usp_ListarCuenta_Result)" />
         </EntityContainer>
         <ComplexType Name="usp_ConsultarEmpleado_Result">
           <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
@@ -1232,6 +1286,36 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
         <ComplexType Name="usp_Ubigeo_ProvinciasDepartamento_Result">
           <Property Type="String" Name="ID_Provincia" Nullable="true" MaxLength="2" />
           <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
+        </ComplexType>
+        <ComplexType Name="usp_ConsultarCuenta_Result">
+          <Property Type="String" Name="Numero_Cuenta" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="Tip_Mon" Nullable="false" MaxLength="1" />
+          <Property Type="Decimal" Name="Saldo_Cuenta" Nullable="true" Precision="19" />
+          <Property Type="String" Name="Tipo" Nullable="false" MaxLength="1" />
+          <Property Type="DateTime" Name="Fecha_Apertura" Nullable="true" Precision="16" />
+          <Property Type="String" Name="Codigo_Cliente" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Codigo_Agencia" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Est_Cuen" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="usp_ListarCuenta_Result">
+          <Property Type="String" Name="Numero_Cuenta" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="Nombre_Cliente" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Tip_Mon" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Tipo_Moneda" Nullable="true" MaxLength="7" />
+          <Property Type="Decimal" Name="Saldo_Cuenta" Nullable="true" Precision="19" />
+          <Property Type="String" Name="Tipo" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Tipo_Cuenta" Nullable="true" MaxLength="9" />
+          <Property Type="DateTime" Name="Fecha_Apertura" Nullable="true" Precision="16" />
+          <Property Type="String" Name="Codigo_Cliente" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Codigo_Agencia" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Est_Cuen" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Estado_Cuenta" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="Usuario_Registro" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="Fecha_Registro" Nullable="false" Precision="16" />
+          <Property Type="String" Name="Usu_Ult_Mod" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="Fec_ult_Mod" Nullable="true" Precision="16" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1606,6 +1690,47 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
               <ComplexTypeMapping TypeName="BancoModel.usp_Ubigeo_ProvinciasDepartamento_Result">
                 <ScalarProperty Name="ID_Provincia" ColumnName="ID_Provincia" />
                 <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ActualizarCuenta" FunctionName="BancoModel.Store.usp_ActualizarCuenta" />
+          <FunctionImportMapping FunctionImportName="usp_ConsultarCuenta" FunctionName="BancoModel.Store.usp_ConsultarCuenta">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_ConsultarCuenta_Result">
+                <ScalarProperty Name="Numero_Cuenta" ColumnName="Numero Cuenta" />
+                <ScalarProperty Name="Tip_Mon" ColumnName="Tip_Mon" />
+                <ScalarProperty Name="Saldo_Cuenta" ColumnName="Saldo Cuenta" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Fecha_Apertura" ColumnName="Fecha Apertura" />
+                <ScalarProperty Name="Codigo_Cliente" ColumnName="Codigo Cliente" />
+                <ScalarProperty Name="Codigo_Agencia" ColumnName="Codigo Agencia" />
+                <ScalarProperty Name="Est_Cuen" ColumnName="Est_Cuen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_EliminarCuenta" FunctionName="BancoModel.Store.usp_EliminarCuenta" />
+          <FunctionImportMapping FunctionImportName="usp_InsertarCuenta" FunctionName="BancoModel.Store.usp_InsertarCuenta" />
+          <FunctionImportMapping FunctionImportName="usp_ListarCuenta" FunctionName="BancoModel.Store.usp_ListarCuenta">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_ListarCuenta_Result">
+                <ScalarProperty Name="Numero_Cuenta" ColumnName="Numero Cuenta" />
+                <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre Cliente" />
+                <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
+                <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido Materno" />
+                <ScalarProperty Name="Tip_Mon" ColumnName="Tip_Mon" />
+                <ScalarProperty Name="Tipo_Moneda" ColumnName="Tipo Moneda" />
+                <ScalarProperty Name="Saldo_Cuenta" ColumnName="Saldo Cuenta" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Tipo_Cuenta" ColumnName="Tipo Cuenta" />
+                <ScalarProperty Name="Fecha_Apertura" ColumnName="Fecha Apertura" />
+                <ScalarProperty Name="Codigo_Cliente" ColumnName="Codigo Cliente" />
+                <ScalarProperty Name="Codigo_Agencia" ColumnName="Codigo Agencia" />
+                <ScalarProperty Name="Est_Cuen" ColumnName="Est_Cuen" />
+                <ScalarProperty Name="Estado_Cuenta" ColumnName="Estado Cuenta" />
+                <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
+                <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_ult_Mod" ColumnName="Fec_ult_Mod" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

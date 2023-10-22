@@ -114,10 +114,16 @@
     <Compile Include="usp_ConsultarCliente_Result.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
+    <Compile Include="usp_ConsultarCuenta_Result.cs">
+      <DependentUpon>Banco.tt</DependentUpon>
+    </Compile>
     <Compile Include="usp_ConsultarEmpleado_Result.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
     <Compile Include="usp_ListarCliente_Result.cs">
+      <DependentUpon>Banco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ListarCuenta_Result.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
     <Compile Include="usp_ListarEmpleado_Result.cs">
