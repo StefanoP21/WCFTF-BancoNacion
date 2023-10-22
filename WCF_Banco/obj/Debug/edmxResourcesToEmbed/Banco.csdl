@@ -413,6 +413,45 @@
       <Parameter Name="Cod_Emp" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="vw_VistaPrestamo" EntityType="BancoModel.vw_VistaPrestamo" />
+    <FunctionImport Name="usp_ActualizarCliente">
+      <Parameter Name="Cod_Cli" Mode="In" Type="String" />
+      <Parameter Name="Num_doc_Cli" Mode="In" Type="String" />
+      <Parameter Name="Tip_doc_Cli" Mode="In" Type="String" />
+      <Parameter Name="Nom_Cli" Mode="In" Type="String" />
+      <Parameter Name="Ape_pat_Cli" Mode="In" Type="String" />
+      <Parameter Name="Ape_mat_Cli" Mode="In" Type="String" />
+      <Parameter Name="Tel_Cli" Mode="In" Type="String" />
+      <Parameter Name="Cor_Cli" Mode="In" Type="String" />
+      <Parameter Name="Dir_Cli" Mode="In" Type="String" />
+      <Parameter Name="Fec_nac_Cli" Mode="In" Type="DateTime" />
+      <Parameter Name="Id_Ubigeo" Mode="In" Type="String" />
+      <Parameter Name="Est_Cli" Mode="In" Type="String" />
+      <Parameter Name="Usu_Ult_Mod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ConsultarCliente" ReturnType="Collection(BancoModel.usp_ConsultarCliente_Result)">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ConsultarClienteDNI" ReturnType="Collection(BancoModel.usp_ConsultarClienteDNI_Result)">
+      <Parameter Name="DNI" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_EliminarCliente">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_InsertarCliente">
+      <Parameter Name="Num_doc_Cli" Mode="In" Type="String" />
+      <Parameter Name="Tip_doc_Cli" Mode="In" Type="String" />
+      <Parameter Name="Nom_Cli" Mode="In" Type="String" />
+      <Parameter Name="Ape_pat_Cli" Mode="In" Type="String" />
+      <Parameter Name="Ape_mat_Cli" Mode="In" Type="String" />
+      <Parameter Name="Tel_Cli" Mode="In" Type="String" />
+      <Parameter Name="Cor_Cli" Mode="In" Type="String" />
+      <Parameter Name="Dir_Cli" Mode="In" Type="String" />
+      <Parameter Name="Fec_nac_Cli" Mode="In" Type="DateTime" />
+      <Parameter Name="Id_Ubigeo" Mode="In" Type="String" />
+      <Parameter Name="Est_Cli" Mode="In" Type="String" />
+      <Parameter Name="Usu_Registro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarCliente" ReturnType="Collection(BancoModel.usp_ListarCliente_Result)" />
   </EntityContainer>
   <ComplexType Name="usp_ConsultarEmpleado_Result">
     <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
@@ -544,4 +583,56 @@
     <Property Name="Usuario_Ultima_Modificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Fecha_Ultima_Modificacion" Type="DateTime" Precision="0" />
   </EntityType>
+  <ComplexType Name="usp_ConsultarCliente_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Numero_Documento" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="Tip_doc_Cli" Nullable="false" MaxLength="1" />
+    <Property Type="DateTime" Name="Fecha_Nacimiento" Nullable="false" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Est_Cli" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="usp_ConsultarClienteDNI_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Numero_Documento" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="Tip_doc_Cli" Nullable="false" MaxLength="1" />
+    <Property Type="DateTime" Name="Fecha_Nacimiento" Nullable="false" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Est_Cli" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarCliente_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Numero_Documento" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="Tipo_Documento" Nullable="true" MaxLength="21" />
+    <Property Type="String" Name="Tip_doc_Cli" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="Edad" Nullable="true" />
+    <Property Type="DateTime" Name="Fecha_Nacimiento" Nullable="false" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Distrito" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="Est_Cli" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Usu_Registro" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="Fec_Registro" Nullable="false" Precision="16" />
+    <Property Type="String" Name="Usu_Ult_Mod" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="Fec_Ult_Mod" Nullable="true" Precision="16" />
+  </ComplexType>
 </Schema>

@@ -383,6 +383,21 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="usp_ActualizarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
+          <Parameter Name="Num_doc_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tip_doc_Cli" Type="nchar" Mode="In" />
+          <Parameter Name="Nom_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ape_pat_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ape_mat_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tel_Cli" Type="nchar" Mode="In" />
+          <Parameter Name="Cor_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Dir_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Fec_nac_Cli" Type="date" Mode="In" />
+          <Parameter Name="Id_Ubigeo" Type="nchar" Mode="In" />
+          <Parameter Name="Est_Cli" Type="nchar" Mode="In" />
+          <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="usp_ActualizarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cod_Emp" Type="nchar" Mode="In" />
           <Parameter Name="Num_doc_Emp" Type="nvarchar" Mode="In" />
@@ -397,11 +412,34 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Parameter Name="Est_Emp" Type="nchar" Mode="In" />
           <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="usp_ConsultarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_ConsultarClienteDNI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DNI" Type="nchar" Mode="In" />
+        </Function>
         <Function Name="usp_ConsultarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_EliminarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nchar" Mode="In" />
         </Function>
         <Function Name="usp_EliminarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Num_doc_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tip_doc_Cli" Type="nchar" Mode="In" />
+          <Parameter Name="Nom_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ape_pat_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ape_mat_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tel_Cli" Type="nchar" Mode="In" />
+          <Parameter Name="Cor_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Dir_Cli" Type="nvarchar" Mode="In" />
+          <Parameter Name="Fec_nac_Cli" Type="date" Mode="In" />
+          <Parameter Name="Id_Ubigeo" Type="nchar" Mode="In" />
+          <Parameter Name="Est_Cli" Type="nchar" Mode="In" />
+          <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="usp_InsertarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Num_doc_Emp" Type="nvarchar" Mode="In" />
@@ -416,6 +454,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Parameter Name="Est_Emp" Type="nchar" Mode="In" />
           <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="usp_ListarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarPrestamos_Cli_Emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
@@ -944,6 +983,45 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             <Parameter Name="Cod_Emp" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="vw_VistaPrestamo" EntityType="BancoModel.vw_VistaPrestamo" />
+          <FunctionImport Name="usp_ActualizarCliente">
+            <Parameter Name="Cod_Cli" Mode="In" Type="String" />
+            <Parameter Name="Num_doc_Cli" Mode="In" Type="String" />
+            <Parameter Name="Tip_doc_Cli" Mode="In" Type="String" />
+            <Parameter Name="Nom_Cli" Mode="In" Type="String" />
+            <Parameter Name="Ape_pat_Cli" Mode="In" Type="String" />
+            <Parameter Name="Ape_mat_Cli" Mode="In" Type="String" />
+            <Parameter Name="Tel_Cli" Mode="In" Type="String" />
+            <Parameter Name="Cor_Cli" Mode="In" Type="String" />
+            <Parameter Name="Dir_Cli" Mode="In" Type="String" />
+            <Parameter Name="Fec_nac_Cli" Mode="In" Type="DateTime" />
+            <Parameter Name="Id_Ubigeo" Mode="In" Type="String" />
+            <Parameter Name="Est_Cli" Mode="In" Type="String" />
+            <Parameter Name="Usu_Ult_Mod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarCliente" ReturnType="Collection(BancoModel.usp_ConsultarCliente_Result)">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarClienteDNI" ReturnType="Collection(BancoModel.usp_ConsultarClienteDNI_Result)">
+            <Parameter Name="DNI" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_EliminarCliente">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertarCliente">
+            <Parameter Name="Num_doc_Cli" Mode="In" Type="String" />
+            <Parameter Name="Tip_doc_Cli" Mode="In" Type="String" />
+            <Parameter Name="Nom_Cli" Mode="In" Type="String" />
+            <Parameter Name="Ape_pat_Cli" Mode="In" Type="String" />
+            <Parameter Name="Ape_mat_Cli" Mode="In" Type="String" />
+            <Parameter Name="Tel_Cli" Mode="In" Type="String" />
+            <Parameter Name="Cor_Cli" Mode="In" Type="String" />
+            <Parameter Name="Dir_Cli" Mode="In" Type="String" />
+            <Parameter Name="Fec_nac_Cli" Mode="In" Type="DateTime" />
+            <Parameter Name="Id_Ubigeo" Mode="In" Type="String" />
+            <Parameter Name="Est_Cli" Mode="In" Type="String" />
+            <Parameter Name="Usu_Registro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ListarCliente" ReturnType="Collection(BancoModel.usp_ListarCliente_Result)" />
         </EntityContainer>
         <ComplexType Name="usp_ConsultarEmpleado_Result">
           <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
@@ -1075,6 +1153,58 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Usuario_Ultima_Modificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Fecha_Ultima_Modificacion" Type="DateTime" Precision="0" />
         </EntityType>
+        <ComplexType Name="usp_ConsultarCliente_Result">
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Numero_Documento" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="Tip_doc_Cli" Nullable="false" MaxLength="1" />
+          <Property Type="DateTime" Name="Fecha_Nacimiento" Nullable="false" />
+          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Est_Cli" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="usp_ConsultarClienteDNI_Result">
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Numero_Documento" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="Tip_doc_Cli" Nullable="false" MaxLength="1" />
+          <Property Type="DateTime" Name="Fecha_Nacimiento" Nullable="false" />
+          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Est_Cli" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="usp_ListarCliente_Result">
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Apellido_Materno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Numero_Documento" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="Tipo_Documento" Nullable="true" MaxLength="21" />
+          <Property Type="String" Name="Tip_doc_Cli" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="Edad" Nullable="true" />
+          <Property Type="DateTime" Name="Fecha_Nacimiento" Nullable="false" />
+          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Departamento" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Distrito" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="Est_Cli" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Usu_Registro" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="Fec_Registro" Nullable="false" Precision="16" />
+          <Property Type="String" Name="Usu_Ult_Mod" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="Fec_Ult_Mod" Nullable="true" Precision="16" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1360,6 +1490,73 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_ActualizarCliente" FunctionName="BancoModel.Store.usp_ActualizarCliente" />
+          <FunctionImportMapping FunctionImportName="usp_ConsultarCliente" FunctionName="BancoModel.Store.usp_ConsultarCliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_ConsultarCliente_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+                <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
+                <ScalarProperty Name="Numero_Documento" ColumnName="Numero_Documento" />
+                <ScalarProperty Name="Tip_doc_Cli" ColumnName="Tip_doc_Cli" />
+                <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+                <ScalarProperty Name="Est_Cli" ColumnName="Est_Cli" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ConsultarClienteDNI" FunctionName="BancoModel.Store.usp_ConsultarClienteDNI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_ConsultarClienteDNI_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+                <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
+                <ScalarProperty Name="Numero_Documento" ColumnName="Numero_Documento" />
+                <ScalarProperty Name="Tip_doc_Cli" ColumnName="Tip_doc_Cli" />
+                <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+                <ScalarProperty Name="Est_Cli" ColumnName="Est_Cli" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_EliminarCliente" FunctionName="BancoModel.Store.usp_EliminarCliente" />
+          <FunctionImportMapping FunctionImportName="usp_InsertarCliente" FunctionName="BancoModel.Store.usp_InsertarCliente" />
+          <FunctionImportMapping FunctionImportName="usp_ListarCliente" FunctionName="BancoModel.Store.usp_ListarCliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_ListarCliente_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+                <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
+                <ScalarProperty Name="Numero_Documento" ColumnName="Numero_Documento" />
+                <ScalarProperty Name="Tipo_Documento" ColumnName="Tipo_Documento" />
+                <ScalarProperty Name="Tip_doc_Cli" ColumnName="Tip_doc_Cli" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Est_Cli" ColumnName="Est_Cli" />
+                <ScalarProperty Name="Usu_Registro" ColumnName="Usu_Registro" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -177,5 +177,147 @@ namespace WCF_Banco
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarPrestamos_Cli_Emp_Result>("usp_ListarPrestamos_Cli_Emp", cod_CliParameter, cod_EmpParameter);
         }
+    
+        public virtual int usp_ActualizarCliente(string cod_Cli, string num_doc_Cli, string tip_doc_Cli, string nom_Cli, string ape_pat_Cli, string ape_mat_Cli, string tel_Cli, string cor_Cli, string dir_Cli, Nullable<System.DateTime> fec_nac_Cli, string id_Ubigeo, string est_Cli, string usu_Ult_Mod)
+        {
+            var cod_CliParameter = cod_Cli != null ?
+                new ObjectParameter("Cod_Cli", cod_Cli) :
+                new ObjectParameter("Cod_Cli", typeof(string));
+    
+            var num_doc_CliParameter = num_doc_Cli != null ?
+                new ObjectParameter("Num_doc_Cli", num_doc_Cli) :
+                new ObjectParameter("Num_doc_Cli", typeof(string));
+    
+            var tip_doc_CliParameter = tip_doc_Cli != null ?
+                new ObjectParameter("Tip_doc_Cli", tip_doc_Cli) :
+                new ObjectParameter("Tip_doc_Cli", typeof(string));
+    
+            var nom_CliParameter = nom_Cli != null ?
+                new ObjectParameter("Nom_Cli", nom_Cli) :
+                new ObjectParameter("Nom_Cli", typeof(string));
+    
+            var ape_pat_CliParameter = ape_pat_Cli != null ?
+                new ObjectParameter("Ape_pat_Cli", ape_pat_Cli) :
+                new ObjectParameter("Ape_pat_Cli", typeof(string));
+    
+            var ape_mat_CliParameter = ape_mat_Cli != null ?
+                new ObjectParameter("Ape_mat_Cli", ape_mat_Cli) :
+                new ObjectParameter("Ape_mat_Cli", typeof(string));
+    
+            var tel_CliParameter = tel_Cli != null ?
+                new ObjectParameter("Tel_Cli", tel_Cli) :
+                new ObjectParameter("Tel_Cli", typeof(string));
+    
+            var cor_CliParameter = cor_Cli != null ?
+                new ObjectParameter("Cor_Cli", cor_Cli) :
+                new ObjectParameter("Cor_Cli", typeof(string));
+    
+            var dir_CliParameter = dir_Cli != null ?
+                new ObjectParameter("Dir_Cli", dir_Cli) :
+                new ObjectParameter("Dir_Cli", typeof(string));
+    
+            var fec_nac_CliParameter = fec_nac_Cli.HasValue ?
+                new ObjectParameter("Fec_nac_Cli", fec_nac_Cli) :
+                new ObjectParameter("Fec_nac_Cli", typeof(System.DateTime));
+    
+            var id_UbigeoParameter = id_Ubigeo != null ?
+                new ObjectParameter("Id_Ubigeo", id_Ubigeo) :
+                new ObjectParameter("Id_Ubigeo", typeof(string));
+    
+            var est_CliParameter = est_Cli != null ?
+                new ObjectParameter("Est_Cli", est_Cli) :
+                new ObjectParameter("Est_Cli", typeof(string));
+    
+            var usu_Ult_ModParameter = usu_Ult_Mod != null ?
+                new ObjectParameter("Usu_Ult_Mod", usu_Ult_Mod) :
+                new ObjectParameter("Usu_Ult_Mod", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarCliente", cod_CliParameter, num_doc_CliParameter, tip_doc_CliParameter, nom_CliParameter, ape_pat_CliParameter, ape_mat_CliParameter, tel_CliParameter, cor_CliParameter, dir_CliParameter, fec_nac_CliParameter, id_UbigeoParameter, est_CliParameter, usu_Ult_ModParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarCliente_Result> usp_ConsultarCliente(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarCliente_Result>("usp_ConsultarCliente", codigoParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarClienteDNI_Result> usp_ConsultarClienteDNI(string dNI)
+        {
+            var dNIParameter = dNI != null ?
+                new ObjectParameter("DNI", dNI) :
+                new ObjectParameter("DNI", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarClienteDNI_Result>("usp_ConsultarClienteDNI", dNIParameter);
+        }
+    
+        public virtual int usp_EliminarCliente(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarCliente", codigoParameter);
+        }
+    
+        public virtual int usp_InsertarCliente(string num_doc_Cli, string tip_doc_Cli, string nom_Cli, string ape_pat_Cli, string ape_mat_Cli, string tel_Cli, string cor_Cli, string dir_Cli, Nullable<System.DateTime> fec_nac_Cli, string id_Ubigeo, string est_Cli, string usu_Registro)
+        {
+            var num_doc_CliParameter = num_doc_Cli != null ?
+                new ObjectParameter("Num_doc_Cli", num_doc_Cli) :
+                new ObjectParameter("Num_doc_Cli", typeof(string));
+    
+            var tip_doc_CliParameter = tip_doc_Cli != null ?
+                new ObjectParameter("Tip_doc_Cli", tip_doc_Cli) :
+                new ObjectParameter("Tip_doc_Cli", typeof(string));
+    
+            var nom_CliParameter = nom_Cli != null ?
+                new ObjectParameter("Nom_Cli", nom_Cli) :
+                new ObjectParameter("Nom_Cli", typeof(string));
+    
+            var ape_pat_CliParameter = ape_pat_Cli != null ?
+                new ObjectParameter("Ape_pat_Cli", ape_pat_Cli) :
+                new ObjectParameter("Ape_pat_Cli", typeof(string));
+    
+            var ape_mat_CliParameter = ape_mat_Cli != null ?
+                new ObjectParameter("Ape_mat_Cli", ape_mat_Cli) :
+                new ObjectParameter("Ape_mat_Cli", typeof(string));
+    
+            var tel_CliParameter = tel_Cli != null ?
+                new ObjectParameter("Tel_Cli", tel_Cli) :
+                new ObjectParameter("Tel_Cli", typeof(string));
+    
+            var cor_CliParameter = cor_Cli != null ?
+                new ObjectParameter("Cor_Cli", cor_Cli) :
+                new ObjectParameter("Cor_Cli", typeof(string));
+    
+            var dir_CliParameter = dir_Cli != null ?
+                new ObjectParameter("Dir_Cli", dir_Cli) :
+                new ObjectParameter("Dir_Cli", typeof(string));
+    
+            var fec_nac_CliParameter = fec_nac_Cli.HasValue ?
+                new ObjectParameter("Fec_nac_Cli", fec_nac_Cli) :
+                new ObjectParameter("Fec_nac_Cli", typeof(System.DateTime));
+    
+            var id_UbigeoParameter = id_Ubigeo != null ?
+                new ObjectParameter("Id_Ubigeo", id_Ubigeo) :
+                new ObjectParameter("Id_Ubigeo", typeof(string));
+    
+            var est_CliParameter = est_Cli != null ?
+                new ObjectParameter("Est_Cli", est_Cli) :
+                new ObjectParameter("Est_Cli", typeof(string));
+    
+            var usu_RegistroParameter = usu_Registro != null ?
+                new ObjectParameter("Usu_Registro", usu_Registro) :
+                new ObjectParameter("Usu_Registro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarCliente", num_doc_CliParameter, tip_doc_CliParameter, nom_CliParameter, ape_pat_CliParameter, ape_mat_CliParameter, tel_CliParameter, cor_CliParameter, dir_CliParameter, fec_nac_CliParameter, id_UbigeoParameter, est_CliParameter, usu_RegistroParameter);
+        }
+    
+        public virtual ObjectResult<usp_ListarCliente_Result> usp_ListarCliente()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarCliente_Result>("usp_ListarCliente");
+        }
     }
 }

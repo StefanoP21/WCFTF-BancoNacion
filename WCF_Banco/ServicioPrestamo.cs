@@ -10,12 +10,12 @@ namespace WCF_Banco
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ServicioPrestamo" in both code and config file together.
     public class ServicioPrestamo : IServicioPrestamo
     {
+        BancoEntities MisPrestamos = new BancoEntities();
         public List<PrestamoDC> ListarPrestamos_Cli_Emp(string cod_Cli, string cod_Emp)
         {
-            BancoEntities MisPrestamos = new BancoEntities();
-            List<PrestamoDC> objPrestamo = new List<PrestamoDC>();
             try
             {
+                List<PrestamoDC> objPrestamo = new List<PrestamoDC>();
                 var query = MisPrestamos.usp_ListarPrestamos_Cli_Emp(cod_Cli, cod_Emp).FirstOrDefault();
 
                 if (query != null)
@@ -37,28 +37,21 @@ namespace WCF_Banco
                         Cod_Age = query.Cod_Age,
                         Nom_age = query.Agencia,
                         EstadoPrestamo = query.Estado_Prestamo
-
-
                     };
 
                     objPrestamo.Add(prestamo);
                 }
+
+                return objPrestamo;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-            return objPrestamo;
         }
-
-
 
         public List<PrestamoDC> ListarPrestamosClienteFechas(String strCodigo, DateTime fecIni, DateTime fecFin)
         {
-            //Instanciamos el modelo
-            BancoEntities MisPrestamos = new BancoEntities();
-
             try
             {
                 //Creamos una lista de PrestamoDC
@@ -80,19 +73,14 @@ namespace WCF_Banco
                     objPrestamoDC.Cuot_Pre = Convert.ToInt16(resultado.Cuotas);
                     objPrestamoDC.Mon_Pre = Convert.ToSingle(resultado.Monto);
 
-
-
                     objListaPrestamoDC.Add(objPrestamoDC);
                 }
 
                 return objListaPrestamoDC;
-
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new Exception(ex.Message);
             }
         }
     }
