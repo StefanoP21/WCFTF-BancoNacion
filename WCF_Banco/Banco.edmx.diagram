@@ -27,6 +27,7 @@
         <AssociationConnector Association="BancoModel.FK__Tb_Presta__Cod_E__60A75C0F" ManuallyRouted="false" />
         <AssociationConnector Association="BancoModel.FK__Tb_Pago__Cod_Pre__628FA481" ManuallyRouted="false" />
         <EntityTypeShape EntityType="BancoModel.vw_VistaEmpleados" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BancoModel.vw_VistaPrestamo" Width="1.5" PointX="12.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

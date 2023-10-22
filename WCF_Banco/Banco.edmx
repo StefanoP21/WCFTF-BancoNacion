@@ -192,6 +192,49 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaEmpleados' does not have a prima
           <Property Name="Usu_Ult_Mod" Type="nvarchar" MaxLength="20" />
           <Property Name="Fec_Ult_Mod" Type="smalldatetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_VistaPrestamo">
+          <Key>
+            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="Monto" />
+            <PropertyRef Name="Cuotas" />
+            <PropertyRef Name="Fecha Solicitud" />
+            <PropertyRef Name="Pre_Est" />
+            <PropertyRef Name="Com_Deu" />
+            <PropertyRef Name="Est_Pre" />
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Cod_Cli" />
+            <PropertyRef Name="Empleado" />
+            <PropertyRef Name="Cod_Emp" />
+            <PropertyRef Name="Agencia" />
+            <PropertyRef Name="Cod_Age" />
+            <PropertyRef Name="Usuario Registro" />
+            <PropertyRef Name="Fecha Registro" />
+          </Key>
+          <Property Name="Codigo" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Monto" Type="money" Nullable="false" />
+          <Property Name="Cuotas" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Fecha Solicitud" Type="smalldatetime" Nullable="false" />
+          <Property Name="Fecha Rechazo" Type="smalldatetime" />
+          <Property Name="Fecha Cancelacion" Type="smalldatetime" />
+          <Property Name="Pre_Est" Type="int" Nullable="false" />
+          <Property Name="Prestamo Estudio" Type="varchar" MaxLength="2" />
+          <Property Name="Com_Deu" Type="int" Nullable="false" />
+          <Property Name="Compra Deuda" Type="varchar" MaxLength="2" />
+          <Property Name="Est_Pre" Type="int" Nullable="false" />
+          <Property Name="Estado Prestamo" Type="varchar" MaxLength="11" />
+          <Property Name="Cliente" Type="nvarchar" MaxLength="82" Nullable="false" />
+          <Property Name="Cod_Cli" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Empleado" Type="nvarchar" MaxLength="82" Nullable="false" />
+          <Property Name="Cod_Emp" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Agencia" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cod_Age" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="Usuario Registro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fecha Registro" Type="smalldatetime" Nullable="false" />
+          <Property Name="Usuario Ultima Modificacion" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fecha Ultima Modificacion" Type="smalldatetime" />
+        </EntityType>
         <Association Name="FK__Tb_Agenci__Id_Ub__6477ECF3">
           <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1" />
           <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="*" />
@@ -374,6 +417,10 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaEmpleados' does not have a prima
           <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="usp_ListarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_ListarPrestamos_Cli_Emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
+          <Parameter Name="Cod_Emp" Type="nchar" Mode="In" />
+        </Function>
         <EntityContainer Name="BancoModelStoreContainer">
           <EntitySet Name="Tb_Agencia" EntityType="Self.Tb_Agencia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tb_Cliente" EntityType="Self.Tb_Cliente" Schema="dbo" store:Type="Tables" />
@@ -408,6 +455,32 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaEmpleados' does not have a prima
     [vw_VistaEmpleados].[Usu_Ult_Mod] AS [Usu_Ult_Mod], 
     [vw_VistaEmpleados].[Fec_Ult_Mod] AS [Fec_Ult_Mod]
     FROM [dbo].[vw_VistaEmpleados] AS [vw_VistaEmpleados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_VistaPrestamo" EntityType="Self.vw_VistaPrestamo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_VistaPrestamo].[Codigo] AS [Codigo], 
+    [vw_VistaPrestamo].[Monto] AS [Monto], 
+    [vw_VistaPrestamo].[Cuotas] AS [Cuotas], 
+    [vw_VistaPrestamo].[Fecha Solicitud] AS [Fecha Solicitud], 
+    [vw_VistaPrestamo].[Fecha Rechazo] AS [Fecha Rechazo], 
+    [vw_VistaPrestamo].[Fecha Cancelacion] AS [Fecha Cancelacion], 
+    [vw_VistaPrestamo].[Pre_Est] AS [Pre_Est], 
+    [vw_VistaPrestamo].[Prestamo Estudio] AS [Prestamo Estudio], 
+    [vw_VistaPrestamo].[Com_Deu] AS [Com_Deu], 
+    [vw_VistaPrestamo].[Compra Deuda] AS [Compra Deuda], 
+    [vw_VistaPrestamo].[Est_Pre] AS [Est_Pre], 
+    [vw_VistaPrestamo].[Estado Prestamo] AS [Estado Prestamo], 
+    [vw_VistaPrestamo].[Cliente] AS [Cliente], 
+    [vw_VistaPrestamo].[Cod_Cli] AS [Cod_Cli], 
+    [vw_VistaPrestamo].[Empleado] AS [Empleado], 
+    [vw_VistaPrestamo].[Cod_Emp] AS [Cod_Emp], 
+    [vw_VistaPrestamo].[Agencia] AS [Agencia], 
+    [vw_VistaPrestamo].[Cod_Age] AS [Cod_Age], 
+    [vw_VistaPrestamo].[Usuario Registro] AS [Usuario Registro], 
+    [vw_VistaPrestamo].[Fecha Registro] AS [Fecha Registro], 
+    [vw_VistaPrestamo].[Usuario Ultima Modificacion] AS [Usuario Ultima Modificacion], 
+    [vw_VistaPrestamo].[Fecha Ultima Modificacion] AS [Fecha Ultima Modificacion]
+    FROM [dbo].[vw_VistaPrestamo] AS [vw_VistaPrestamo]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__Tb_Agenci__Id_Ub__6477ECF3" Association="Self.FK__Tb_Agenci__Id_Ub__6477ECF3">
             <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
@@ -866,6 +939,11 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaEmpleados' does not have a prima
           </FunctionImport>
           <FunctionImport Name="usp_ListarEmpleado" ReturnType="Collection(BancoModel.usp_ListarEmpleado_Result)" />
           <EntitySet Name="vw_VistaEmpleados" EntityType="BancoModel.vw_VistaEmpleados" />
+          <FunctionImport Name="usp_ListarPrestamos_Cli_Emp" ReturnType="Collection(BancoModel.usp_ListarPrestamos_Cli_Emp_Result)">
+            <Parameter Name="Cod_Cli" Mode="In" Type="String" />
+            <Parameter Name="Cod_Emp" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="vw_VistaPrestamo" EntityType="BancoModel.vw_VistaPrestamo" />
         </EntityContainer>
         <ComplexType Name="usp_ConsultarEmpleado_Result">
           <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
@@ -938,6 +1016,64 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaEmpleados' does not have a prima
           <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
+        </EntityType>
+        <ComplexType Name="usp_ListarPrestamos_Cli_Emp_Result">
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+          <Property Type="Decimal" Name="Monto" Nullable="false" Precision="19" />
+          <Property Type="String" Name="Cuotas" Nullable="false" MaxLength="2" />
+          <Property Type="DateTime" Name="Fecha_Solicitud" Nullable="false" Precision="16" />
+          <Property Type="DateTime" Name="Fecha_Rechazo" Nullable="true" Precision="16" />
+          <Property Type="DateTime" Name="Fecha_Cancelacion" Nullable="true" Precision="16" />
+          <Property Type="String" Name="Prestamo_Estudio" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="Compra_Deuda" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="Estado_Prestamo" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Cliente" Nullable="false" MaxLength="82" />
+          <Property Type="String" Name="Cod_Cli" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Empleado" Nullable="false" MaxLength="82" />
+          <Property Type="String" Name="Cod_Emp" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Agencia" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Cod_Age" Nullable="false" MaxLength="4" />
+        </ComplexType>
+        <EntityType Name="vw_VistaPrestamo">
+          <Key>
+            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="Monto" />
+            <PropertyRef Name="Cuotas" />
+            <PropertyRef Name="Fecha_Solicitud" />
+            <PropertyRef Name="Pre_Est" />
+            <PropertyRef Name="Com_Deu" />
+            <PropertyRef Name="Est_Pre" />
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Cod_Cli" />
+            <PropertyRef Name="Empleado" />
+            <PropertyRef Name="Cod_Emp" />
+            <PropertyRef Name="Agencia" />
+            <PropertyRef Name="Cod_Age" />
+            <PropertyRef Name="Usuario_Registro" />
+            <PropertyRef Name="Fecha_Registro" />
+          </Key>
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Cuotas" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_Solicitud" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_Rechazo" Type="DateTime" Precision="0" />
+          <Property Name="Fecha_Cancelacion" Type="DateTime" Precision="0" />
+          <Property Name="Pre_Est" Type="Int32" Nullable="false" />
+          <Property Name="Prestamo_Estudio" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Com_Deu" Type="Int32" Nullable="false" />
+          <Property Name="Compra_Deuda" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Est_Pre" Type="Int32" Nullable="false" />
+          <Property Name="Estado_Prestamo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Cliente" Type="String" Nullable="false" MaxLength="82" FixedLength="false" Unicode="true" />
+          <Property Name="Cod_Cli" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="Empleado" Type="String" Nullable="false" MaxLength="82" FixedLength="false" Unicode="true" />
+          <Property Name="Cod_Emp" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="Agencia" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cod_Age" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="Usuario_Registro" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_Registro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Usuario_Ultima_Modificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_Ultima_Modificacion" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1171,6 +1307,55 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaEmpleados' does not have a prima
                 <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido Materno" />
                 <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_ListarPrestamos_Cli_Emp" FunctionName="BancoModel.Store.usp_ListarPrestamos_Cli_Emp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_ListarPrestamos_Cli_Emp_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
+                <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
+                <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
+                <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
+                <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
+                <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="vw_VistaPrestamo">
+            <EntityTypeMapping TypeName="BancoModel.vw_VistaPrestamo">
+              <MappingFragment StoreEntitySet="vw_VistaPrestamo">
+                <ScalarProperty Name="Fecha_Ultima_Modificacion" ColumnName="Fecha Ultima Modificacion" />
+                <ScalarProperty Name="Usuario_Ultima_Modificacion" ColumnName="Usuario Ultima Modificacion" />
+                <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
+                <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
+                <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
+                <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
+                <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
+                <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
+                <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
+                <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
+                <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
+                <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
+                <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
               </MappingFragment>
             </EntityTypeMapping>

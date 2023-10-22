@@ -231,5 +231,54 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_ListarPrestamos_Cli_Emp" FunctionName="BancoModel.Store.usp_ListarPrestamos_Cli_Emp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoModel.usp_ListarPrestamos_Cli_Emp_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+          <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
+          <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
+          <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
+          <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
+          <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
+          <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+          <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+          <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="vw_VistaPrestamo">
+      <EntityTypeMapping TypeName="BancoModel.vw_VistaPrestamo">
+        <MappingFragment StoreEntitySet="vw_VistaPrestamo">
+          <ScalarProperty Name="Fecha_Ultima_Modificacion" ColumnName="Fecha Ultima Modificacion" />
+          <ScalarProperty Name="Usuario_Ultima_Modificacion" ColumnName="Usuario Ultima Modificacion" />
+          <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
+          <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
+          <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+          <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+          <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
+          <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
+          <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
+          <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
+          <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
+          <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
+          <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
+          <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
+          <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
+          <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

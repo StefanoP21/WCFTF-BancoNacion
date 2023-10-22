@@ -38,6 +38,7 @@ namespace WCF_Banco
         public virtual DbSet<Tb_Ubigeo> Tb_Ubigeo { get; set; }
         public virtual DbSet<Tb_Usuario> Tb_Usuario { get; set; }
         public virtual DbSet<vw_VistaEmpleados> vw_VistaEmpleados { get; set; }
+        public virtual DbSet<vw_VistaPrestamo> vw_VistaPrestamo { get; set; }
     
         public virtual int usp_ActualizarEmpleado(string cod_Emp, string num_doc_Emp, string tip_doc_Emp, string nom_Emp, string ape_pat_Emp, string ape_mat_Emp, string tel_Emp, string cor_Emp, byte[] img_Emp, string id_Ubigeo, string est_Emp, string usu_Ult_Mod)
         {
@@ -162,6 +163,19 @@ namespace WCF_Banco
         public virtual ObjectResult<usp_ListarEmpleado_Result> usp_ListarEmpleado()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarEmpleado_Result>("usp_ListarEmpleado");
+        }
+    
+        public virtual ObjectResult<usp_ListarPrestamos_Cli_Emp_Result> usp_ListarPrestamos_Cli_Emp(string cod_Cli, string cod_Emp)
+        {
+            var cod_CliParameter = cod_Cli != null ?
+                new ObjectParameter("Cod_Cli", cod_Cli) :
+                new ObjectParameter("Cod_Cli", typeof(string));
+    
+            var cod_EmpParameter = cod_Emp != null ?
+                new ObjectParameter("Cod_Emp", cod_Emp) :
+                new ObjectParameter("Cod_Emp", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarPrestamos_Cli_Emp_Result>("usp_ListarPrestamos_Cli_Emp", cod_CliParameter, cod_EmpParameter);
         }
     }
 }

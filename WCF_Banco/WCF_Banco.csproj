@@ -112,7 +112,13 @@
     <Compile Include="usp_ListarEmpleado_Result.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
+    <Compile Include="usp_ListarPrestamos_Cli_Emp_Result.cs">
+      <DependentUpon>Banco.tt</DependentUpon>
+    </Compile>
     <Compile Include="vw_VistaEmpleados.cs">
+      <DependentUpon>Banco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_VistaPrestamo.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
   </ItemGroup>

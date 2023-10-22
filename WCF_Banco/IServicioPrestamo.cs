@@ -12,19 +12,10 @@ namespace WCF_Banco
     public interface IServicioPrestamo
     {
         [OperationContract]
-        List<PrestamoDC> ListarPrestamos();
+        List<PrestamoDC> ListarPrestamos_Cli_Emp(String cod_Cli, String cod_Emp);
+
         [OperationContract]
-        PrestamoDC ConsultarPrestamos();
-        [OperationContract]
-        Boolean InsertarPrestamo(PrestamoDC objPrestamo);
-        [OperationContract]
-        Boolean ActualizarPrestamo(PrestamoDC objPrestamo);
-        [OperationContract]
-        Boolean EliminarPrestamo(string strCodigo);
-        [OperationContract]
-        List<PrestamoDC> ListarPrestamosAnuales();
-        [OperationContract]
-        List<PrestamoDC> PrestamosCliente(String Num_doc_cli);
+        List<PrestamoDC> ListarPrestamosClienteFechas(String strCodigo, DateTime fecIni, DateTime fecFin);
     }
 
     [DataContract]
@@ -40,28 +31,32 @@ namespace WCF_Banco
         [DataMember]
         public DateTime Fec_Sol { get; set; }
         [DataMember]
-        public DateTime Fec_Rech { get; set; }
+        public DateTime? Fec_Rech { get; set; }
         [DataMember]
-        public DateTime Fec_Can { get; set; }
-        [DataMember]
-        public Int16 Pre_Est { get; set; }
-        [DataMember]
-        public Int16 Com_Deu { get; set; }
+        public DateTime? Fec_Can { get; set; }
         [DataMember]
         public String Cod_Cli { get; set; }
         [DataMember]
         public String Cod_Emp { get; set; }
         [DataMember]
         public String Cod_Age { get; set; }
+        //nuevos
         [DataMember]
-        public Int16 Est_Pre { get; set; }
+        public String Nom_cli { get; set; }
+
         [DataMember]
-        public String Usu_Registro { get; set; }
+        public String Nom_emp { get; set; }
+
         [DataMember]
-        public DateTime Fec_Registro { get; set; }
+        public String Nom_age { get; set; }
+
         [DataMember]
-        public String Usu_Ult_Mod { get; set; }
+        public String PrestamoEstudio { get; set; }
+
         [DataMember]
-        public DateTime Fec_Ult_Mod { get; set; }
+        public String CompraDeuda { get; set; }
+
+        [DataMember]
+        public String EstadoPrestamo { get; set; }
     }
 }
