@@ -34,11 +34,15 @@ namespace WCF_Banco
                     objClienteDC.Nom_Cli = item.Nombre;
                     objClienteDC.Ape_pat_Cli = item.Apellido_Paterno;
                     objClienteDC.Ape_mat_Cli = item.Apellido_Materno;
+                    objClienteDC.Edad = Convert.ToInt16(item.Edad);
                     objClienteDC.Tel_Cli = item.Telefono;
                     objClienteDC.Cor_Cli = item.Correo;
                     objClienteDC.Dir_Cli = item.Direccion;
                     objClienteDC.Fec_nac_Cli = Convert.ToDateTime(item.Fecha_Nacimiento);
                     objClienteDC.Id_Ubigeo = item.Id_Ubigeo;
+                    objClienteDC.Departamento = item.Departamento;
+                    objClienteDC.Provincia = item.Provincia;
+                    objClienteDC.Distrito = item.Distrito;
                     objClienteDC.Est_Cli = Convert.ToInt16(item.Est_Cli);
                     objClienteDC.Estado = item.Estado;
                     objClienteDC.Usu_Registro = item.Usu_Registro;

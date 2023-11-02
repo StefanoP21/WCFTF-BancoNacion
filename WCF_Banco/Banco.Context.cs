@@ -37,145 +37,27 @@ namespace WCF_Banco
         public virtual DbSet<Tb_Transferencia> Tb_Transferencia { get; set; }
         public virtual DbSet<Tb_Ubigeo> Tb_Ubigeo { get; set; }
         public virtual DbSet<Tb_Usuario> Tb_Usuario { get; set; }
-        public virtual DbSet<vw_VistaEmpleados> vw_VistaEmpleados { get; set; }
         public virtual DbSet<vw_VistaPrestamo> vw_VistaPrestamo { get; set; }
     
-        public virtual int usp_ActualizarEmpleado(string cod_Emp, string num_doc_Emp, string tip_doc_Emp, string nom_Emp, string ape_pat_Emp, string ape_mat_Emp, string tel_Emp, string cor_Emp, byte[] img_Emp, string id_Ubigeo, string est_Emp, string usu_Ult_Mod)
+        public virtual int usp_ActualizarAgencia(string cod_Age, string nom_Age, string dir_Age, string id_Ubigeo)
         {
-            var cod_EmpParameter = cod_Emp != null ?
-                new ObjectParameter("Cod_Emp", cod_Emp) :
-                new ObjectParameter("Cod_Emp", typeof(string));
+            var cod_AgeParameter = cod_Age != null ?
+                new ObjectParameter("Cod_Age", cod_Age) :
+                new ObjectParameter("Cod_Age", typeof(string));
     
-            var num_doc_EmpParameter = num_doc_Emp != null ?
-                new ObjectParameter("Num_doc_Emp", num_doc_Emp) :
-                new ObjectParameter("Num_doc_Emp", typeof(string));
+            var nom_AgeParameter = nom_Age != null ?
+                new ObjectParameter("Nom_Age", nom_Age) :
+                new ObjectParameter("Nom_Age", typeof(string));
     
-            var tip_doc_EmpParameter = tip_doc_Emp != null ?
-                new ObjectParameter("Tip_doc_Emp", tip_doc_Emp) :
-                new ObjectParameter("Tip_doc_Emp", typeof(string));
-    
-            var nom_EmpParameter = nom_Emp != null ?
-                new ObjectParameter("Nom_Emp", nom_Emp) :
-                new ObjectParameter("Nom_Emp", typeof(string));
-    
-            var ape_pat_EmpParameter = ape_pat_Emp != null ?
-                new ObjectParameter("Ape_pat_Emp", ape_pat_Emp) :
-                new ObjectParameter("Ape_pat_Emp", typeof(string));
-    
-            var ape_mat_EmpParameter = ape_mat_Emp != null ?
-                new ObjectParameter("Ape_mat_Emp", ape_mat_Emp) :
-                new ObjectParameter("Ape_mat_Emp", typeof(string));
-    
-            var tel_EmpParameter = tel_Emp != null ?
-                new ObjectParameter("Tel_Emp", tel_Emp) :
-                new ObjectParameter("Tel_Emp", typeof(string));
-    
-            var cor_EmpParameter = cor_Emp != null ?
-                new ObjectParameter("Cor_Emp", cor_Emp) :
-                new ObjectParameter("Cor_Emp", typeof(string));
-    
-            var img_EmpParameter = img_Emp != null ?
-                new ObjectParameter("Img_Emp", img_Emp) :
-                new ObjectParameter("Img_Emp", typeof(byte[]));
+            var dir_AgeParameter = dir_Age != null ?
+                new ObjectParameter("Dir_Age", dir_Age) :
+                new ObjectParameter("Dir_Age", typeof(string));
     
             var id_UbigeoParameter = id_Ubigeo != null ?
                 new ObjectParameter("Id_Ubigeo", id_Ubigeo) :
                 new ObjectParameter("Id_Ubigeo", typeof(string));
     
-            var est_EmpParameter = est_Emp != null ?
-                new ObjectParameter("Est_Emp", est_Emp) :
-                new ObjectParameter("Est_Emp", typeof(string));
-    
-            var usu_Ult_ModParameter = usu_Ult_Mod != null ?
-                new ObjectParameter("Usu_Ult_Mod", usu_Ult_Mod) :
-                new ObjectParameter("Usu_Ult_Mod", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarEmpleado", cod_EmpParameter, num_doc_EmpParameter, tip_doc_EmpParameter, nom_EmpParameter, ape_pat_EmpParameter, ape_mat_EmpParameter, tel_EmpParameter, cor_EmpParameter, img_EmpParameter, id_UbigeoParameter, est_EmpParameter, usu_Ult_ModParameter);
-        }
-    
-        public virtual ObjectResult<usp_ConsultarEmpleado_Result> usp_ConsultarEmpleado(string codigo)
-        {
-            var codigoParameter = codigo != null ?
-                new ObjectParameter("codigo", codigo) :
-                new ObjectParameter("codigo", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarEmpleado_Result>("usp_ConsultarEmpleado", codigoParameter);
-        }
-    
-        public virtual int usp_EliminarEmpleado(string codigo)
-        {
-            var codigoParameter = codigo != null ?
-                new ObjectParameter("codigo", codigo) :
-                new ObjectParameter("codigo", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarEmpleado", codigoParameter);
-        }
-    
-        public virtual int usp_InsertarEmpleado(string num_doc_Emp, string tip_doc_Emp, string nom_Emp, string ape_pat_Emp, string ape_mat_Emp, string tel_Emp, string cor_Emp, byte[] img_Emp, string id_Ubigeo, string est_Emp, string usu_Registro)
-        {
-            var num_doc_EmpParameter = num_doc_Emp != null ?
-                new ObjectParameter("Num_doc_Emp", num_doc_Emp) :
-                new ObjectParameter("Num_doc_Emp", typeof(string));
-    
-            var tip_doc_EmpParameter = tip_doc_Emp != null ?
-                new ObjectParameter("Tip_doc_Emp", tip_doc_Emp) :
-                new ObjectParameter("Tip_doc_Emp", typeof(string));
-    
-            var nom_EmpParameter = nom_Emp != null ?
-                new ObjectParameter("Nom_Emp", nom_Emp) :
-                new ObjectParameter("Nom_Emp", typeof(string));
-    
-            var ape_pat_EmpParameter = ape_pat_Emp != null ?
-                new ObjectParameter("Ape_pat_Emp", ape_pat_Emp) :
-                new ObjectParameter("Ape_pat_Emp", typeof(string));
-    
-            var ape_mat_EmpParameter = ape_mat_Emp != null ?
-                new ObjectParameter("Ape_mat_Emp", ape_mat_Emp) :
-                new ObjectParameter("Ape_mat_Emp", typeof(string));
-    
-            var tel_EmpParameter = tel_Emp != null ?
-                new ObjectParameter("Tel_Emp", tel_Emp) :
-                new ObjectParameter("Tel_Emp", typeof(string));
-    
-            var cor_EmpParameter = cor_Emp != null ?
-                new ObjectParameter("Cor_Emp", cor_Emp) :
-                new ObjectParameter("Cor_Emp", typeof(string));
-    
-            var img_EmpParameter = img_Emp != null ?
-                new ObjectParameter("Img_Emp", img_Emp) :
-                new ObjectParameter("Img_Emp", typeof(byte[]));
-    
-            var id_UbigeoParameter = id_Ubigeo != null ?
-                new ObjectParameter("Id_Ubigeo", id_Ubigeo) :
-                new ObjectParameter("Id_Ubigeo", typeof(string));
-    
-            var est_EmpParameter = est_Emp != null ?
-                new ObjectParameter("Est_Emp", est_Emp) :
-                new ObjectParameter("Est_Emp", typeof(string));
-    
-            var usu_RegistroParameter = usu_Registro != null ?
-                new ObjectParameter("Usu_Registro", usu_Registro) :
-                new ObjectParameter("Usu_Registro", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarEmpleado", num_doc_EmpParameter, tip_doc_EmpParameter, nom_EmpParameter, ape_pat_EmpParameter, ape_mat_EmpParameter, tel_EmpParameter, cor_EmpParameter, img_EmpParameter, id_UbigeoParameter, est_EmpParameter, usu_RegistroParameter);
-        }
-    
-        public virtual ObjectResult<usp_ListarEmpleado_Result> usp_ListarEmpleado()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarEmpleado_Result>("usp_ListarEmpleado");
-        }
-    
-        public virtual ObjectResult<usp_ListarPrestamos_Cli_Emp_Result> usp_ListarPrestamos_Cli_Emp(string cod_Cli, string cod_Emp)
-        {
-            var cod_CliParameter = cod_Cli != null ?
-                new ObjectParameter("Cod_Cli", cod_Cli) :
-                new ObjectParameter("Cod_Cli", typeof(string));
-    
-            var cod_EmpParameter = cod_Emp != null ?
-                new ObjectParameter("Cod_Emp", cod_Emp) :
-                new ObjectParameter("Cod_Emp", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarPrestamos_Cli_Emp_Result>("usp_ListarPrestamos_Cli_Emp", cod_CliParameter, cod_EmpParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarAgencia", cod_AgeParameter, nom_AgeParameter, dir_AgeParameter, id_UbigeoParameter);
         }
     
         public virtual int usp_ActualizarCliente(string cod_Cli, string num_doc_Cli, string tip_doc_Cli, string nom_Cli, string ape_pat_Cli, string ape_mat_Cli, string tel_Cli, string cor_Cli, string dir_Cli, Nullable<System.DateTime> fec_nac_Cli, string id_Ubigeo, string est_Cli, string usu_Ult_Mod)
@@ -235,6 +117,291 @@ namespace WCF_Banco
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarCliente", cod_CliParameter, num_doc_CliParameter, tip_doc_CliParameter, nom_CliParameter, ape_pat_CliParameter, ape_mat_CliParameter, tel_CliParameter, cor_CliParameter, dir_CliParameter, fec_nac_CliParameter, id_UbigeoParameter, est_CliParameter, usu_Ult_ModParameter);
         }
     
+        public virtual int usp_ActualizarCuenta(string codigo, string tipoMoneda, Nullable<decimal> saldoCuenta, string tipoCuenta, string codigoCliente, string codigoAgencia, string estadoCuenta, string usuarioUltMod)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            var tipoMonedaParameter = tipoMoneda != null ?
+                new ObjectParameter("tipoMoneda", tipoMoneda) :
+                new ObjectParameter("tipoMoneda", typeof(string));
+    
+            var saldoCuentaParameter = saldoCuenta.HasValue ?
+                new ObjectParameter("saldoCuenta", saldoCuenta) :
+                new ObjectParameter("saldoCuenta", typeof(decimal));
+    
+            var tipoCuentaParameter = tipoCuenta != null ?
+                new ObjectParameter("tipoCuenta", tipoCuenta) :
+                new ObjectParameter("tipoCuenta", typeof(string));
+    
+            var codigoClienteParameter = codigoCliente != null ?
+                new ObjectParameter("codigoCliente", codigoCliente) :
+                new ObjectParameter("codigoCliente", typeof(string));
+    
+            var codigoAgenciaParameter = codigoAgencia != null ?
+                new ObjectParameter("codigoAgencia", codigoAgencia) :
+                new ObjectParameter("codigoAgencia", typeof(string));
+    
+            var estadoCuentaParameter = estadoCuenta != null ?
+                new ObjectParameter("estadoCuenta", estadoCuenta) :
+                new ObjectParameter("estadoCuenta", typeof(string));
+    
+            var usuarioUltModParameter = usuarioUltMod != null ?
+                new ObjectParameter("UsuarioUltMod", usuarioUltMod) :
+                new ObjectParameter("UsuarioUltMod", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarCuenta", codigoParameter, tipoMonedaParameter, saldoCuentaParameter, tipoCuentaParameter, codigoClienteParameter, codigoAgenciaParameter, estadoCuentaParameter, usuarioUltModParameter);
+        }
+    
+        public virtual int usp_ActualizarEmpleado(string cod_Emp, string num_doc_Emp, string tip_doc_Emp, string nom_Emp, string ape_pat_Emp, string ape_mat_Emp, string tel_Emp, string cor_Emp, byte[] img_Emp, string id_Ubigeo, string est_Emp, string usu_Ult_Mod)
+        {
+            var cod_EmpParameter = cod_Emp != null ?
+                new ObjectParameter("Cod_Emp", cod_Emp) :
+                new ObjectParameter("Cod_Emp", typeof(string));
+    
+            var num_doc_EmpParameter = num_doc_Emp != null ?
+                new ObjectParameter("Num_doc_Emp", num_doc_Emp) :
+                new ObjectParameter("Num_doc_Emp", typeof(string));
+    
+            var tip_doc_EmpParameter = tip_doc_Emp != null ?
+                new ObjectParameter("Tip_doc_Emp", tip_doc_Emp) :
+                new ObjectParameter("Tip_doc_Emp", typeof(string));
+    
+            var nom_EmpParameter = nom_Emp != null ?
+                new ObjectParameter("Nom_Emp", nom_Emp) :
+                new ObjectParameter("Nom_Emp", typeof(string));
+    
+            var ape_pat_EmpParameter = ape_pat_Emp != null ?
+                new ObjectParameter("Ape_pat_Emp", ape_pat_Emp) :
+                new ObjectParameter("Ape_pat_Emp", typeof(string));
+    
+            var ape_mat_EmpParameter = ape_mat_Emp != null ?
+                new ObjectParameter("Ape_mat_Emp", ape_mat_Emp) :
+                new ObjectParameter("Ape_mat_Emp", typeof(string));
+    
+            var tel_EmpParameter = tel_Emp != null ?
+                new ObjectParameter("Tel_Emp", tel_Emp) :
+                new ObjectParameter("Tel_Emp", typeof(string));
+    
+            var cor_EmpParameter = cor_Emp != null ?
+                new ObjectParameter("Cor_Emp", cor_Emp) :
+                new ObjectParameter("Cor_Emp", typeof(string));
+    
+            var img_EmpParameter = img_Emp != null ?
+                new ObjectParameter("Img_Emp", img_Emp) :
+                new ObjectParameter("Img_Emp", typeof(byte[]));
+    
+            var id_UbigeoParameter = id_Ubigeo != null ?
+                new ObjectParameter("Id_Ubigeo", id_Ubigeo) :
+                new ObjectParameter("Id_Ubigeo", typeof(string));
+    
+            var est_EmpParameter = est_Emp != null ?
+                new ObjectParameter("Est_Emp", est_Emp) :
+                new ObjectParameter("Est_Emp", typeof(string));
+    
+            var usu_Ult_ModParameter = usu_Ult_Mod != null ?
+                new ObjectParameter("Usu_Ult_Mod", usu_Ult_Mod) :
+                new ObjectParameter("Usu_Ult_Mod", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarEmpleado", cod_EmpParameter, num_doc_EmpParameter, tip_doc_EmpParameter, nom_EmpParameter, ape_pat_EmpParameter, ape_mat_EmpParameter, tel_EmpParameter, cor_EmpParameter, img_EmpParameter, id_UbigeoParameter, est_EmpParameter, usu_Ult_ModParameter);
+        }
+    
+        public virtual int usp_ActualizarPago(string cod_Pag, string num_cuot_Pag, Nullable<decimal> mon_Pag, Nullable<System.DateTime> fec_pro_Pag, Nullable<System.DateTime> fec_real_Pag, string cod_Pre, Nullable<int> est_Pag, string usu_Ult_Mod)
+        {
+            var cod_PagParameter = cod_Pag != null ?
+                new ObjectParameter("Cod_Pag", cod_Pag) :
+                new ObjectParameter("Cod_Pag", typeof(string));
+    
+            var num_cuot_PagParameter = num_cuot_Pag != null ?
+                new ObjectParameter("Num_cuot_Pag", num_cuot_Pag) :
+                new ObjectParameter("Num_cuot_Pag", typeof(string));
+    
+            var mon_PagParameter = mon_Pag.HasValue ?
+                new ObjectParameter("Mon_Pag", mon_Pag) :
+                new ObjectParameter("Mon_Pag", typeof(decimal));
+    
+            var fec_pro_PagParameter = fec_pro_Pag.HasValue ?
+                new ObjectParameter("Fec_pro_Pag", fec_pro_Pag) :
+                new ObjectParameter("Fec_pro_Pag", typeof(System.DateTime));
+    
+            var fec_real_PagParameter = fec_real_Pag.HasValue ?
+                new ObjectParameter("Fec_real_Pag", fec_real_Pag) :
+                new ObjectParameter("Fec_real_Pag", typeof(System.DateTime));
+    
+            var cod_PreParameter = cod_Pre != null ?
+                new ObjectParameter("Cod_Pre", cod_Pre) :
+                new ObjectParameter("Cod_Pre", typeof(string));
+    
+            var est_PagParameter = est_Pag.HasValue ?
+                new ObjectParameter("Est_Pag", est_Pag) :
+                new ObjectParameter("Est_Pag", typeof(int));
+    
+            var usu_Ult_ModParameter = usu_Ult_Mod != null ?
+                new ObjectParameter("Usu_Ult_Mod", usu_Ult_Mod) :
+                new ObjectParameter("Usu_Ult_Mod", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarPago", cod_PagParameter, num_cuot_PagParameter, mon_PagParameter, fec_pro_PagParameter, fec_real_PagParameter, cod_PreParameter, est_PagParameter, usu_Ult_ModParameter);
+        }
+    
+        public virtual int usp_ActualizarPrestamo(string cod_Pre, Nullable<decimal> mon_Pre, string cuot_Pre, Nullable<System.DateTime> fec_Rech, Nullable<System.DateTime> fec_Can, Nullable<int> pre_Est, Nullable<int> com_Deu, Nullable<int> est_Pre, string cod_Cli, string cod_Emp, string cod_Age, string usu_Ult_Mod)
+        {
+            var cod_PreParameter = cod_Pre != null ?
+                new ObjectParameter("Cod_Pre", cod_Pre) :
+                new ObjectParameter("Cod_Pre", typeof(string));
+    
+            var mon_PreParameter = mon_Pre.HasValue ?
+                new ObjectParameter("Mon_Pre", mon_Pre) :
+                new ObjectParameter("Mon_Pre", typeof(decimal));
+    
+            var cuot_PreParameter = cuot_Pre != null ?
+                new ObjectParameter("Cuot_Pre", cuot_Pre) :
+                new ObjectParameter("Cuot_Pre", typeof(string));
+    
+            var fec_RechParameter = fec_Rech.HasValue ?
+                new ObjectParameter("Fec_Rech", fec_Rech) :
+                new ObjectParameter("Fec_Rech", typeof(System.DateTime));
+    
+            var fec_CanParameter = fec_Can.HasValue ?
+                new ObjectParameter("Fec_Can", fec_Can) :
+                new ObjectParameter("Fec_Can", typeof(System.DateTime));
+    
+            var pre_EstParameter = pre_Est.HasValue ?
+                new ObjectParameter("Pre_Est", pre_Est) :
+                new ObjectParameter("Pre_Est", typeof(int));
+    
+            var com_DeuParameter = com_Deu.HasValue ?
+                new ObjectParameter("Com_Deu", com_Deu) :
+                new ObjectParameter("Com_Deu", typeof(int));
+    
+            var est_PreParameter = est_Pre.HasValue ?
+                new ObjectParameter("Est_Pre", est_Pre) :
+                new ObjectParameter("Est_Pre", typeof(int));
+    
+            var cod_CliParameter = cod_Cli != null ?
+                new ObjectParameter("Cod_Cli", cod_Cli) :
+                new ObjectParameter("Cod_Cli", typeof(string));
+    
+            var cod_EmpParameter = cod_Emp != null ?
+                new ObjectParameter("Cod_Emp", cod_Emp) :
+                new ObjectParameter("Cod_Emp", typeof(string));
+    
+            var cod_AgeParameter = cod_Age != null ?
+                new ObjectParameter("Cod_Age", cod_Age) :
+                new ObjectParameter("Cod_Age", typeof(string));
+    
+            var usu_Ult_ModParameter = usu_Ult_Mod != null ?
+                new ObjectParameter("Usu_Ult_Mod", usu_Ult_Mod) :
+                new ObjectParameter("Usu_Ult_Mod", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarPrestamo", cod_PreParameter, mon_PreParameter, cuot_PreParameter, fec_RechParameter, fec_CanParameter, pre_EstParameter, com_DeuParameter, est_PreParameter, cod_CliParameter, cod_EmpParameter, cod_AgeParameter, usu_Ult_ModParameter);
+        }
+    
+        public virtual int usp_ActualizarSeguro(Nullable<int> codigo, Nullable<decimal> costoSeguro, string tipoSeguro, Nullable<System.DateTime> fechaAdquisicion, string codigoCliente)
+        {
+            var codigoParameter = codigo.HasValue ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(int));
+    
+            var costoSeguroParameter = costoSeguro.HasValue ?
+                new ObjectParameter("costoSeguro", costoSeguro) :
+                new ObjectParameter("costoSeguro", typeof(decimal));
+    
+            var tipoSeguroParameter = tipoSeguro != null ?
+                new ObjectParameter("tipoSeguro", tipoSeguro) :
+                new ObjectParameter("tipoSeguro", typeof(string));
+    
+            var fechaAdquisicionParameter = fechaAdquisicion.HasValue ?
+                new ObjectParameter("fechaAdquisicion", fechaAdquisicion) :
+                new ObjectParameter("fechaAdquisicion", typeof(System.DateTime));
+    
+            var codigoClienteParameter = codigoCliente != null ?
+                new ObjectParameter("codigoCliente", codigoCliente) :
+                new ObjectParameter("codigoCliente", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarSeguro", codigoParameter, costoSeguroParameter, tipoSeguroParameter, fechaAdquisicionParameter, codigoClienteParameter);
+        }
+    
+        public virtual int usp_ActualizarTransferencia(string codigo, Nullable<decimal> montoTran, string cuentaDest, string cuentaOrig, Nullable<int> tranInterb, Nullable<System.DateTime> fechaTran)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            var montoTranParameter = montoTran.HasValue ?
+                new ObjectParameter("montoTran", montoTran) :
+                new ObjectParameter("montoTran", typeof(decimal));
+    
+            var cuentaDestParameter = cuentaDest != null ?
+                new ObjectParameter("CuentaDest", cuentaDest) :
+                new ObjectParameter("CuentaDest", typeof(string));
+    
+            var cuentaOrigParameter = cuentaOrig != null ?
+                new ObjectParameter("CuentaOrig", cuentaOrig) :
+                new ObjectParameter("CuentaOrig", typeof(string));
+    
+            var tranInterbParameter = tranInterb.HasValue ?
+                new ObjectParameter("tranInterb", tranInterb) :
+                new ObjectParameter("tranInterb", typeof(int));
+    
+            var fechaTranParameter = fechaTran.HasValue ?
+                new ObjectParameter("fechaTran", fechaTran) :
+                new ObjectParameter("fechaTran", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarTransferencia", codigoParameter, montoTranParameter, cuentaDestParameter, cuentaOrigParameter, tranInterbParameter, fechaTranParameter);
+        }
+    
+        public virtual int usp_ActualizarUbigeo(string idUbigeo, string departamento, string provincia, string distrito)
+        {
+            var idUbigeoParameter = idUbigeo != null ?
+                new ObjectParameter("idUbigeo", idUbigeo) :
+                new ObjectParameter("idUbigeo", typeof(string));
+    
+            var departamentoParameter = departamento != null ?
+                new ObjectParameter("departamento", departamento) :
+                new ObjectParameter("departamento", typeof(string));
+    
+            var provinciaParameter = provincia != null ?
+                new ObjectParameter("provincia", provincia) :
+                new ObjectParameter("provincia", typeof(string));
+    
+            var distritoParameter = distrito != null ?
+                new ObjectParameter("distrito", distrito) :
+                new ObjectParameter("distrito", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarUbigeo", idUbigeoParameter, departamentoParameter, provinciaParameter, distritoParameter);
+        }
+    
+        public virtual int usp_ActualizarUsuario(string id, string pass, string niv, string est)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            var nivParameter = niv != null ?
+                new ObjectParameter("niv", niv) :
+                new ObjectParameter("niv", typeof(string));
+    
+            var estParameter = est != null ?
+                new ObjectParameter("est", est) :
+                new ObjectParameter("est", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarUsuario", idParameter, passParameter, nivParameter, estParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarAgencia_Result> usp_ConsultarAgencia(string idAgencia)
+        {
+            var idAgenciaParameter = idAgencia != null ?
+                new ObjectParameter("idAgencia", idAgencia) :
+                new ObjectParameter("idAgencia", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarAgencia_Result>("usp_ConsultarAgencia", idAgenciaParameter);
+        }
+    
         public virtual ObjectResult<usp_ConsultarCliente_Result> usp_ConsultarCliente(string codigo)
         {
             var codigoParameter = codigo != null ?
@@ -253,6 +420,87 @@ namespace WCF_Banco
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarClienteDNI_Result>("usp_ConsultarClienteDNI", dNIParameter);
         }
     
+        public virtual ObjectResult<usp_ConsultarCuenta_Result> usp_ConsultarCuenta(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarCuenta_Result>("usp_ConsultarCuenta", codigoParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarEmpleado_Result> usp_ConsultarEmpleado(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarEmpleado_Result>("usp_ConsultarEmpleado", codigoParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarPago_Result> usp_ConsultarPago(string idPago)
+        {
+            var idPagoParameter = idPago != null ?
+                new ObjectParameter("idPago", idPago) :
+                new ObjectParameter("idPago", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarPago_Result>("usp_ConsultarPago", idPagoParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarPrestamo_Result> usp_ConsultarPrestamo(string idPrestamo)
+        {
+            var idPrestamoParameter = idPrestamo != null ?
+                new ObjectParameter("idPrestamo", idPrestamo) :
+                new ObjectParameter("idPrestamo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarPrestamo_Result>("usp_ConsultarPrestamo", idPrestamoParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarSeguro_Result> usp_ConsultarSeguro(Nullable<int> codigo)
+        {
+            var codigoParameter = codigo.HasValue ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarSeguro_Result>("usp_ConsultarSeguro", codigoParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarTransferencia_Result> usp_ConsultarTransferencia(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarTransferencia_Result>("usp_ConsultarTransferencia", codigoParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarUsuario_Result> usp_ConsultarUsuario(string id)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarUsuario_Result>("usp_ConsultarUsuario", idParameter);
+        }
+    
+        public virtual ObjectResult<usp_CuentasCliente_Result> usp_CuentasCliente(string cod_Cli)
+        {
+            var cod_CliParameter = cod_Cli != null ?
+                new ObjectParameter("Cod_Cli", cod_Cli) :
+                new ObjectParameter("Cod_Cli", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_CuentasCliente_Result>("usp_CuentasCliente", cod_CliParameter);
+        }
+    
+        public virtual int usp_EliminarAgencia(string idAgencia)
+        {
+            var idAgenciaParameter = idAgencia != null ?
+                new ObjectParameter("idAgencia", idAgencia) :
+                new ObjectParameter("idAgencia", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarAgencia", idAgenciaParameter);
+        }
+    
         public virtual int usp_EliminarCliente(string codigo)
         {
             var codigoParameter = codigo != null ?
@@ -260,6 +508,95 @@ namespace WCF_Banco
                 new ObjectParameter("codigo", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarCliente", codigoParameter);
+        }
+    
+        public virtual int usp_EliminarCuenta(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarCuenta", codigoParameter);
+        }
+    
+        public virtual int usp_EliminarEmpleado(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarEmpleado", codigoParameter);
+        }
+    
+        public virtual int usp_EliminarPago(string idPago)
+        {
+            var idPagoParameter = idPago != null ?
+                new ObjectParameter("idPago", idPago) :
+                new ObjectParameter("idPago", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarPago", idPagoParameter);
+        }
+    
+        public virtual int usp_EliminarPrestamo(string idPrestamo)
+        {
+            var idPrestamoParameter = idPrestamo != null ?
+                new ObjectParameter("idPrestamo", idPrestamo) :
+                new ObjectParameter("idPrestamo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarPrestamo", idPrestamoParameter);
+        }
+    
+        public virtual int usp_EliminarSeguro(Nullable<int> codigo)
+        {
+            var codigoParameter = codigo.HasValue ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarSeguro", codigoParameter);
+        }
+    
+        public virtual int usp_EliminarTransferencia(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarTransferencia", codigoParameter);
+        }
+    
+        public virtual int usp_EliminarUbigeo(string idUbigeo)
+        {
+            var idUbigeoParameter = idUbigeo != null ?
+                new ObjectParameter("idUbigeo", idUbigeo) :
+                new ObjectParameter("idUbigeo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarUbigeo", idUbigeoParameter);
+        }
+    
+        public virtual int usp_EliminarUsuario(string id)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarUsuario", idParameter);
+        }
+    
+        public virtual int usp_InsertarAgencia(string nom_Age, string dir_Age, string id_Ubigeo)
+        {
+            var nom_AgeParameter = nom_Age != null ?
+                new ObjectParameter("Nom_Age", nom_Age) :
+                new ObjectParameter("Nom_Age", typeof(string));
+    
+            var dir_AgeParameter = dir_Age != null ?
+                new ObjectParameter("Dir_Age", dir_Age) :
+                new ObjectParameter("Dir_Age", typeof(string));
+    
+            var id_UbigeoParameter = id_Ubigeo != null ?
+                new ObjectParameter("Id_Ubigeo", id_Ubigeo) :
+                new ObjectParameter("Id_Ubigeo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarAgencia", nom_AgeParameter, dir_AgeParameter, id_UbigeoParameter);
         }
     
         public virtual int usp_InsertarCliente(string num_doc_Cli, string tip_doc_Cli, string nom_Cli, string ape_pat_Cli, string ape_mat_Cli, string tel_Cli, string cor_Cli, string dir_Cli, Nullable<System.DateTime> fec_nac_Cli, string id_Ubigeo, string est_Cli, string usu_Registro)
@@ -315,93 +652,6 @@ namespace WCF_Banco
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarCliente", num_doc_CliParameter, tip_doc_CliParameter, nom_CliParameter, ape_pat_CliParameter, ape_mat_CliParameter, tel_CliParameter, cor_CliParameter, dir_CliParameter, fec_nac_CliParameter, id_UbigeoParameter, est_CliParameter, usu_RegistroParameter);
         }
     
-        public virtual ObjectResult<usp_ListarCliente_Result> usp_ListarCliente()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarCliente_Result>("usp_ListarCliente");
-        }
-    
-        public virtual ObjectResult<usp_Ubigeo_Departamentos_Result> usp_Ubigeo_Departamentos()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_Departamentos_Result>("usp_Ubigeo_Departamentos");
-        }
-    
-        public virtual ObjectResult<usp_Ubigeo_DistritosProvinciaDepartamento_Result> usp_Ubigeo_DistritosProvinciaDepartamento(string idDep, string idProv)
-        {
-            var idDepParameter = idDep != null ?
-                new ObjectParameter("idDep", idDep) :
-                new ObjectParameter("idDep", typeof(string));
-    
-            var idProvParameter = idProv != null ?
-                new ObjectParameter("idProv", idProv) :
-                new ObjectParameter("idProv", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_DistritosProvinciaDepartamento_Result>("usp_Ubigeo_DistritosProvinciaDepartamento", idDepParameter, idProvParameter);
-        }
-    
-        public virtual ObjectResult<usp_Ubigeo_ProvinciasDepartamento_Result> usp_Ubigeo_ProvinciasDepartamento(string idDep)
-        {
-            var idDepParameter = idDep != null ?
-                new ObjectParameter("idDep", idDep) :
-                new ObjectParameter("idDep", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_ProvinciasDepartamento_Result>("usp_Ubigeo_ProvinciasDepartamento", idDepParameter);
-        }
-    
-        public virtual int usp_ActualizarCuenta(string codigo, string tipoMoneda, Nullable<decimal> saldoCuenta, string tipoCuenta, string codigoCliente, string codigoAgencia, string estadoCuenta, string usuarioUltMod)
-        {
-            var codigoParameter = codigo != null ?
-                new ObjectParameter("codigo", codigo) :
-                new ObjectParameter("codigo", typeof(string));
-    
-            var tipoMonedaParameter = tipoMoneda != null ?
-                new ObjectParameter("tipoMoneda", tipoMoneda) :
-                new ObjectParameter("tipoMoneda", typeof(string));
-    
-            var saldoCuentaParameter = saldoCuenta.HasValue ?
-                new ObjectParameter("saldoCuenta", saldoCuenta) :
-                new ObjectParameter("saldoCuenta", typeof(decimal));
-    
-            var tipoCuentaParameter = tipoCuenta != null ?
-                new ObjectParameter("tipoCuenta", tipoCuenta) :
-                new ObjectParameter("tipoCuenta", typeof(string));
-    
-            var codigoClienteParameter = codigoCliente != null ?
-                new ObjectParameter("codigoCliente", codigoCliente) :
-                new ObjectParameter("codigoCliente", typeof(string));
-    
-            var codigoAgenciaParameter = codigoAgencia != null ?
-                new ObjectParameter("codigoAgencia", codigoAgencia) :
-                new ObjectParameter("codigoAgencia", typeof(string));
-    
-            var estadoCuentaParameter = estadoCuenta != null ?
-                new ObjectParameter("estadoCuenta", estadoCuenta) :
-                new ObjectParameter("estadoCuenta", typeof(string));
-    
-            var usuarioUltModParameter = usuarioUltMod != null ?
-                new ObjectParameter("UsuarioUltMod", usuarioUltMod) :
-                new ObjectParameter("UsuarioUltMod", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarCuenta", codigoParameter, tipoMonedaParameter, saldoCuentaParameter, tipoCuentaParameter, codigoClienteParameter, codigoAgenciaParameter, estadoCuentaParameter, usuarioUltModParameter);
-        }
-    
-        public virtual ObjectResult<usp_ConsultarCuenta_Result> usp_ConsultarCuenta(string codigo)
-        {
-            var codigoParameter = codigo != null ?
-                new ObjectParameter("codigo", codigo) :
-                new ObjectParameter("codigo", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarCuenta_Result>("usp_ConsultarCuenta", codigoParameter);
-        }
-    
-        public virtual int usp_EliminarCuenta(string codigo)
-        {
-            var codigoParameter = codigo != null ?
-                new ObjectParameter("codigo", codigo) :
-                new ObjectParameter("codigo", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarCuenta", codigoParameter);
-        }
-    
         public virtual int usp_InsertarCuenta(string tipoMoneda, Nullable<decimal> saldoCuenta, string tipoCuenta, Nullable<System.DateTime> fecApertura, string codigoCliente, string codigoAgencia, string estadoCuenta, string usuRegistro)
         {
             var tipoMonedaParameter = tipoMoneda != null ?
@@ -439,9 +689,375 @@ namespace WCF_Banco
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarCuenta", tipoMonedaParameter, saldoCuentaParameter, tipoCuentaParameter, fecAperturaParameter, codigoClienteParameter, codigoAgenciaParameter, estadoCuentaParameter, usuRegistroParameter);
         }
     
+        public virtual int usp_InsertarEmpleado(string num_doc_Emp, string tip_doc_Emp, string nom_Emp, string ape_pat_Emp, string ape_mat_Emp, string tel_Emp, string cor_Emp, byte[] img_Emp, string id_Ubigeo, string est_Emp, string usu_Registro)
+        {
+            var num_doc_EmpParameter = num_doc_Emp != null ?
+                new ObjectParameter("Num_doc_Emp", num_doc_Emp) :
+                new ObjectParameter("Num_doc_Emp", typeof(string));
+    
+            var tip_doc_EmpParameter = tip_doc_Emp != null ?
+                new ObjectParameter("Tip_doc_Emp", tip_doc_Emp) :
+                new ObjectParameter("Tip_doc_Emp", typeof(string));
+    
+            var nom_EmpParameter = nom_Emp != null ?
+                new ObjectParameter("Nom_Emp", nom_Emp) :
+                new ObjectParameter("Nom_Emp", typeof(string));
+    
+            var ape_pat_EmpParameter = ape_pat_Emp != null ?
+                new ObjectParameter("Ape_pat_Emp", ape_pat_Emp) :
+                new ObjectParameter("Ape_pat_Emp", typeof(string));
+    
+            var ape_mat_EmpParameter = ape_mat_Emp != null ?
+                new ObjectParameter("Ape_mat_Emp", ape_mat_Emp) :
+                new ObjectParameter("Ape_mat_Emp", typeof(string));
+    
+            var tel_EmpParameter = tel_Emp != null ?
+                new ObjectParameter("Tel_Emp", tel_Emp) :
+                new ObjectParameter("Tel_Emp", typeof(string));
+    
+            var cor_EmpParameter = cor_Emp != null ?
+                new ObjectParameter("Cor_Emp", cor_Emp) :
+                new ObjectParameter("Cor_Emp", typeof(string));
+    
+            var img_EmpParameter = img_Emp != null ?
+                new ObjectParameter("Img_Emp", img_Emp) :
+                new ObjectParameter("Img_Emp", typeof(byte[]));
+    
+            var id_UbigeoParameter = id_Ubigeo != null ?
+                new ObjectParameter("Id_Ubigeo", id_Ubigeo) :
+                new ObjectParameter("Id_Ubigeo", typeof(string));
+    
+            var est_EmpParameter = est_Emp != null ?
+                new ObjectParameter("Est_Emp", est_Emp) :
+                new ObjectParameter("Est_Emp", typeof(string));
+    
+            var usu_RegistroParameter = usu_Registro != null ?
+                new ObjectParameter("Usu_Registro", usu_Registro) :
+                new ObjectParameter("Usu_Registro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarEmpleado", num_doc_EmpParameter, tip_doc_EmpParameter, nom_EmpParameter, ape_pat_EmpParameter, ape_mat_EmpParameter, tel_EmpParameter, cor_EmpParameter, img_EmpParameter, id_UbigeoParameter, est_EmpParameter, usu_RegistroParameter);
+        }
+    
+        public virtual int usp_InsertarPago(string num_cuot_Pag, Nullable<decimal> mon_Pag, Nullable<System.DateTime> fec_pro_Pag, Nullable<System.DateTime> fec_real_Pag, string cod_Pre, Nullable<int> est_Pag, string usu_Registro)
+        {
+            var num_cuot_PagParameter = num_cuot_Pag != null ?
+                new ObjectParameter("Num_cuot_Pag", num_cuot_Pag) :
+                new ObjectParameter("Num_cuot_Pag", typeof(string));
+    
+            var mon_PagParameter = mon_Pag.HasValue ?
+                new ObjectParameter("Mon_Pag", mon_Pag) :
+                new ObjectParameter("Mon_Pag", typeof(decimal));
+    
+            var fec_pro_PagParameter = fec_pro_Pag.HasValue ?
+                new ObjectParameter("Fec_pro_Pag", fec_pro_Pag) :
+                new ObjectParameter("Fec_pro_Pag", typeof(System.DateTime));
+    
+            var fec_real_PagParameter = fec_real_Pag.HasValue ?
+                new ObjectParameter("Fec_real_Pag", fec_real_Pag) :
+                new ObjectParameter("Fec_real_Pag", typeof(System.DateTime));
+    
+            var cod_PreParameter = cod_Pre != null ?
+                new ObjectParameter("Cod_Pre", cod_Pre) :
+                new ObjectParameter("Cod_Pre", typeof(string));
+    
+            var est_PagParameter = est_Pag.HasValue ?
+                new ObjectParameter("Est_Pag", est_Pag) :
+                new ObjectParameter("Est_Pag", typeof(int));
+    
+            var usu_RegistroParameter = usu_Registro != null ?
+                new ObjectParameter("Usu_Registro", usu_Registro) :
+                new ObjectParameter("Usu_Registro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarPago", num_cuot_PagParameter, mon_PagParameter, fec_pro_PagParameter, fec_real_PagParameter, cod_PreParameter, est_PagParameter, usu_RegistroParameter);
+        }
+    
+        public virtual int usp_InsertarPrestamo(Nullable<decimal> mon_Pre, string cuot_Pre, Nullable<int> pre_Est, Nullable<int> com_Deu, Nullable<int> est_Pre, string cod_Cli, string cod_Emp, string cod_Age, string usu_Registro)
+        {
+            var mon_PreParameter = mon_Pre.HasValue ?
+                new ObjectParameter("Mon_Pre", mon_Pre) :
+                new ObjectParameter("Mon_Pre", typeof(decimal));
+    
+            var cuot_PreParameter = cuot_Pre != null ?
+                new ObjectParameter("Cuot_Pre", cuot_Pre) :
+                new ObjectParameter("Cuot_Pre", typeof(string));
+    
+            var pre_EstParameter = pre_Est.HasValue ?
+                new ObjectParameter("Pre_Est", pre_Est) :
+                new ObjectParameter("Pre_Est", typeof(int));
+    
+            var com_DeuParameter = com_Deu.HasValue ?
+                new ObjectParameter("Com_Deu", com_Deu) :
+                new ObjectParameter("Com_Deu", typeof(int));
+    
+            var est_PreParameter = est_Pre.HasValue ?
+                new ObjectParameter("Est_Pre", est_Pre) :
+                new ObjectParameter("Est_Pre", typeof(int));
+    
+            var cod_CliParameter = cod_Cli != null ?
+                new ObjectParameter("Cod_Cli", cod_Cli) :
+                new ObjectParameter("Cod_Cli", typeof(string));
+    
+            var cod_EmpParameter = cod_Emp != null ?
+                new ObjectParameter("Cod_Emp", cod_Emp) :
+                new ObjectParameter("Cod_Emp", typeof(string));
+    
+            var cod_AgeParameter = cod_Age != null ?
+                new ObjectParameter("Cod_Age", cod_Age) :
+                new ObjectParameter("Cod_Age", typeof(string));
+    
+            var usu_RegistroParameter = usu_Registro != null ?
+                new ObjectParameter("Usu_Registro", usu_Registro) :
+                new ObjectParameter("Usu_Registro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarPrestamo", mon_PreParameter, cuot_PreParameter, pre_EstParameter, com_DeuParameter, est_PreParameter, cod_CliParameter, cod_EmpParameter, cod_AgeParameter, usu_RegistroParameter);
+        }
+    
+        public virtual int usp_InsertarSeguro(Nullable<decimal> costoSeguro, string tipoSeguro, Nullable<System.DateTime> fechaAdquisicion, string codigoCliente)
+        {
+            var costoSeguroParameter = costoSeguro.HasValue ?
+                new ObjectParameter("costoSeguro", costoSeguro) :
+                new ObjectParameter("costoSeguro", typeof(decimal));
+    
+            var tipoSeguroParameter = tipoSeguro != null ?
+                new ObjectParameter("tipoSeguro", tipoSeguro) :
+                new ObjectParameter("tipoSeguro", typeof(string));
+    
+            var fechaAdquisicionParameter = fechaAdquisicion.HasValue ?
+                new ObjectParameter("fechaAdquisicion", fechaAdquisicion) :
+                new ObjectParameter("fechaAdquisicion", typeof(System.DateTime));
+    
+            var codigoClienteParameter = codigoCliente != null ?
+                new ObjectParameter("codigoCliente", codigoCliente) :
+                new ObjectParameter("codigoCliente", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarSeguro", costoSeguroParameter, tipoSeguroParameter, fechaAdquisicionParameter, codigoClienteParameter);
+        }
+    
+        public virtual int usp_InsertarTransferencia(Nullable<decimal> montoTran, string cuentaDest, string cuentaOrig, Nullable<int> tranInterb, Nullable<System.DateTime> fechaTran)
+        {
+            var montoTranParameter = montoTran.HasValue ?
+                new ObjectParameter("montoTran", montoTran) :
+                new ObjectParameter("montoTran", typeof(decimal));
+    
+            var cuentaDestParameter = cuentaDest != null ?
+                new ObjectParameter("CuentaDest", cuentaDest) :
+                new ObjectParameter("CuentaDest", typeof(string));
+    
+            var cuentaOrigParameter = cuentaOrig != null ?
+                new ObjectParameter("CuentaOrig", cuentaOrig) :
+                new ObjectParameter("CuentaOrig", typeof(string));
+    
+            var tranInterbParameter = tranInterb.HasValue ?
+                new ObjectParameter("tranInterb", tranInterb) :
+                new ObjectParameter("tranInterb", typeof(int));
+    
+            var fechaTranParameter = fechaTran.HasValue ?
+                new ObjectParameter("fechaTran", fechaTran) :
+                new ObjectParameter("fechaTran", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarTransferencia", montoTranParameter, cuentaDestParameter, cuentaOrigParameter, tranInterbParameter, fechaTranParameter);
+        }
+    
+        public virtual int usp_InsertarUbigeo(string idUbigeo, string departamento, string provincia, string distrito)
+        {
+            var idUbigeoParameter = idUbigeo != null ?
+                new ObjectParameter("idUbigeo", idUbigeo) :
+                new ObjectParameter("idUbigeo", typeof(string));
+    
+            var departamentoParameter = departamento != null ?
+                new ObjectParameter("departamento", departamento) :
+                new ObjectParameter("departamento", typeof(string));
+    
+            var provinciaParameter = provincia != null ?
+                new ObjectParameter("provincia", provincia) :
+                new ObjectParameter("provincia", typeof(string));
+    
+            var distritoParameter = distrito != null ?
+                new ObjectParameter("distrito", distrito) :
+                new ObjectParameter("distrito", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarUbigeo", idUbigeoParameter, departamentoParameter, provinciaParameter, distritoParameter);
+        }
+    
+        public virtual int usp_InsertarUsuario(string id, string pass, string niv, string est, string usuario)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            var nivParameter = niv != null ?
+                new ObjectParameter("niv", niv) :
+                new ObjectParameter("niv", typeof(string));
+    
+            var estParameter = est != null ?
+                new ObjectParameter("est", est) :
+                new ObjectParameter("est", typeof(string));
+    
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("usuario", usuario) :
+                new ObjectParameter("usuario", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarUsuario", idParameter, passParameter, nivParameter, estParameter, usuarioParameter);
+        }
+    
+        public virtual ObjectResult<usp_ListarAgencia_Result> usp_ListarAgencia()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarAgencia_Result>("usp_ListarAgencia");
+        }
+    
+        public virtual ObjectResult<usp_ListarCliente_Result> usp_ListarCliente()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarCliente_Result>("usp_ListarCliente");
+        }
+    
         public virtual ObjectResult<usp_ListarCuenta_Result> usp_ListarCuenta()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarCuenta_Result>("usp_ListarCuenta");
+        }
+    
+        public virtual ObjectResult<usp_ListarEmpleado_Result> usp_ListarEmpleado()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarEmpleado_Result>("usp_ListarEmpleado");
+        }
+    
+        public virtual ObjectResult<usp_ListarPago_Result> usp_ListarPago()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarPago_Result>("usp_ListarPago");
+        }
+    
+        public virtual ObjectResult<usp_ListarPrestamo_Result> usp_ListarPrestamo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarPrestamo_Result>("usp_ListarPrestamo");
+        }
+    
+        public virtual ObjectResult<usp_ListarPrestamos_Paginacion_Result> usp_ListarPrestamos_Paginacion(string cod_Cli, string cod_Emp, string estado, Nullable<int> numPag)
+        {
+            var cod_CliParameter = cod_Cli != null ?
+                new ObjectParameter("Cod_Cli", cod_Cli) :
+                new ObjectParameter("Cod_Cli", typeof(string));
+    
+            var cod_EmpParameter = cod_Emp != null ?
+                new ObjectParameter("Cod_Emp", cod_Emp) :
+                new ObjectParameter("Cod_Emp", typeof(string));
+    
+            var estadoParameter = estado != null ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(string));
+    
+            var numPagParameter = numPag.HasValue ?
+                new ObjectParameter("NumPag", numPag) :
+                new ObjectParameter("NumPag", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarPrestamos_Paginacion_Result>("usp_ListarPrestamos_Paginacion", cod_CliParameter, cod_EmpParameter, estadoParameter, numPagParameter);
+        }
+    
+        public virtual ObjectResult<usp_ListarSeguro_Result> usp_ListarSeguro()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarSeguro_Result>("usp_ListarSeguro");
+        }
+    
+        public virtual ObjectResult<usp_ListarTransferencia_Result> usp_ListarTransferencia()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarTransferencia_Result>("usp_ListarTransferencia");
+        }
+    
+        public virtual ObjectResult<usp_ListarUbigeo_Result> usp_ListarUbigeo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarUbigeo_Result>("usp_ListarUbigeo");
+        }
+    
+        public virtual ObjectResult<usp_ListarUsuarios_Result> usp_ListarUsuarios()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarUsuarios_Result>("usp_ListarUsuarios");
+        }
+    
+        public virtual int usp_NumPag_ListarPrestamos_Paginacion(string cod_Cli, string cod_Emp, string estado, ObjectParameter nUMREG)
+        {
+            var cod_CliParameter = cod_Cli != null ?
+                new ObjectParameter("Cod_Cli", cod_Cli) :
+                new ObjectParameter("Cod_Cli", typeof(string));
+    
+            var cod_EmpParameter = cod_Emp != null ?
+                new ObjectParameter("Cod_Emp", cod_Emp) :
+                new ObjectParameter("Cod_Emp", typeof(string));
+    
+            var estadoParameter = estado != null ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_NumPag_ListarPrestamos_Paginacion", cod_CliParameter, cod_EmpParameter, estadoParameter, nUMREG);
+        }
+    
+        public virtual int usp_ObtenerUbigeo(string idUbigeo, ObjectParameter ubicacion)
+        {
+            var idUbigeoParameter = idUbigeo != null ?
+                new ObjectParameter("idUbigeo", idUbigeo) :
+                new ObjectParameter("idUbigeo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ObtenerUbigeo", idUbigeoParameter, ubicacion);
+        }
+    
+        public virtual ObjectResult<string> usp_PrestamosCliente(string num_doc_cli)
+        {
+            var num_doc_cliParameter = num_doc_cli != null ?
+                new ObjectParameter("Num_doc_cli", num_doc_cli) :
+                new ObjectParameter("Num_doc_cli", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("usp_PrestamosCliente", num_doc_cliParameter);
+        }
+    
+        public virtual ObjectResult<usp_PrestamosInfo_Result> usp_PrestamosInfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_PrestamosInfo_Result>("usp_PrestamosInfo");
+        }
+    
+        public virtual ObjectResult<usp_TransferenciasInfo_Result> usp_TransferenciasInfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_TransferenciasInfo_Result>("usp_TransferenciasInfo");
+        }
+    
+        public virtual ObjectResult<usp_Ubigeo_Departamentos_Result> usp_Ubigeo_Departamentos()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_Departamentos_Result>("usp_Ubigeo_Departamentos");
+        }
+    
+        public virtual ObjectResult<usp_Ubigeo_DistritosProvinciaDepartamento_Result> usp_Ubigeo_DistritosProvinciaDepartamento(string idDep, string idProv)
+        {
+            var idDepParameter = idDep != null ?
+                new ObjectParameter("idDep", idDep) :
+                new ObjectParameter("idDep", typeof(string));
+    
+            var idProvParameter = idProv != null ?
+                new ObjectParameter("idProv", idProv) :
+                new ObjectParameter("idProv", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_DistritosProvinciaDepartamento_Result>("usp_Ubigeo_DistritosProvinciaDepartamento", idDepParameter, idProvParameter);
+        }
+    
+        public virtual ObjectResult<usp_Ubigeo_ProvinciasDepartamento_Result> usp_Ubigeo_ProvinciasDepartamento(string idDep)
+        {
+            var idDepParameter = idDep != null ?
+                new ObjectParameter("idDep", idDep) :
+                new ObjectParameter("idDep", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_ProvinciasDepartamento_Result>("usp_Ubigeo_ProvinciasDepartamento", idDepParameter);
+        }
+    
+        public virtual ObjectResult<usp_ListarPrestamos_Cli_Emp_Result> usp_ListarPrestamos_Cli_Emp(string cod_Cli, string cod_Emp)
+        {
+            var cod_CliParameter = cod_Cli != null ?
+                new ObjectParameter("Cod_Cli", cod_Cli) :
+                new ObjectParameter("Cod_Cli", typeof(string));
+    
+            var cod_EmpParameter = cod_Emp != null ?
+                new ObjectParameter("Cod_Emp", cod_Emp) :
+                new ObjectParameter("Cod_Emp", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarPrestamos_Cli_Emp_Result>("usp_ListarPrestamos_Cli_Emp", cod_CliParameter, cod_EmpParameter);
         }
     }
 }

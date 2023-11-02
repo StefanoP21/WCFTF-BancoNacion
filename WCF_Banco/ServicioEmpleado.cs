@@ -45,7 +45,7 @@ namespace WCF_Banco
                     objEmpleado.Ape_mat_Emp = resultado.Apellido_Materno;
                     objEmpleado.Tel_Emp = resultado.Telefono;
                     objEmpleado.Cor_Emp = resultado.Correo;
-                    // objEmpleado.Img_Emp = resultado.Imagen;
+                    objEmpleado.Img_Emp = resultado.Imagen;
                     objEmpleado.Id_Ubigeo = resultado.Id_Ubigeo;
                     objEmpleado.Est_Emp = Convert.ToInt16(resultado.Est_Emp);
                 }
@@ -108,8 +108,11 @@ namespace WCF_Banco
                     objEmpleadoDC.Ape_mat_Emp = resultado.Apellido_Materno;
                     objEmpleadoDC.Tel_Emp = resultado.Telefono;
                     objEmpleadoDC.Cor_Emp = resultado.Correo;
-                    // objEmpleadoDC.Img_Emp = resultado.Img_Emp;
+                    objEmpleadoDC.Img_Emp = resultado.Imagen;
                     objEmpleadoDC.Id_Ubigeo = resultado.Id_Ubigeo;
+                    objEmpleadoDC.Departamento = resultado.Departamento;
+                    objEmpleadoDC.Provincia = resultado.Provincia;
+                    objEmpleadoDC.Distrito = resultado.Distrito;
                     objEmpleadoDC.Est_Emp = Convert.ToInt16(resultado.Est_Emp);
                     objEmpleadoDC.Estado = resultado.Estado;
                     objEmpleadoDC.Usu_Registro = resultado.Usu_Registro;

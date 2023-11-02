@@ -10,3 +10,15 @@ D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\WCFTF-BancoNacion\WCF_Banco\obj\D
 D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.csproj.CopyComplete
 D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.dll
 D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.pdb
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.csproj.AssemblyReference.cache
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.csproj.CoreCompileInputs.cache
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.dll
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.pdb
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\WCF_Banco.dll.config
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\WCF_Banco.dll
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\WCF_Banco.pdb
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.dll
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.xml
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.csproj.CopyComplete

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF_Banco", "WCF_Banco\WCF_Banco.csproj", "{CDCC148F-A14C-41A4-810D-182B0A4CBAF5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProyBanco_GUI", "ProyBanco_GUI\ProyBanco_GUI.csproj", "{60E3DBD4-57A1-4E38-8B7D-263900ACC4E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CDCC148F-A14C-41A4-810D-182B0A4CBAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDCC148F-A14C-41A4-810D-182B0A4CBAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDCC148F-A14C-41A4-810D-182B0A4CBAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E3DBD4-57A1-4E38-8B7D-263900ACC4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E3DBD4-57A1-4E38-8B7D-263900ACC4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E3DBD4-57A1-4E38-8B7D-263900ACC4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E3DBD4-57A1-4E38-8B7D-263900ACC4E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

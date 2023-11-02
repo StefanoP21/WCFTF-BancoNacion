@@ -50,6 +50,12 @@ namespace WCF_Banco
         [DataMember]
         public String Id_Ubigeo { get; set; }
         [DataMember]
+        public String Departamento { get; set; }
+        [DataMember]
+        public String Provincia { get; set; }
+        [DataMember]
+        public String Distrito { get; set; }
+        [DataMember]
         public Int16 Est_Emp { get; set; }
         [DataMember]
         public string Estado { get; set; }

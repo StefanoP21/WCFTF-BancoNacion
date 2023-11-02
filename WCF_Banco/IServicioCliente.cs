@@ -44,6 +44,8 @@ namespace WCF_Banco
         [DataMember]
         public String Ape_mat_Cli { get; set; }
         [DataMember]
+        public Int16 Edad { get; set; }
+        [DataMember]
         public String Tel_Cli { get; set; }
         [DataMember]
         public String Cor_Cli { get; set; }
@@ -53,6 +55,12 @@ namespace WCF_Banco
         public DateTime Fec_nac_Cli { get; set; }
         [DataMember]
         public String Id_Ubigeo { get; set; }
+        [DataMember]
+        public String Departamento { get; set; }
+        [DataMember]
+        public String Provincia { get; set; }
+        [DataMember]
+        public String Distrito { get; set; }
         [DataMember]
         public Int16 Est_Cli { get; set; }
         [DataMember]
