@@ -19,11 +19,8 @@ namespace WCF_Banco
         public System.DateTime Fecha_Solicitud { get; set; }
         public Nullable<System.DateTime> Fecha_Rechazo { get; set; }
         public Nullable<System.DateTime> Fecha_Cancelacion { get; set; }
-        public int Pre_Est { get; set; }
         public string Prestamo_Estudio { get; set; }
-        public int Com_Deu { get; set; }
         public string Compra_Deuda { get; set; }
-        public int Est_Pre { get; set; }
         public string Estado_Prestamo { get; set; }
         public string Cliente { get; set; }
         public string Cod_Cli { get; set; }
@@ -31,9 +28,5 @@ namespace WCF_Banco
         public string Cod_Emp { get; set; }
         public string Agencia { get; set; }
         public string Cod_Age { get; set; }
-        public string Usuario_Registro { get; set; }
-        public System.DateTime Fecha_Registro { get; set; }
-        public string Usuario_Ultima_Modificacion { get; set; }
-        public Nullable<System.DateTime> Fecha_Ultima_Modificacion { get; set; }
     }
 }

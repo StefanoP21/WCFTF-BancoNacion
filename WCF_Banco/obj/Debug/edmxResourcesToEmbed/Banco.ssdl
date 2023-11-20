@@ -191,7 +191,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     <Property Name="Usuario Ultima Modificacion" Type="nvarchar" MaxLength="20" />
     <Property Name="Fecha Ultima Modificacion" Type="smalldatetime" />
   </EntityType>
-  <Association Name="FK__Tb_Agenci__Id_Ub__52593CB8">
+  <Association Name="FK__Tb_Agenci__Id_Ub__6477ECF3">
     <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1" />
     <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="*" />
     <ReferentialConstraint>
@@ -203,7 +203,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Client__Id_Ub__48CFD27E">
+  <Association Name="FK__Tb_Client__Id_Ub__5AEE82B9">
     <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -217,7 +217,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Cuenta__Cod_A__4AB81AF0">
+  <Association Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B">
     <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -231,7 +231,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Cuenta__Cod_C__4BAC3F29">
+  <Association Name="FK__Tb_Cuenta__Cod_C__5DCAEF64">
     <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -245,7 +245,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Emplea__Id_Ub__49C3F6B7">
+  <Association Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2">
     <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -259,7 +259,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Pago__Cod_Pre__5070F446">
+  <Association Name="FK__Tb_Pago__Cod_Pre__628FA481">
     <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -273,7 +273,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Presta__Cod_A__4F7CD00D">
+  <Association Name="FK__Tb_Presta__Cod_A__619B8048">
     <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -287,7 +287,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Presta__Cod_C__4D94879B">
+  <Association Name="FK__Tb_Presta__Cod_C__5FB337D6">
     <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1" />
     <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
     <ReferentialConstraint>
@@ -299,7 +299,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Presta__Cod_E__4E88ABD4">
+  <Association Name="FK__Tb_Presta__Cod_E__60A75C0F">
     <End Role="Tb_Empleado" Type="Self.Tb_Empleado" Multiplicity="1" />
     <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
     <ReferentialConstraint>
@@ -311,7 +311,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Seguro__Cod_C__5165187F">
+  <Association Name="FK__Tb_Seguro__Cod_C__6383C8BA">
     <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -325,7 +325,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tb_Transf__Cuen___4CA06362">
+  <Association Name="FK__Tb_Transf__Cuen___5EBF139D">
     <End Role="Tb_Cuenta" Type="Self.Tb_Cuenta" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -339,12 +339,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="usp_ActualizarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Cod_Age" Type="nchar" Mode="In" />
-    <Parameter Name="Nom_Age" Type="nvarchar" Mode="In" />
-    <Parameter Name="Dir_Age" Type="nvarchar" Mode="In" />
-    <Parameter Name="Id_Ubigeo" Type="nchar" Mode="In" />
-  </Function>
   <Function Name="usp_ActualizarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
     <Parameter Name="Num_doc_Cli" Type="nvarchar" Mode="In" />
@@ -384,57 +378,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     <Parameter Name="Est_Emp" Type="nchar" Mode="In" />
     <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
   </Function>
-  <Function Name="usp_ActualizarPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Cod_Pag" Type="nchar" Mode="In" />
-    <Parameter Name="Num_cuot_Pag" Type="nvarchar" Mode="In" />
-    <Parameter Name="Mon_Pag" Type="money" Mode="In" />
-    <Parameter Name="Fec_pro_Pag" Type="date" Mode="In" />
-    <Parameter Name="Fec_real_Pag" Type="smalldatetime" Mode="In" />
-    <Parameter Name="Cod_Pre" Type="nchar" Mode="In" />
-    <Parameter Name="Est_Pag" Type="int" Mode="In" />
-    <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="usp_ActualizarPrestamo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Cod_Pre" Type="nchar" Mode="In" />
-    <Parameter Name="Mon_Pre" Type="money" Mode="In" />
-    <Parameter Name="Cuot_Pre" Type="nvarchar" Mode="In" />
-    <Parameter Name="Fec_Rech" Type="smalldatetime" Mode="In" />
-    <Parameter Name="Fec_Can" Type="smalldatetime" Mode="In" />
-    <Parameter Name="Pre_Est" Type="int" Mode="In" />
-    <Parameter Name="Com_Deu" Type="int" Mode="In" />
-    <Parameter Name="Est_Pre" Type="int" Mode="In" />
-    <Parameter Name="Cod_Cli" Type="nvarchar" Mode="In" />
-    <Parameter Name="Cod_Emp" Type="nvarchar" Mode="In" />
-    <Parameter Name="Cod_Age" Type="nvarchar" Mode="In" />
-    <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="usp_ActualizarSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="codigo" Type="int" Mode="In" />
-    <Parameter Name="costoSeguro" Type="money" Mode="In" />
-    <Parameter Name="tipoSeguro" Type="nchar" Mode="In" />
-    <Parameter Name="fechaAdquisicion" Type="smalldatetime" Mode="In" />
-    <Parameter Name="codigoCliente" Type="nchar" Mode="In" />
-  </Function>
-  <Function Name="usp_ActualizarTransferencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
-    <Parameter Name="montoTran" Type="money" Mode="In" />
-    <Parameter Name="CuentaDest" Type="nvarchar" Mode="In" />
-    <Parameter Name="CuentaOrig" Type="nvarchar" Mode="In" />
-    <Parameter Name="tranInterb" Type="int" Mode="In" />
-    <Parameter Name="fechaTran" Type="smalldatetime" Mode="In" />
-  </Function>
-  <Function Name="usp_ActualizarUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
-    <Parameter Name="departamento" Type="nvarchar" Mode="In" />
-    <Parameter Name="provincia" Type="nvarchar" Mode="In" />
-    <Parameter Name="distrito" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="usp_ActualizarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="nvarchar" Mode="In" />
-    <Parameter Name="pass" Type="nvarchar" Mode="In" />
-    <Parameter Name="niv" Type="nchar" Mode="In" />
-    <Parameter Name="est" Type="nchar" Mode="In" />
-  </Function>
   <Function Name="usp_ConsultarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idAgencia" Type="nchar" Mode="In" />
   </Function>
@@ -468,9 +411,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
   <Function Name="usp_CuentasCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
   </Function>
-  <Function Name="usp_EliminarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="idAgencia" Type="nvarchar" Mode="In" />
-  </Function>
   <Function Name="usp_EliminarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="codigo" Type="nchar" Mode="In" />
   </Function>
@@ -479,29 +419,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
   </Function>
   <Function Name="usp_EliminarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="codigo" Type="nchar" Mode="In" />
-  </Function>
-  <Function Name="usp_EliminarPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="idPago" Type="nchar" Mode="In" />
-  </Function>
-  <Function Name="usp_EliminarPrestamo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="idPrestamo" Type="nchar" Mode="In" />
-  </Function>
-  <Function Name="usp_EliminarSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="codigo" Type="int" Mode="In" />
-  </Function>
-  <Function Name="usp_EliminarTransferencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="usp_EliminarUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
-  </Function>
-  <Function Name="usp_EliminarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="usp_InsertarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Nom_Age" Type="nvarchar" Mode="In" />
-    <Parameter Name="Dir_Age" Type="nvarchar" Mode="In" />
-    <Parameter Name="Id_Ubigeo" Type="nchar" Mode="In" />
   </Function>
   <Function Name="usp_InsertarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Num_doc_Cli" Type="nvarchar" Mode="In" />
@@ -540,52 +457,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     <Parameter Name="Est_Emp" Type="nchar" Mode="In" />
     <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
   </Function>
-  <Function Name="usp_InsertarPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Num_cuot_Pag" Type="nvarchar" Mode="In" />
-    <Parameter Name="Mon_Pag" Type="money" Mode="In" />
-    <Parameter Name="Fec_pro_Pag" Type="date" Mode="In" />
-    <Parameter Name="Fec_real_Pag" Type="smalldatetime" Mode="In" />
-    <Parameter Name="Cod_Pre" Type="nchar" Mode="In" />
-    <Parameter Name="Est_Pag" Type="int" Mode="In" />
-    <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="usp_InsertarPrestamo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Mon_Pre" Type="money" Mode="In" />
-    <Parameter Name="Cuot_Pre" Type="nvarchar" Mode="In" />
-    <Parameter Name="Pre_Est" Type="int" Mode="In" />
-    <Parameter Name="Com_Deu" Type="int" Mode="In" />
-    <Parameter Name="Est_Pre" Type="int" Mode="In" />
-    <Parameter Name="Cod_Cli" Type="nvarchar" Mode="In" />
-    <Parameter Name="Cod_Emp" Type="nvarchar" Mode="In" />
-    <Parameter Name="Cod_Age" Type="nvarchar" Mode="In" />
-    <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="usp_InsertarSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="costoSeguro" Type="money" Mode="In" />
-    <Parameter Name="tipoSeguro" Type="nchar" Mode="In" />
-    <Parameter Name="fechaAdquisicion" Type="smalldatetime" Mode="In" />
-    <Parameter Name="codigoCliente" Type="nchar" Mode="In" />
-  </Function>
-  <Function Name="usp_InsertarTransferencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="montoTran" Type="money" Mode="In" />
-    <Parameter Name="CuentaDest" Type="nvarchar" Mode="In" />
-    <Parameter Name="CuentaOrig" Type="nvarchar" Mode="In" />
-    <Parameter Name="tranInterb" Type="int" Mode="In" />
-    <Parameter Name="fechaTran" Type="smalldatetime" Mode="In" />
-  </Function>
-  <Function Name="usp_InsertarUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
-    <Parameter Name="departamento" Type="nvarchar" Mode="In" />
-    <Parameter Name="provincia" Type="nvarchar" Mode="In" />
-    <Parameter Name="distrito" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="usp_InsertarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="nvarchar" Mode="In" />
-    <Parameter Name="pass" Type="nvarchar" Mode="In" />
-    <Parameter Name="niv" Type="nchar" Mode="In" />
-    <Parameter Name="est" Type="nchar" Mode="In" />
-    <Parameter Name="usuario" Type="nvarchar" Mode="In" />
-  </Function>
   <Function Name="usp_ListarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="usp_ListarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="usp_ListarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -606,19 +477,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
   <Function Name="usp_ListarTransferencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="usp_ListarUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="usp_ListarUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="usp_NumPag_ListarPrestamos_Paginacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
-    <Parameter Name="Cod_Emp" Type="nchar" Mode="In" />
-    <Parameter Name="Estado" Type="nvarchar" Mode="In" />
-    <Parameter Name="NUMREG" Type="int" Mode="InOut" />
-  </Function>
-  <Function Name="usp_ObtenerUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
-    <Parameter Name="Ubicacion" Type="nvarchar" Mode="InOut" />
-  </Function>
-  <Function Name="usp_PrestamosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Num_doc_cli" Type="nchar" Mode="In" />
-  </Function>
   <Function Name="usp_PrestamosInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="usp_TransferenciasInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="usp_Ubigeo_Departamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -666,47 +524,47 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     [vw_VistaPrestamo].[Fecha Ultima Modificacion] AS [Fecha Ultima Modificacion]
     FROM [dbo].[vw_VistaPrestamo] AS [vw_VistaPrestamo]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK__Tb_Agenci__Id_Ub__52593CB8" Association="Self.FK__Tb_Agenci__Id_Ub__52593CB8">
+    <AssociationSet Name="FK__Tb_Agenci__Id_Ub__6477ECF3" Association="Self.FK__Tb_Agenci__Id_Ub__6477ECF3">
       <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
       <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Client__Id_Ub__48CFD27E" Association="Self.FK__Tb_Client__Id_Ub__48CFD27E">
+    <AssociationSet Name="FK__Tb_Client__Id_Ub__5AEE82B9" Association="Self.FK__Tb_Client__Id_Ub__5AEE82B9">
       <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
       <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Cuenta__Cod_A__4AB81AF0" Association="Self.FK__Tb_Cuenta__Cod_A__4AB81AF0">
+    <AssociationSet Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B" Association="Self.FK__Tb_Cuenta__Cod_A__5CD6CB2B">
       <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
       <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Cuenta__Cod_C__4BAC3F29" Association="Self.FK__Tb_Cuenta__Cod_C__4BAC3F29">
+    <AssociationSet Name="FK__Tb_Cuenta__Cod_C__5DCAEF64" Association="Self.FK__Tb_Cuenta__Cod_C__5DCAEF64">
       <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
       <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Emplea__Id_Ub__49C3F6B7" Association="Self.FK__Tb_Emplea__Id_Ub__49C3F6B7">
+    <AssociationSet Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2" Association="Self.FK__Tb_Emplea__Id_Ub__5BE2A6F2">
       <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
       <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Pago__Cod_Pre__5070F446" Association="Self.FK__Tb_Pago__Cod_Pre__5070F446">
+    <AssociationSet Name="FK__Tb_Pago__Cod_Pre__628FA481" Association="Self.FK__Tb_Pago__Cod_Pre__628FA481">
       <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
       <End Role="Tb_Pago" EntitySet="Tb_Pago" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Presta__Cod_A__4F7CD00D" Association="Self.FK__Tb_Presta__Cod_A__4F7CD00D">
+    <AssociationSet Name="FK__Tb_Presta__Cod_A__619B8048" Association="Self.FK__Tb_Presta__Cod_A__619B8048">
       <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
       <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Presta__Cod_C__4D94879B" Association="Self.FK__Tb_Presta__Cod_C__4D94879B">
+    <AssociationSet Name="FK__Tb_Presta__Cod_C__5FB337D6" Association="Self.FK__Tb_Presta__Cod_C__5FB337D6">
       <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
       <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Presta__Cod_E__4E88ABD4" Association="Self.FK__Tb_Presta__Cod_E__4E88ABD4">
+    <AssociationSet Name="FK__Tb_Presta__Cod_E__60A75C0F" Association="Self.FK__Tb_Presta__Cod_E__60A75C0F">
       <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
       <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Seguro__Cod_C__5165187F" Association="Self.FK__Tb_Seguro__Cod_C__5165187F">
+    <AssociationSet Name="FK__Tb_Seguro__Cod_C__6383C8BA" Association="Self.FK__Tb_Seguro__Cod_C__6383C8BA">
       <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
       <End Role="Tb_Seguro" EntitySet="Tb_Seguro" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tb_Transf__Cuen___4CA06362" Association="Self.FK__Tb_Transf__Cuen___4CA06362">
+    <AssociationSet Name="FK__Tb_Transf__Cuen___5EBF139D" Association="Self.FK__Tb_Transf__Cuen___5EBF139D">
       <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
       <End Role="Tb_Transferencia" EntitySet="Tb_Transferencia" />
     </AssociationSet>

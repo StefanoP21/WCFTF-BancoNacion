@@ -196,7 +196,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Usuario Ultima Modificacion" Type="nvarchar" MaxLength="20" />
           <Property Name="Fecha Ultima Modificacion" Type="smalldatetime" />
         </EntityType>
-        <Association Name="FK__Tb_Agenci__Id_Ub__52593CB8">
+        <Association Name="FK__Tb_Agenci__Id_Ub__6477ECF3">
           <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1" />
           <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="*" />
           <ReferentialConstraint>
@@ -208,7 +208,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Client__Id_Ub__48CFD27E">
+        <Association Name="FK__Tb_Client__Id_Ub__5AEE82B9">
           <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -222,7 +222,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Cuenta__Cod_A__4AB81AF0">
+        <Association Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B">
           <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -236,7 +236,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Cuenta__Cod_C__4BAC3F29">
+        <Association Name="FK__Tb_Cuenta__Cod_C__5DCAEF64">
           <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -250,7 +250,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Emplea__Id_Ub__49C3F6B7">
+        <Association Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2">
           <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -264,7 +264,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Pago__Cod_Pre__5070F446">
+        <Association Name="FK__Tb_Pago__Cod_Pre__628FA481">
           <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -278,7 +278,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Presta__Cod_A__4F7CD00D">
+        <Association Name="FK__Tb_Presta__Cod_A__619B8048">
           <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -292,7 +292,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Presta__Cod_C__4D94879B">
+        <Association Name="FK__Tb_Presta__Cod_C__5FB337D6">
           <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1" />
           <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -304,7 +304,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Presta__Cod_E__4E88ABD4">
+        <Association Name="FK__Tb_Presta__Cod_E__60A75C0F">
           <End Role="Tb_Empleado" Type="Self.Tb_Empleado" Multiplicity="1" />
           <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -316,7 +316,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Seguro__Cod_C__5165187F">
+        <Association Name="FK__Tb_Seguro__Cod_C__6383C8BA">
           <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -330,7 +330,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Transf__Cuen___4CA06362">
+        <Association Name="FK__Tb_Transf__Cuen___5EBF139D">
           <End Role="Tb_Cuenta" Type="Self.Tb_Cuenta" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -344,12 +344,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="usp_ActualizarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Cod_Age" Type="nchar" Mode="In" />
-          <Parameter Name="Nom_Age" Type="nvarchar" Mode="In" />
-          <Parameter Name="Dir_Age" Type="nvarchar" Mode="In" />
-          <Parameter Name="Id_Ubigeo" Type="nchar" Mode="In" />
-        </Function>
         <Function Name="usp_ActualizarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
           <Parameter Name="Num_doc_Cli" Type="nvarchar" Mode="In" />
@@ -389,57 +383,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Parameter Name="Est_Emp" Type="nchar" Mode="In" />
           <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="usp_ActualizarPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Cod_Pag" Type="nchar" Mode="In" />
-          <Parameter Name="Num_cuot_Pag" Type="nvarchar" Mode="In" />
-          <Parameter Name="Mon_Pag" Type="money" Mode="In" />
-          <Parameter Name="Fec_pro_Pag" Type="date" Mode="In" />
-          <Parameter Name="Fec_real_Pag" Type="smalldatetime" Mode="In" />
-          <Parameter Name="Cod_Pre" Type="nchar" Mode="In" />
-          <Parameter Name="Est_Pag" Type="int" Mode="In" />
-          <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="usp_ActualizarPrestamo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Cod_Pre" Type="nchar" Mode="In" />
-          <Parameter Name="Mon_Pre" Type="money" Mode="In" />
-          <Parameter Name="Cuot_Pre" Type="nvarchar" Mode="In" />
-          <Parameter Name="Fec_Rech" Type="smalldatetime" Mode="In" />
-          <Parameter Name="Fec_Can" Type="smalldatetime" Mode="In" />
-          <Parameter Name="Pre_Est" Type="int" Mode="In" />
-          <Parameter Name="Com_Deu" Type="int" Mode="In" />
-          <Parameter Name="Est_Pre" Type="int" Mode="In" />
-          <Parameter Name="Cod_Cli" Type="nvarchar" Mode="In" />
-          <Parameter Name="Cod_Emp" Type="nvarchar" Mode="In" />
-          <Parameter Name="Cod_Age" Type="nvarchar" Mode="In" />
-          <Parameter Name="Usu_Ult_Mod" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="usp_ActualizarSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="codigo" Type="int" Mode="In" />
-          <Parameter Name="costoSeguro" Type="money" Mode="In" />
-          <Parameter Name="tipoSeguro" Type="nchar" Mode="In" />
-          <Parameter Name="fechaAdquisicion" Type="smalldatetime" Mode="In" />
-          <Parameter Name="codigoCliente" Type="nchar" Mode="In" />
-        </Function>
-        <Function Name="usp_ActualizarTransferencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
-          <Parameter Name="montoTran" Type="money" Mode="In" />
-          <Parameter Name="CuentaDest" Type="nvarchar" Mode="In" />
-          <Parameter Name="CuentaOrig" Type="nvarchar" Mode="In" />
-          <Parameter Name="tranInterb" Type="int" Mode="In" />
-          <Parameter Name="fechaTran" Type="smalldatetime" Mode="In" />
-        </Function>
-        <Function Name="usp_ActualizarUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
-          <Parameter Name="departamento" Type="nvarchar" Mode="In" />
-          <Parameter Name="provincia" Type="nvarchar" Mode="In" />
-          <Parameter Name="distrito" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="usp_ActualizarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="id" Type="nvarchar" Mode="In" />
-          <Parameter Name="pass" Type="nvarchar" Mode="In" />
-          <Parameter Name="niv" Type="nchar" Mode="In" />
-          <Parameter Name="est" Type="nchar" Mode="In" />
-        </Function>
         <Function Name="usp_ConsultarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idAgencia" Type="nchar" Mode="In" />
         </Function>
@@ -473,9 +416,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
         <Function Name="usp_CuentasCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
         </Function>
-        <Function Name="usp_EliminarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idAgencia" Type="nvarchar" Mode="In" />
-        </Function>
         <Function Name="usp_EliminarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nchar" Mode="In" />
         </Function>
@@ -484,29 +424,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
         </Function>
         <Function Name="usp_EliminarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nchar" Mode="In" />
-        </Function>
-        <Function Name="usp_EliminarPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idPago" Type="nchar" Mode="In" />
-        </Function>
-        <Function Name="usp_EliminarPrestamo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idPrestamo" Type="nchar" Mode="In" />
-        </Function>
-        <Function Name="usp_EliminarSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="codigo" Type="int" Mode="In" />
-        </Function>
-        <Function Name="usp_EliminarTransferencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="usp_EliminarUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
-        </Function>
-        <Function Name="usp_EliminarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="id" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="usp_InsertarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Nom_Age" Type="nvarchar" Mode="In" />
-          <Parameter Name="Dir_Age" Type="nvarchar" Mode="In" />
-          <Parameter Name="Id_Ubigeo" Type="nchar" Mode="In" />
         </Function>
         <Function Name="usp_InsertarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Num_doc_Cli" Type="nvarchar" Mode="In" />
@@ -545,52 +462,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Parameter Name="Est_Emp" Type="nchar" Mode="In" />
           <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="usp_InsertarPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Num_cuot_Pag" Type="nvarchar" Mode="In" />
-          <Parameter Name="Mon_Pag" Type="money" Mode="In" />
-          <Parameter Name="Fec_pro_Pag" Type="date" Mode="In" />
-          <Parameter Name="Fec_real_Pag" Type="smalldatetime" Mode="In" />
-          <Parameter Name="Cod_Pre" Type="nchar" Mode="In" />
-          <Parameter Name="Est_Pag" Type="int" Mode="In" />
-          <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="usp_InsertarPrestamo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Mon_Pre" Type="money" Mode="In" />
-          <Parameter Name="Cuot_Pre" Type="nvarchar" Mode="In" />
-          <Parameter Name="Pre_Est" Type="int" Mode="In" />
-          <Parameter Name="Com_Deu" Type="int" Mode="In" />
-          <Parameter Name="Est_Pre" Type="int" Mode="In" />
-          <Parameter Name="Cod_Cli" Type="nvarchar" Mode="In" />
-          <Parameter Name="Cod_Emp" Type="nvarchar" Mode="In" />
-          <Parameter Name="Cod_Age" Type="nvarchar" Mode="In" />
-          <Parameter Name="Usu_Registro" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="usp_InsertarSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="costoSeguro" Type="money" Mode="In" />
-          <Parameter Name="tipoSeguro" Type="nchar" Mode="In" />
-          <Parameter Name="fechaAdquisicion" Type="smalldatetime" Mode="In" />
-          <Parameter Name="codigoCliente" Type="nchar" Mode="In" />
-        </Function>
-        <Function Name="usp_InsertarTransferencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="montoTran" Type="money" Mode="In" />
-          <Parameter Name="CuentaDest" Type="nvarchar" Mode="In" />
-          <Parameter Name="CuentaOrig" Type="nvarchar" Mode="In" />
-          <Parameter Name="tranInterb" Type="int" Mode="In" />
-          <Parameter Name="fechaTran" Type="smalldatetime" Mode="In" />
-        </Function>
-        <Function Name="usp_InsertarUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
-          <Parameter Name="departamento" Type="nvarchar" Mode="In" />
-          <Parameter Name="provincia" Type="nvarchar" Mode="In" />
-          <Parameter Name="distrito" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="usp_InsertarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="id" Type="nvarchar" Mode="In" />
-          <Parameter Name="pass" Type="nvarchar" Mode="In" />
-          <Parameter Name="niv" Type="nchar" Mode="In" />
-          <Parameter Name="est" Type="nchar" Mode="In" />
-          <Parameter Name="usuario" Type="nvarchar" Mode="In" />
-        </Function>
         <Function Name="usp_ListarAgencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -611,19 +482,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
         <Function Name="usp_ListarTransferencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="usp_NumPag_ListarPrestamos_Paginacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Cod_Cli" Type="nchar" Mode="In" />
-          <Parameter Name="Cod_Emp" Type="nchar" Mode="In" />
-          <Parameter Name="Estado" Type="nvarchar" Mode="In" />
-          <Parameter Name="NUMREG" Type="int" Mode="InOut" />
-        </Function>
-        <Function Name="usp_ObtenerUbigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
-          <Parameter Name="Ubicacion" Type="nvarchar" Mode="InOut" />
-        </Function>
-        <Function Name="usp_PrestamosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Num_doc_cli" Type="nchar" Mode="In" />
-        </Function>
         <Function Name="usp_PrestamosInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_TransferenciasInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_Ubigeo_Departamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -671,47 +529,47 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     [vw_VistaPrestamo].[Fecha Ultima Modificacion] AS [Fecha Ultima Modificacion]
     FROM [dbo].[vw_VistaPrestamo] AS [vw_VistaPrestamo]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__Tb_Agenci__Id_Ub__52593CB8" Association="Self.FK__Tb_Agenci__Id_Ub__52593CB8">
+          <AssociationSet Name="FK__Tb_Agenci__Id_Ub__6477ECF3" Association="Self.FK__Tb_Agenci__Id_Ub__6477ECF3">
             <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
             <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Client__Id_Ub__48CFD27E" Association="Self.FK__Tb_Client__Id_Ub__48CFD27E">
+          <AssociationSet Name="FK__Tb_Client__Id_Ub__5AEE82B9" Association="Self.FK__Tb_Client__Id_Ub__5AEE82B9">
             <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
             <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Cuenta__Cod_A__4AB81AF0" Association="Self.FK__Tb_Cuenta__Cod_A__4AB81AF0">
+          <AssociationSet Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B" Association="Self.FK__Tb_Cuenta__Cod_A__5CD6CB2B">
             <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
             <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Cuenta__Cod_C__4BAC3F29" Association="Self.FK__Tb_Cuenta__Cod_C__4BAC3F29">
+          <AssociationSet Name="FK__Tb_Cuenta__Cod_C__5DCAEF64" Association="Self.FK__Tb_Cuenta__Cod_C__5DCAEF64">
             <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
             <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Emplea__Id_Ub__49C3F6B7" Association="Self.FK__Tb_Emplea__Id_Ub__49C3F6B7">
+          <AssociationSet Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2" Association="Self.FK__Tb_Emplea__Id_Ub__5BE2A6F2">
             <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
             <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Pago__Cod_Pre__5070F446" Association="Self.FK__Tb_Pago__Cod_Pre__5070F446">
+          <AssociationSet Name="FK__Tb_Pago__Cod_Pre__628FA481" Association="Self.FK__Tb_Pago__Cod_Pre__628FA481">
             <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
             <End Role="Tb_Pago" EntitySet="Tb_Pago" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Presta__Cod_A__4F7CD00D" Association="Self.FK__Tb_Presta__Cod_A__4F7CD00D">
+          <AssociationSet Name="FK__Tb_Presta__Cod_A__619B8048" Association="Self.FK__Tb_Presta__Cod_A__619B8048">
             <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
             <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Presta__Cod_C__4D94879B" Association="Self.FK__Tb_Presta__Cod_C__4D94879B">
+          <AssociationSet Name="FK__Tb_Presta__Cod_C__5FB337D6" Association="Self.FK__Tb_Presta__Cod_C__5FB337D6">
             <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
             <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Presta__Cod_E__4E88ABD4" Association="Self.FK__Tb_Presta__Cod_E__4E88ABD4">
+          <AssociationSet Name="FK__Tb_Presta__Cod_E__60A75C0F" Association="Self.FK__Tb_Presta__Cod_E__60A75C0F">
             <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
             <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Seguro__Cod_C__5165187F" Association="Self.FK__Tb_Seguro__Cod_C__5165187F">
+          <AssociationSet Name="FK__Tb_Seguro__Cod_C__6383C8BA" Association="Self.FK__Tb_Seguro__Cod_C__6383C8BA">
             <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
             <End Role="Tb_Seguro" EntitySet="Tb_Seguro" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Transf__Cuen___4CA06362" Association="Self.FK__Tb_Transf__Cuen___4CA06362">
+          <AssociationSet Name="FK__Tb_Transf__Cuen___5EBF139D" Association="Self.FK__Tb_Transf__Cuen___5EBF139D">
             <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
             <End Role="Tb_Transferencia" EntitySet="Tb_Transferencia" />
           </AssociationSet>
@@ -728,9 +586,9 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Nom_Age" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Dir_Age" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Id_Ubigeo" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Tb_Ubigeo" Relationship="Self.FK__Tb_Agenci__Id_Ub__52593CB8" FromRole="Tb_Agencia" ToRole="Tb_Ubigeo" />
-          <NavigationProperty Name="Tb_Cuenta" Relationship="Self.FK__Tb_Cuenta__Cod_A__4AB81AF0" FromRole="Tb_Agencia" ToRole="Tb_Cuenta" />
-          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Presta__Cod_A__4F7CD00D" FromRole="Tb_Agencia" ToRole="Tb_Prestamo" />
+          <NavigationProperty Name="Tb_Ubigeo" Relationship="Self.FK__Tb_Agenci__Id_Ub__6477ECF3" FromRole="Tb_Agencia" ToRole="Tb_Ubigeo" />
+          <NavigationProperty Name="Tb_Cuenta" Relationship="Self.FK__Tb_Cuenta__Cod_A__5CD6CB2B" FromRole="Tb_Agencia" ToRole="Tb_Cuenta" />
+          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Presta__Cod_A__619B8048" FromRole="Tb_Agencia" ToRole="Tb_Prestamo" />
         </EntityType>
         <EntityType Name="Tb_Cliente">
           <Key>
@@ -752,10 +610,10 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Tb_Ubigeo" Relationship="Self.FK__Tb_Client__Id_Ub__48CFD27E" FromRole="Tb_Cliente" ToRole="Tb_Ubigeo" />
-          <NavigationProperty Name="Tb_Cuenta" Relationship="Self.FK__Tb_Cuenta__Cod_C__4BAC3F29" FromRole="Tb_Cliente" ToRole="Tb_Cuenta" />
-          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Presta__Cod_C__4D94879B" FromRole="Tb_Cliente" ToRole="Tb_Prestamo" />
-          <NavigationProperty Name="Tb_Seguro" Relationship="Self.FK__Tb_Seguro__Cod_C__5165187F" FromRole="Tb_Cliente" ToRole="Tb_Seguro" />
+          <NavigationProperty Name="Tb_Ubigeo" Relationship="Self.FK__Tb_Client__Id_Ub__5AEE82B9" FromRole="Tb_Cliente" ToRole="Tb_Ubigeo" />
+          <NavigationProperty Name="Tb_Cuenta" Relationship="Self.FK__Tb_Cuenta__Cod_C__5DCAEF64" FromRole="Tb_Cliente" ToRole="Tb_Cuenta" />
+          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Presta__Cod_C__5FB337D6" FromRole="Tb_Cliente" ToRole="Tb_Prestamo" />
+          <NavigationProperty Name="Tb_Seguro" Relationship="Self.FK__Tb_Seguro__Cod_C__6383C8BA" FromRole="Tb_Cliente" ToRole="Tb_Seguro" />
         </EntityType>
         <EntityType Name="Tb_Cuenta">
           <Key>
@@ -773,9 +631,9 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Tb_Agencia" Relationship="Self.FK__Tb_Cuenta__Cod_A__4AB81AF0" FromRole="Tb_Cuenta" ToRole="Tb_Agencia" />
-          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Cuenta__Cod_C__4BAC3F29" FromRole="Tb_Cuenta" ToRole="Tb_Cliente" />
-          <NavigationProperty Name="Tb_Transferencia" Relationship="Self.FK__Tb_Transf__Cuen___4CA06362" FromRole="Tb_Cuenta" ToRole="Tb_Transferencia" />
+          <NavigationProperty Name="Tb_Agencia" Relationship="Self.FK__Tb_Cuenta__Cod_A__5CD6CB2B" FromRole="Tb_Cuenta" ToRole="Tb_Agencia" />
+          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Cuenta__Cod_C__5DCAEF64" FromRole="Tb_Cuenta" ToRole="Tb_Cliente" />
+          <NavigationProperty Name="Tb_Transferencia" Relationship="Self.FK__Tb_Transf__Cuen___5EBF139D" FromRole="Tb_Cuenta" ToRole="Tb_Transferencia" />
         </EntityType>
         <EntityType Name="Tb_Empleado">
           <Key>
@@ -796,8 +654,8 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Tb_Ubigeo" Relationship="Self.FK__Tb_Emplea__Id_Ub__49C3F6B7" FromRole="Tb_Empleado" ToRole="Tb_Ubigeo" />
-          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Presta__Cod_E__4E88ABD4" FromRole="Tb_Empleado" ToRole="Tb_Prestamo" />
+          <NavigationProperty Name="Tb_Ubigeo" Relationship="Self.FK__Tb_Emplea__Id_Ub__5BE2A6F2" FromRole="Tb_Empleado" ToRole="Tb_Ubigeo" />
+          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Presta__Cod_E__60A75C0F" FromRole="Tb_Empleado" ToRole="Tb_Prestamo" />
         </EntityType>
         <EntityType Name="Tb_Pago">
           <Key>
@@ -814,7 +672,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Pago__Cod_Pre__5070F446" FromRole="Tb_Pago" ToRole="Tb_Prestamo" />
+          <NavigationProperty Name="Tb_Prestamo" Relationship="Self.FK__Tb_Pago__Cod_Pre__628FA481" FromRole="Tb_Pago" ToRole="Tb_Prestamo" />
         </EntityType>
         <EntityType Name="Tb_Prestamo">
           <Key>
@@ -836,10 +694,10 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Usu_Ult_Mod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Fec_Ult_Mod" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Tb_Agencia" Relationship="Self.FK__Tb_Presta__Cod_A__4F7CD00D" FromRole="Tb_Prestamo" ToRole="Tb_Agencia" />
-          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Presta__Cod_C__4D94879B" FromRole="Tb_Prestamo" ToRole="Tb_Cliente" />
-          <NavigationProperty Name="Tb_Empleado" Relationship="Self.FK__Tb_Presta__Cod_E__4E88ABD4" FromRole="Tb_Prestamo" ToRole="Tb_Empleado" />
-          <NavigationProperty Name="Tb_Pago" Relationship="Self.FK__Tb_Pago__Cod_Pre__5070F446" FromRole="Tb_Prestamo" ToRole="Tb_Pago" />
+          <NavigationProperty Name="Tb_Agencia" Relationship="Self.FK__Tb_Presta__Cod_A__619B8048" FromRole="Tb_Prestamo" ToRole="Tb_Agencia" />
+          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Presta__Cod_C__5FB337D6" FromRole="Tb_Prestamo" ToRole="Tb_Cliente" />
+          <NavigationProperty Name="Tb_Empleado" Relationship="Self.FK__Tb_Presta__Cod_E__60A75C0F" FromRole="Tb_Prestamo" ToRole="Tb_Empleado" />
+          <NavigationProperty Name="Tb_Pago" Relationship="Self.FK__Tb_Pago__Cod_Pre__628FA481" FromRole="Tb_Prestamo" ToRole="Tb_Pago" />
         </EntityType>
         <EntityType Name="Tb_Seguro">
           <Key>
@@ -850,7 +708,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Fec_Adq" Type="DateTime" Precision="0" />
           <Property Name="Cod_Cli" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Seguro__Cod_C__5165187F" FromRole="Tb_Seguro" ToRole="Tb_Cliente" />
+          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Seguro__Cod_C__6383C8BA" FromRole="Tb_Seguro" ToRole="Tb_Cliente" />
         </EntityType>
         <EntityType Name="Tb_Transferencia">
           <Key>
@@ -862,7 +720,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Cuen_Orig" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Tran_Int" Type="Int32" />
           <Property Name="Fec_Tran" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Tb_Cuenta" Relationship="Self.FK__Tb_Transf__Cuen___4CA06362" FromRole="Tb_Transferencia" ToRole="Tb_Cuenta" />
+          <NavigationProperty Name="Tb_Cuenta" Relationship="Self.FK__Tb_Transf__Cuen___5EBF139D" FromRole="Tb_Transferencia" ToRole="Tb_Cuenta" />
         </EntityType>
         <EntityType Name="Tb_Ubigeo">
           <Key>
@@ -875,9 +733,9 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Departamento" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Provincia" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Distrito" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Tb_Agencia" Relationship="Self.FK__Tb_Agenci__Id_Ub__52593CB8" FromRole="Tb_Ubigeo" ToRole="Tb_Agencia" />
-          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Client__Id_Ub__48CFD27E" FromRole="Tb_Ubigeo" ToRole="Tb_Cliente" />
-          <NavigationProperty Name="Tb_Empleado" Relationship="Self.FK__Tb_Emplea__Id_Ub__49C3F6B7" FromRole="Tb_Ubigeo" ToRole="Tb_Empleado" />
+          <NavigationProperty Name="Tb_Agencia" Relationship="Self.FK__Tb_Agenci__Id_Ub__6477ECF3" FromRole="Tb_Ubigeo" ToRole="Tb_Agencia" />
+          <NavigationProperty Name="Tb_Cliente" Relationship="Self.FK__Tb_Client__Id_Ub__5AEE82B9" FromRole="Tb_Ubigeo" ToRole="Tb_Cliente" />
+          <NavigationProperty Name="Tb_Empleado" Relationship="Self.FK__Tb_Emplea__Id_Ub__5BE2A6F2" FromRole="Tb_Ubigeo" ToRole="Tb_Empleado" />
         </EntityType>
         <EntityType Name="Tb_Usuario">
           <Key>
@@ -890,7 +748,48 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Name="Fec_Registro" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Usu_Registro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Tb_Agenci__Id_Ub__52593CB8">
+        <EntityType Name="vw_VistaPrestamo">
+          <Key>
+            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="Monto" />
+            <PropertyRef Name="Cuotas" />
+            <PropertyRef Name="Fecha_Solicitud" />
+            <PropertyRef Name="Pre_Est" />
+            <PropertyRef Name="Com_Deu" />
+            <PropertyRef Name="Est_Pre" />
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Cod_Cli" />
+            <PropertyRef Name="Empleado" />
+            <PropertyRef Name="Cod_Emp" />
+            <PropertyRef Name="Agencia" />
+            <PropertyRef Name="Cod_Age" />
+            <PropertyRef Name="Usuario_Registro" />
+            <PropertyRef Name="Fecha_Registro" />
+          </Key>
+          <Property Name="Codigo" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Monto" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Cuotas" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fecha_Solicitud" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_Rechazo" Type="DateTime" Precision="0" />
+          <Property Name="Fecha_Cancelacion" Type="DateTime" Precision="0" />
+          <Property Name="Pre_Est" Type="Int32" Nullable="false" />
+          <Property Name="Prestamo_Estudio" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Com_Deu" Type="Int32" Nullable="false" />
+          <Property Name="Compra_Deuda" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Est_Pre" Type="Int32" Nullable="false" />
+          <Property Name="Estado_Prestamo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Cliente" Type="String" MaxLength="82" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cod_Cli" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Empleado" Type="String" MaxLength="82" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cod_Emp" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Agencia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cod_Age" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Usuario_Registro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fecha_Registro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Usuario_Ultima_Modificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_Ultima_Modificacion" Type="DateTime" Precision="0" />
+        </EntityType>
+        <Association Name="FK__Tb_Agenci__Id_Ub__6477ECF3">
           <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1" />
           <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="*" />
           <ReferentialConstraint>
@@ -902,7 +801,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Cuenta__Cod_A__4AB81AF0">
+        <Association Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B">
           <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -916,7 +815,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Presta__Cod_A__4F7CD00D">
+        <Association Name="FK__Tb_Presta__Cod_A__619B8048">
           <End Role="Tb_Agencia" Type="Self.Tb_Agencia" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -930,7 +829,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Client__Id_Ub__48CFD27E">
+        <Association Name="FK__Tb_Client__Id_Ub__5AEE82B9">
           <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -944,7 +843,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Cuenta__Cod_C__4BAC3F29">
+        <Association Name="FK__Tb_Cuenta__Cod_C__5DCAEF64">
           <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -958,7 +857,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Presta__Cod_C__4D94879B">
+        <Association Name="FK__Tb_Presta__Cod_C__5FB337D6">
           <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1" />
           <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -970,7 +869,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Seguro__Cod_C__5165187F">
+        <Association Name="FK__Tb_Seguro__Cod_C__6383C8BA">
           <End Role="Tb_Cliente" Type="Self.Tb_Cliente" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -984,7 +883,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Transf__Cuen___4CA06362">
+        <Association Name="FK__Tb_Transf__Cuen___5EBF139D">
           <End Role="Tb_Cuenta" Type="Self.Tb_Cuenta" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -998,7 +897,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Emplea__Id_Ub__49C3F6B7">
+        <Association Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2">
           <End Role="Tb_Ubigeo" Type="Self.Tb_Ubigeo" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -1012,7 +911,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Presta__Cod_E__4E88ABD4">
+        <Association Name="FK__Tb_Presta__Cod_E__60A75C0F">
           <End Role="Tb_Empleado" Type="Self.Tb_Empleado" Multiplicity="1" />
           <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1024,7 +923,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tb_Pago__Cod_Pre__5070F446">
+        <Association Name="FK__Tb_Pago__Cod_Pre__628FA481">
           <End Role="Tb_Prestamo" Type="Self.Tb_Prestamo" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -1038,7 +937,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BancoEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BancoEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tb_Agencia" EntityType="Self.Tb_Agencia" />
           <EntitySet Name="Tb_Cliente" EntityType="Self.Tb_Cliente" />
           <EntitySet Name="Tb_Cuenta" EntityType="Self.Tb_Cuenta" />
@@ -1049,56 +948,114 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <EntitySet Name="Tb_Transferencia" EntityType="Self.Tb_Transferencia" />
           <EntitySet Name="Tb_Ubigeo" EntityType="Self.Tb_Ubigeo" />
           <EntitySet Name="Tb_Usuario" EntityType="Self.Tb_Usuario" />
-          <AssociationSet Name="FK__Tb_Agenci__Id_Ub__52593CB8" Association="Self.FK__Tb_Agenci__Id_Ub__52593CB8">
+          <EntitySet Name="vw_VistaPrestamo" EntityType="Self.vw_VistaPrestamo" />
+          <AssociationSet Name="FK__Tb_Agenci__Id_Ub__6477ECF3" Association="Self.FK__Tb_Agenci__Id_Ub__6477ECF3">
             <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
             <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Cuenta__Cod_A__4AB81AF0" Association="Self.FK__Tb_Cuenta__Cod_A__4AB81AF0">
+          <AssociationSet Name="FK__Tb_Cuenta__Cod_A__5CD6CB2B" Association="Self.FK__Tb_Cuenta__Cod_A__5CD6CB2B">
             <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
             <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Presta__Cod_A__4F7CD00D" Association="Self.FK__Tb_Presta__Cod_A__4F7CD00D">
+          <AssociationSet Name="FK__Tb_Presta__Cod_A__619B8048" Association="Self.FK__Tb_Presta__Cod_A__619B8048">
             <End Role="Tb_Agencia" EntitySet="Tb_Agencia" />
             <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Client__Id_Ub__48CFD27E" Association="Self.FK__Tb_Client__Id_Ub__48CFD27E">
+          <AssociationSet Name="FK__Tb_Client__Id_Ub__5AEE82B9" Association="Self.FK__Tb_Client__Id_Ub__5AEE82B9">
             <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
             <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Cuenta__Cod_C__4BAC3F29" Association="Self.FK__Tb_Cuenta__Cod_C__4BAC3F29">
+          <AssociationSet Name="FK__Tb_Cuenta__Cod_C__5DCAEF64" Association="Self.FK__Tb_Cuenta__Cod_C__5DCAEF64">
             <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
             <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Presta__Cod_C__4D94879B" Association="Self.FK__Tb_Presta__Cod_C__4D94879B">
+          <AssociationSet Name="FK__Tb_Presta__Cod_C__5FB337D6" Association="Self.FK__Tb_Presta__Cod_C__5FB337D6">
             <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
             <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Seguro__Cod_C__5165187F" Association="Self.FK__Tb_Seguro__Cod_C__5165187F">
+          <AssociationSet Name="FK__Tb_Seguro__Cod_C__6383C8BA" Association="Self.FK__Tb_Seguro__Cod_C__6383C8BA">
             <End Role="Tb_Cliente" EntitySet="Tb_Cliente" />
             <End Role="Tb_Seguro" EntitySet="Tb_Seguro" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Transf__Cuen___4CA06362" Association="Self.FK__Tb_Transf__Cuen___4CA06362">
+          <AssociationSet Name="FK__Tb_Transf__Cuen___5EBF139D" Association="Self.FK__Tb_Transf__Cuen___5EBF139D">
             <End Role="Tb_Cuenta" EntitySet="Tb_Cuenta" />
             <End Role="Tb_Transferencia" EntitySet="Tb_Transferencia" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Emplea__Id_Ub__49C3F6B7" Association="Self.FK__Tb_Emplea__Id_Ub__49C3F6B7">
+          <AssociationSet Name="FK__Tb_Emplea__Id_Ub__5BE2A6F2" Association="Self.FK__Tb_Emplea__Id_Ub__5BE2A6F2">
             <End Role="Tb_Ubigeo" EntitySet="Tb_Ubigeo" />
             <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Presta__Cod_E__4E88ABD4" Association="Self.FK__Tb_Presta__Cod_E__4E88ABD4">
+          <AssociationSet Name="FK__Tb_Presta__Cod_E__60A75C0F" Association="Self.FK__Tb_Presta__Cod_E__60A75C0F">
             <End Role="Tb_Empleado" EntitySet="Tb_Empleado" />
             <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tb_Pago__Cod_Pre__5070F446" Association="Self.FK__Tb_Pago__Cod_Pre__5070F446">
+          <AssociationSet Name="FK__Tb_Pago__Cod_Pre__628FA481" Association="Self.FK__Tb_Pago__Cod_Pre__628FA481">
             <End Role="Tb_Prestamo" EntitySet="Tb_Prestamo" />
             <End Role="Tb_Pago" EntitySet="Tb_Pago" />
           </AssociationSet>
-          <FunctionImport Name="usp_ActualizarAgencia">
-            <Parameter Name="Cod_Age" Mode="In" Type="String" />
-            <Parameter Name="Nom_Age" Mode="In" Type="String" />
-            <Parameter Name="Dir_Age" Mode="In" Type="String" />
-            <Parameter Name="Id_Ubigeo" Mode="In" Type="String" />
+          <FunctionImport Name="usp_ConsultarAgencia" ReturnType="Collection(BancoModel.usp_ConsultarAgencia_Result)">
+          <Parameter Name="idAgencia" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="usp_ConsultarCliente" ReturnType="Collection(BancoModel.usp_ConsultarCliente_Result)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarClienteDNI" ReturnType="Collection(BancoModel.usp_ConsultarClienteDNI_Result)">
+          <Parameter Name="DNI" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarCuenta" ReturnType="Collection(BancoModel.usp_ConsultarCuenta_Result)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarEmpleado" ReturnType="Collection(BancoModel.usp_ConsultarEmpleado_Result)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarPago" ReturnType="Collection(BancoModel.usp_ConsultarPago_Result)">
+          <Parameter Name="idPago" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarPrestamo" ReturnType="Collection(BancoModel.usp_ConsultarPrestamo_Result)">
+          <Parameter Name="idPrestamo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarSeguro" ReturnType="Collection(BancoModel.usp_ConsultarSeguro_Result)">
+          <Parameter Name="codigo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarTransferencia" ReturnType="Collection(BancoModel.usp_ConsultarTransferencia_Result)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarUsuario" ReturnType="Collection(BancoModel.usp_ConsultarUsuario_Result)">
+          <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_CuentasCliente" ReturnType="Collection(BancoModel.usp_CuentasCliente_Result)">
+          <Parameter Name="Cod_Cli" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ListarCliente" ReturnType="Collection(BancoModel.usp_ListarCliente_Result)" />
+          <FunctionImport Name="usp_ListarCuenta" ReturnType="Collection(BancoModel.usp_ListarCuenta_Result)" />
+          <FunctionImport Name="usp_ListarEmpleado" ReturnType="Collection(BancoModel.usp_ListarEmpleado_Result)" />
+          <FunctionImport Name="usp_ListarPago" ReturnType="Collection(BancoModel.usp_ListarPago_Result)" />
+          <FunctionImport Name="usp_ListarPrestamo" ReturnType="Collection(BancoModel.usp_ListarPrestamo_Result)" />
+          <FunctionImport Name="usp_ListarPrestamos_Cli_Emp" ReturnType="Collection(BancoModel.usp_ListarPrestamos_Cli_Emp_Result)">
+            <Parameter Name="Cod_Cli" Mode="In" Type="String" />
+            <Parameter Name="Cod_Emp" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ListarPrestamos_Paginacion" ReturnType="Collection(BancoModel.usp_ListarPrestamos_Paginacion_Result)">
+            <Parameter Name="Cod_Cli" Mode="In" Type="String" />
+            <Parameter Name="Cod_Emp" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
+            <Parameter Name="NumPag" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ListarSeguro" ReturnType="Collection(BancoModel.usp_ListarSeguro_Result)" />
+          <FunctionImport Name="usp_ListarTransferencia" ReturnType="Collection(BancoModel.usp_ListarTransferencia_Result)" />
+          <FunctionImport Name="usp_ListarUbigeo" ReturnType="Collection(BancoModel.usp_ListarUbigeo_Result)" />
+          <FunctionImport Name="usp_ListarUsuarios" ReturnType="Collection(BancoModel.usp_ListarUsuarios_Result)" />
+          <FunctionImport Name="usp_PrestamosInfo" ReturnType="Collection(BancoModel.usp_PrestamosInfo_Result)" />
+          <FunctionImport Name="usp_TransferenciasInfo" ReturnType="Collection(BancoModel.usp_TransferenciasInfo_Result)" />
+          <FunctionImport Name="usp_Ubigeo_Departamentos" ReturnType="Collection(BancoModel.usp_Ubigeo_Departamentos_Result)" />
+          <FunctionImport Name="usp_Ubigeo_DistritosProvinciaDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_DistritosProvinciaDepartamento_Result)">
+            <Parameter Name="idDep" Mode="In" Type="String" />
+            <Parameter Name="idProv" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_Ubigeo_ProvinciasDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_ProvinciasDepartamento_Result)">
+          <Parameter Name="idDep" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ListarAgencia" ReturnType="Collection(BancoModel.usp_ListarAgencia_Result)" />
           <FunctionImport Name="usp_ActualizarCliente">
             <Parameter Name="Cod_Cli" Mode="In" Type="String" />
             <Parameter Name="Num_doc_Cli" Mode="In" Type="String" />
@@ -1138,124 +1095,14 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             <Parameter Name="Est_Emp" Mode="In" Type="String" />
             <Parameter Name="Usu_Ult_Mod" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="usp_ActualizarPago">
-            <Parameter Name="Cod_Pag" Mode="In" Type="String" />
-            <Parameter Name="Num_cuot_Pag" Mode="In" Type="String" />
-            <Parameter Name="Mon_Pag" Mode="In" Type="Decimal" />
-            <Parameter Name="Fec_pro_Pag" Mode="In" Type="DateTime" />
-            <Parameter Name="Fec_real_Pag" Mode="In" Type="DateTime" />
-            <Parameter Name="Cod_Pre" Mode="In" Type="String" />
-            <Parameter Name="Est_Pag" Mode="In" Type="Int32" />
-            <Parameter Name="Usu_Ult_Mod" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ActualizarPrestamo">
-            <Parameter Name="Cod_Pre" Mode="In" Type="String" />
-            <Parameter Name="Mon_Pre" Mode="In" Type="Decimal" />
-            <Parameter Name="Cuot_Pre" Mode="In" Type="String" />
-            <Parameter Name="Fec_Rech" Mode="In" Type="DateTime" />
-            <Parameter Name="Fec_Can" Mode="In" Type="DateTime" />
-            <Parameter Name="Pre_Est" Mode="In" Type="Int32" />
-            <Parameter Name="Com_Deu" Mode="In" Type="Int32" />
-            <Parameter Name="Est_Pre" Mode="In" Type="Int32" />
-            <Parameter Name="Cod_Cli" Mode="In" Type="String" />
-            <Parameter Name="Cod_Emp" Mode="In" Type="String" />
-            <Parameter Name="Cod_Age" Mode="In" Type="String" />
-            <Parameter Name="Usu_Ult_Mod" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ActualizarSeguro">
-            <Parameter Name="codigo" Mode="In" Type="Int32" />
-            <Parameter Name="costoSeguro" Mode="In" Type="Decimal" />
-            <Parameter Name="tipoSeguro" Mode="In" Type="String" />
-            <Parameter Name="fechaAdquisicion" Mode="In" Type="DateTime" />
-            <Parameter Name="codigoCliente" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ActualizarTransferencia">
-            <Parameter Name="codigo" Mode="In" Type="String" />
-            <Parameter Name="montoTran" Mode="In" Type="Decimal" />
-            <Parameter Name="CuentaDest" Mode="In" Type="String" />
-            <Parameter Name="CuentaOrig" Mode="In" Type="String" />
-            <Parameter Name="tranInterb" Mode="In" Type="Int32" />
-            <Parameter Name="fechaTran" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ActualizarUbigeo">
-            <Parameter Name="idUbigeo" Mode="In" Type="String" />
-            <Parameter Name="departamento" Mode="In" Type="String" />
-            <Parameter Name="provincia" Mode="In" Type="String" />
-            <Parameter Name="distrito" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ActualizarUsuario">
-            <Parameter Name="id" Mode="In" Type="String" />
-            <Parameter Name="pass" Mode="In" Type="String" />
-            <Parameter Name="niv" Mode="In" Type="String" />
-            <Parameter Name="est" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarAgencia" ReturnType="Collection(BancoModel.usp_ConsultarAgencia_Result)">
-          <Parameter Name="idAgencia" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarCliente" ReturnType="Collection(BancoModel.usp_ConsultarCliente_Result)">
-          <Parameter Name="codigo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarClienteDNI" ReturnType="Collection(BancoModel.usp_ConsultarClienteDNI_Result)">
-          <Parameter Name="DNI" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarCuenta" ReturnType="Collection(BancoModel.usp_ConsultarCuenta_Result)">
-          <Parameter Name="codigo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarEmpleado" ReturnType="Collection(BancoModel.usp_ConsultarEmpleado_Result)">
-          <Parameter Name="codigo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarPago" ReturnType="Collection(BancoModel.usp_ConsultarPago_Result)">
-          <Parameter Name="idPago" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarPrestamo" ReturnType="Collection(BancoModel.usp_ConsultarPrestamo_Result)">
-          <Parameter Name="idPrestamo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarSeguro" ReturnType="Collection(BancoModel.usp_ConsultarSeguro_Result)">
-          <Parameter Name="codigo" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarTransferencia" ReturnType="Collection(BancoModel.usp_ConsultarTransferencia_Result)">
-          <Parameter Name="codigo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ConsultarUsuario" ReturnType="Collection(BancoModel.usp_ConsultarUsuario_Result)">
-          <Parameter Name="id" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_CuentasCliente" ReturnType="Collection(BancoModel.usp_CuentasCliente_Result)">
-          <Parameter Name="Cod_Cli" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_EliminarAgencia">
-          <Parameter Name="idAgencia" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="usp_EliminarCliente">
-          <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_EliminarCuenta">
-          <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_EliminarEmpleado">
-          <Parameter Name="codigo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_EliminarPago">
-          <Parameter Name="idPago" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_EliminarPrestamo">
-          <Parameter Name="idPrestamo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_EliminarSeguro">
-          <Parameter Name="codigo" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="usp_EliminarTransferencia">
-          <Parameter Name="codigo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_EliminarUbigeo">
-          <Parameter Name="idUbigeo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_EliminarUsuario">
-          <Parameter Name="id" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_InsertarAgencia">
-            <Parameter Name="Nom_Age" Mode="In" Type="String" />
-            <Parameter Name="Dir_Age" Mode="In" Type="String" />
-            <Parameter Name="Id_Ubigeo" Mode="In" Type="String" />
+            <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_InsertarCliente">
             <Parameter Name="Num_doc_Cli" Mode="In" Type="String" />
@@ -1293,96 +1140,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
             <Parameter Name="Id_Ubigeo" Mode="In" Type="String" />
             <Parameter Name="Est_Emp" Mode="In" Type="String" />
             <Parameter Name="Usu_Registro" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_InsertarPago">
-            <Parameter Name="Num_cuot_Pag" Mode="In" Type="String" />
-            <Parameter Name="Mon_Pag" Mode="In" Type="Decimal" />
-            <Parameter Name="Fec_pro_Pag" Mode="In" Type="DateTime" />
-            <Parameter Name="Fec_real_Pag" Mode="In" Type="DateTime" />
-            <Parameter Name="Cod_Pre" Mode="In" Type="String" />
-            <Parameter Name="Est_Pag" Mode="In" Type="Int32" />
-            <Parameter Name="Usu_Registro" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_InsertarPrestamo">
-            <Parameter Name="Mon_Pre" Mode="In" Type="Decimal" />
-            <Parameter Name="Cuot_Pre" Mode="In" Type="String" />
-            <Parameter Name="Pre_Est" Mode="In" Type="Int32" />
-            <Parameter Name="Com_Deu" Mode="In" Type="Int32" />
-            <Parameter Name="Est_Pre" Mode="In" Type="Int32" />
-            <Parameter Name="Cod_Cli" Mode="In" Type="String" />
-            <Parameter Name="Cod_Emp" Mode="In" Type="String" />
-            <Parameter Name="Cod_Age" Mode="In" Type="String" />
-            <Parameter Name="Usu_Registro" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_InsertarSeguro">
-            <Parameter Name="costoSeguro" Mode="In" Type="Decimal" />
-            <Parameter Name="tipoSeguro" Mode="In" Type="String" />
-            <Parameter Name="fechaAdquisicion" Mode="In" Type="DateTime" />
-            <Parameter Name="codigoCliente" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_InsertarTransferencia">
-            <Parameter Name="montoTran" Mode="In" Type="Decimal" />
-            <Parameter Name="CuentaDest" Mode="In" Type="String" />
-            <Parameter Name="CuentaOrig" Mode="In" Type="String" />
-            <Parameter Name="tranInterb" Mode="In" Type="Int32" />
-            <Parameter Name="fechaTran" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="usp_InsertarUbigeo">
-            <Parameter Name="idUbigeo" Mode="In" Type="String" />
-            <Parameter Name="departamento" Mode="In" Type="String" />
-            <Parameter Name="provincia" Mode="In" Type="String" />
-            <Parameter Name="distrito" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_InsertarUsuario">
-            <Parameter Name="id" Mode="In" Type="String" />
-            <Parameter Name="pass" Mode="In" Type="String" />
-            <Parameter Name="niv" Mode="In" Type="String" />
-            <Parameter Name="est" Mode="In" Type="String" />
-            <Parameter Name="usuario" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ListarAgencia" ReturnType="Collection(BancoModel.usp_ListarAgencia_Result)" />
-          <FunctionImport Name="usp_ListarCliente" ReturnType="Collection(BancoModel.usp_ListarCliente_Result)" />
-          <FunctionImport Name="usp_ListarCuenta" ReturnType="Collection(BancoModel.usp_ListarCuenta_Result)" />
-          <FunctionImport Name="usp_ListarEmpleado" ReturnType="Collection(BancoModel.usp_ListarEmpleado_Result)" />
-          <FunctionImport Name="usp_ListarPago" ReturnType="Collection(BancoModel.usp_ListarPago_Result)" />
-          <FunctionImport Name="usp_ListarPrestamo" ReturnType="Collection(BancoModel.usp_ListarPrestamo_Result)" />
-          <FunctionImport Name="usp_ListarPrestamos_Paginacion" ReturnType="Collection(BancoModel.usp_ListarPrestamos_Paginacion_Result)">
-            <Parameter Name="Cod_Cli" Mode="In" Type="String" />
-            <Parameter Name="Cod_Emp" Mode="In" Type="String" />
-            <Parameter Name="Estado" Mode="In" Type="String" />
-            <Parameter Name="NumPag" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ListarSeguro" ReturnType="Collection(BancoModel.usp_ListarSeguro_Result)" />
-          <FunctionImport Name="usp_ListarTransferencia" ReturnType="Collection(BancoModel.usp_ListarTransferencia_Result)" />
-          <FunctionImport Name="usp_ListarUbigeo" ReturnType="Collection(BancoModel.usp_ListarUbigeo_Result)" />
-          <FunctionImport Name="usp_ListarUsuarios" ReturnType="Collection(BancoModel.usp_ListarUsuarios_Result)" />
-          <FunctionImport Name="usp_NumPag_ListarPrestamos_Paginacion">
-            <Parameter Name="Cod_Cli" Mode="In" Type="String" />
-            <Parameter Name="Cod_Emp" Mode="In" Type="String" />
-            <Parameter Name="Estado" Mode="In" Type="String" />
-            <Parameter Name="NUMREG" Mode="InOut" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="usp_ObtenerUbigeo">
-            <Parameter Name="idUbigeo" Mode="In" Type="String" />
-            <Parameter Name="Ubicacion" Mode="InOut" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_PrestamosCliente" ReturnType="Collection(String)">
-          <Parameter Name="Num_doc_cli" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_PrestamosInfo" ReturnType="Collection(BancoModel.usp_PrestamosInfo_Result)" />
-          <FunctionImport Name="usp_TransferenciasInfo" ReturnType="Collection(BancoModel.usp_TransferenciasInfo_Result)" />
-          <FunctionImport Name="usp_Ubigeo_Departamentos" ReturnType="Collection(BancoModel.usp_Ubigeo_Departamentos_Result)" />
-          <FunctionImport Name="usp_Ubigeo_DistritosProvinciaDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_DistritosProvinciaDepartamento_Result)">
-            <Parameter Name="idDep" Mode="In" Type="String" />
-            <Parameter Name="idProv" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="usp_Ubigeo_ProvinciasDepartamento" ReturnType="Collection(BancoModel.usp_Ubigeo_ProvinciasDepartamento_Result)">
-          <Parameter Name="idDep" Mode="In" Type="String" />
-          </FunctionImport>
-          <EntitySet Name="vw_VistaPrestamo" EntityType="BancoModel.vw_VistaPrestamo" />
-          <FunctionImport Name="usp_ListarPrestamos_Cli_Emp" ReturnType="Collection(BancoModel.usp_ListarPrestamos_Cli_Emp_Result)">
-            <Parameter Name="Cod_Cli" Mode="In" Type="String" />
-            <Parameter Name="Cod_Emp" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="usp_ConsultarAgencia_Result">
@@ -1504,15 +1261,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Type="DateTime" Name="Fecha_Apertura" Nullable="true" Precision="16" />
           <Property Type="String" Name="Estado_Cuenta" Nullable="true" MaxLength="8" />
         </ComplexType>
-        <ComplexType Name="usp_ListarAgencia_Result">
-          <Property Type="String" Name="Codigo_Agencia" Nullable="false" MaxLength="4" />
-          <Property Type="String" Name="Nombre_Agencia" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="Direccion_Agencia" Nullable="false" MaxLength="255" />
-          <Property Type="String" Name="Departamento" Nullable="true" MaxLength="40" />
-          <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
-          <Property Type="String" Name="Distrito" Nullable="true" MaxLength="40" />
-          <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
-        </ComplexType>
         <ComplexType Name="usp_ListarCliente_Result">
           <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
@@ -1616,18 +1364,15 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Type="String" Name="Usuario_Ultima_Modificacion" Nullable="true" MaxLength="20" />
           <Property Type="DateTime" Name="Fecha_Ultima_Modificacion" Nullable="true" Precision="16" />
         </ComplexType>
-        <ComplexType Name="usp_ListarPrestamos_Paginacion_Result">
+        <ComplexType Name="usp_ListarPrestamos_Cli_Emp_Result">
           <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
           <Property Type="Decimal" Name="Monto" Nullable="false" Precision="19" />
           <Property Type="String" Name="Cuotas" Nullable="false" MaxLength="2" />
           <Property Type="DateTime" Name="Fecha_Solicitud" Nullable="false" Precision="16" />
           <Property Type="DateTime" Name="Fecha_Rechazo" Nullable="true" Precision="16" />
           <Property Type="DateTime" Name="Fecha_Cancelacion" Nullable="true" Precision="16" />
-          <Property Type="Int32" Name="Pre_Est" Nullable="false" />
           <Property Type="String" Name="Prestamo_Estudio" Nullable="true" MaxLength="2" />
-          <Property Type="Int32" Name="Com_Deu" Nullable="false" />
           <Property Type="String" Name="Compra_Deuda" Nullable="true" MaxLength="2" />
-          <Property Type="Int32" Name="Est_Pre" Nullable="false" />
           <Property Type="String" Name="Estado_Prestamo" Nullable="true" MaxLength="11" />
           <Property Type="String" Name="Cliente" Nullable="false" MaxLength="82" />
           <Property Type="String" Name="Cod_Cli" Nullable="false" MaxLength="4" />
@@ -1635,10 +1380,23 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Type="String" Name="Cod_Emp" Nullable="false" MaxLength="4" />
           <Property Type="String" Name="Agencia" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="Cod_Age" Nullable="false" MaxLength="4" />
-          <Property Type="String" Name="Usuario_Registro" Nullable="false" MaxLength="20" />
-          <Property Type="DateTime" Name="Fecha_Registro" Nullable="false" Precision="16" />
-          <Property Type="String" Name="Usuario_Ultima_Modificacion" Nullable="true" MaxLength="20" />
-          <Property Type="DateTime" Name="Fecha_Ultima_Modificacion" Nullable="true" Precision="16" />
+        </ComplexType>
+        <ComplexType Name="usp_ListarPrestamos_Paginacion_Result">
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
+          <Property Type="Decimal" Name="Monto" Nullable="false" Precision="19" />
+          <Property Type="String" Name="Cuotas" Nullable="false" MaxLength="2" />
+          <Property Type="DateTime" Name="Fecha_Solicitud" Nullable="false" Precision="16" />
+          <Property Type="DateTime" Name="Fecha_Rechazo" Nullable="true" Precision="16" />
+          <Property Type="DateTime" Name="Fecha_Cancelacion" Nullable="true" Precision="16" />
+          <Property Type="String" Name="Prestamo_Estudio" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="Compra_Deuda" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="Estado_Prestamo" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Cliente" Nullable="false" MaxLength="82" />
+          <Property Type="String" Name="Cod_Cli" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Empleado" Nullable="false" MaxLength="82" />
+          <Property Type="String" Name="Cod_Emp" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Agencia" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Cod_Age" Nullable="false" MaxLength="4" />
         </ComplexType>
         <ComplexType Name="usp_ListarSeguro_Result">
           <Property Type="Int32" Name="Codigo_Seguro" Nullable="false" />
@@ -1698,70 +1456,21 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
           <Property Type="String" Name="ID_Provincia" Nullable="true" MaxLength="2" />
           <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
         </ComplexType>
-        <EntityType Name="vw_VistaPrestamo">
-          <Key>
-            <PropertyRef Name="Codigo" />
-            <PropertyRef Name="Monto" />
-            <PropertyRef Name="Cuotas" />
-            <PropertyRef Name="Fecha_Solicitud" />
-            <PropertyRef Name="Pre_Est" />
-            <PropertyRef Name="Com_Deu" />
-            <PropertyRef Name="Est_Pre" />
-            <PropertyRef Name="Cliente" />
-            <PropertyRef Name="Cod_Cli" />
-            <PropertyRef Name="Empleado" />
-            <PropertyRef Name="Cod_Emp" />
-            <PropertyRef Name="Agencia" />
-            <PropertyRef Name="Cod_Age" />
-            <PropertyRef Name="Usuario_Registro" />
-            <PropertyRef Name="Fecha_Registro" />
-          </Key>
-          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Cuotas" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="Fecha_Solicitud" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Fecha_Rechazo" Type="DateTime" Precision="0" />
-          <Property Name="Fecha_Cancelacion" Type="DateTime" Precision="0" />
-          <Property Name="Pre_Est" Type="Int32" Nullable="false" />
-          <Property Name="Prestamo_Estudio" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="Com_Deu" Type="Int32" Nullable="false" />
-          <Property Name="Compra_Deuda" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="Est_Pre" Type="Int32" Nullable="false" />
-          <Property Name="Estado_Prestamo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="Cliente" Type="String" Nullable="false" MaxLength="82" FixedLength="false" Unicode="true" />
-          <Property Name="Cod_Cli" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="Empleado" Type="String" Nullable="false" MaxLength="82" FixedLength="false" Unicode="true" />
-          <Property Name="Cod_Emp" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="Agencia" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Cod_Age" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="Usuario_Registro" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Fecha_Registro" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Usuario_Ultima_Modificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Fecha_Ultima_Modificacion" Type="DateTime" Precision="0" />
-        </EntityType>
-        <ComplexType Name="usp_ListarPrestamos_Cli_Emp_Result">
-          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="4" />
-          <Property Type="Decimal" Name="Monto" Nullable="false" Precision="19" />
-          <Property Type="String" Name="Cuotas" Nullable="false" MaxLength="2" />
-          <Property Type="DateTime" Name="Fecha_Solicitud" Nullable="false" Precision="16" />
-          <Property Type="DateTime" Name="Fecha_Rechazo" Nullable="true" Precision="16" />
-          <Property Type="DateTime" Name="Fecha_Cancelacion" Nullable="true" Precision="16" />
-          <Property Type="String" Name="Prestamo_Estudio" Nullable="true" MaxLength="2" />
-          <Property Type="String" Name="Compra_Deuda" Nullable="true" MaxLength="2" />
-          <Property Type="String" Name="Estado_Prestamo" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Cliente" Nullable="false" MaxLength="82" />
-          <Property Type="String" Name="Cod_Cli" Nullable="false" MaxLength="4" />
-          <Property Type="String" Name="Empleado" Nullable="false" MaxLength="82" />
-          <Property Type="String" Name="Cod_Emp" Nullable="false" MaxLength="4" />
-          <Property Type="String" Name="Agencia" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="Cod_Age" Nullable="false" MaxLength="4" />
+        <ComplexType Name="usp_ListarAgencia_Result">
+          <Property Type="String" Name="Codigo_Agencia" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Nombre_Agencia" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Direccion_Agencia" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="Departamento" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Provincia" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Distrito" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Id_Ubigeo" Nullable="false" MaxLength="6" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BancoModelStoreContainer" CdmEntityContainer="BancoEntities">
+        <EntityContainerMapping StorageEntityContainer="BancoModelStoreContainer" CdmEntityContainer="BancoEntities1">
           <EntitySetMapping Name="Tb_Agencia">
             <EntityTypeMapping TypeName="BancoModel.Tb_Agencia">
               <MappingFragment StoreEntitySet="Tb_Agencia">
@@ -1920,16 +1629,34 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="usp_ActualizarAgencia" FunctionName="BancoModel.Store.usp_ActualizarAgencia" />
-          <FunctionImportMapping FunctionImportName="usp_ActualizarCliente" FunctionName="BancoModel.Store.usp_ActualizarCliente" />
-          <FunctionImportMapping FunctionImportName="usp_ActualizarCuenta" FunctionName="BancoModel.Store.usp_ActualizarCuenta" />
-          <FunctionImportMapping FunctionImportName="usp_ActualizarEmpleado" FunctionName="BancoModel.Store.usp_ActualizarEmpleado" />
-          <FunctionImportMapping FunctionImportName="usp_ActualizarPago" FunctionName="BancoModel.Store.usp_ActualizarPago" />
-          <FunctionImportMapping FunctionImportName="usp_ActualizarPrestamo" FunctionName="BancoModel.Store.usp_ActualizarPrestamo" />
-          <FunctionImportMapping FunctionImportName="usp_ActualizarSeguro" FunctionName="BancoModel.Store.usp_ActualizarSeguro" />
-          <FunctionImportMapping FunctionImportName="usp_ActualizarTransferencia" FunctionName="BancoModel.Store.usp_ActualizarTransferencia" />
-          <FunctionImportMapping FunctionImportName="usp_ActualizarUbigeo" FunctionName="BancoModel.Store.usp_ActualizarUbigeo" />
-          <FunctionImportMapping FunctionImportName="usp_ActualizarUsuario" FunctionName="BancoModel.Store.usp_ActualizarUsuario" />
+          <EntitySetMapping Name="vw_VistaPrestamo">
+            <EntityTypeMapping TypeName="BancoModel.vw_VistaPrestamo">
+              <MappingFragment StoreEntitySet="vw_VistaPrestamo">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
+                <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
+                <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
+                <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
+                <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
+                <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
+                <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
+                <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
+                <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+                <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
+                <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
+                <ScalarProperty Name="Usuario_Ultima_Modificacion" ColumnName="Usuario Ultima Modificacion" />
+                <ScalarProperty Name="Fecha_Ultima_Modificacion" ColumnName="Fecha Ultima Modificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="usp_ConsultarAgencia" FunctionName="BancoModel.Store.usp_ConsultarAgencia">
             <ResultMapping>
               <ComplexTypeMapping TypeName="BancoModel.usp_ConsultarAgencia_Result">
@@ -2093,39 +1820,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="usp_EliminarAgencia" FunctionName="BancoModel.Store.usp_EliminarAgencia" />
-          <FunctionImportMapping FunctionImportName="usp_EliminarCliente" FunctionName="BancoModel.Store.usp_EliminarCliente" />
-          <FunctionImportMapping FunctionImportName="usp_EliminarCuenta" FunctionName="BancoModel.Store.usp_EliminarCuenta" />
-          <FunctionImportMapping FunctionImportName="usp_EliminarEmpleado" FunctionName="BancoModel.Store.usp_EliminarEmpleado" />
-          <FunctionImportMapping FunctionImportName="usp_EliminarPago" FunctionName="BancoModel.Store.usp_EliminarPago" />
-          <FunctionImportMapping FunctionImportName="usp_EliminarPrestamo" FunctionName="BancoModel.Store.usp_EliminarPrestamo" />
-          <FunctionImportMapping FunctionImportName="usp_EliminarSeguro" FunctionName="BancoModel.Store.usp_EliminarSeguro" />
-          <FunctionImportMapping FunctionImportName="usp_EliminarTransferencia" FunctionName="BancoModel.Store.usp_EliminarTransferencia" />
-          <FunctionImportMapping FunctionImportName="usp_EliminarUbigeo" FunctionName="BancoModel.Store.usp_EliminarUbigeo" />
-          <FunctionImportMapping FunctionImportName="usp_EliminarUsuario" FunctionName="BancoModel.Store.usp_EliminarUsuario" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarAgencia" FunctionName="BancoModel.Store.usp_InsertarAgencia" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarCliente" FunctionName="BancoModel.Store.usp_InsertarCliente" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarCuenta" FunctionName="BancoModel.Store.usp_InsertarCuenta" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarEmpleado" FunctionName="BancoModel.Store.usp_InsertarEmpleado" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarPago" FunctionName="BancoModel.Store.usp_InsertarPago" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarPrestamo" FunctionName="BancoModel.Store.usp_InsertarPrestamo" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarSeguro" FunctionName="BancoModel.Store.usp_InsertarSeguro" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarTransferencia" FunctionName="BancoModel.Store.usp_InsertarTransferencia" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarUbigeo" FunctionName="BancoModel.Store.usp_InsertarUbigeo" />
-          <FunctionImportMapping FunctionImportName="usp_InsertarUsuario" FunctionName="BancoModel.Store.usp_InsertarUsuario" />
-          <FunctionImportMapping FunctionImportName="usp_ListarAgencia" FunctionName="BancoModel.Store.usp_ListarAgencia">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="BancoModel.usp_ListarAgencia_Result">
-                <ScalarProperty Name="Codigo_Agencia" ColumnName="Codigo Agencia" />
-                <ScalarProperty Name="Nombre_Agencia" ColumnName="Nombre Agencia" />
-                <ScalarProperty Name="Direccion_Agencia" ColumnName="Direccion Agencia" />
-                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
-                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-                <ScalarProperty Name="Distrito" ColumnName="Distrito" />
-                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="usp_ListarCliente" FunctionName="BancoModel.Store.usp_ListarCliente">
             <ResultMapping>
               <ComplexTypeMapping TypeName="BancoModel.usp_ListarCliente_Result">
@@ -2249,6 +1943,27 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ListarPrestamos_Cli_Emp" FunctionName="BancoModel.Store.usp_ListarPrestamos_Cli_Emp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BancoModel.usp_ListarPrestamos_Cli_Emp_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
+                <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
+                <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
+                <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
+                <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
+                <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="usp_ListarPrestamos_Paginacion" FunctionName="BancoModel.Store.usp_ListarPrestamos_Paginacion">
             <ResultMapping>
               <ComplexTypeMapping TypeName="BancoModel.usp_ListarPrestamos_Paginacion_Result">
@@ -2258,11 +1973,8 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
                 <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
                 <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
                 <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
-                <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
                 <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
-                <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
                 <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
-                <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
                 <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
                 <ScalarProperty Name="Cliente" ColumnName="Cliente" />
                 <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
@@ -2270,10 +1982,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
                 <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
                 <ScalarProperty Name="Agencia" ColumnName="Agencia" />
                 <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
-                <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
-                <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
-                <ScalarProperty Name="Usuario_Ultima_Modificacion" ColumnName="Usuario Ultima Modificacion" />
-                <ScalarProperty Name="Fecha_Ultima_Modificacion" ColumnName="Fecha Ultima Modificacion" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -2329,9 +2037,6 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="usp_NumPag_ListarPrestamos_Paginacion" FunctionName="BancoModel.Store.usp_NumPag_ListarPrestamos_Paginacion" />
-          <FunctionImportMapping FunctionImportName="usp_ObtenerUbigeo" FunctionName="BancoModel.Store.usp_ObtenerUbigeo" />
-          <FunctionImportMapping FunctionImportName="usp_PrestamosCliente" FunctionName="BancoModel.Store.usp_PrestamosCliente" />
           <FunctionImportMapping FunctionImportName="usp_PrestamosInfo" FunctionName="BancoModel.Store.usp_PrestamosInfo">
             <ResultMapping>
               <ComplexTypeMapping TypeName="BancoModel.usp_PrestamosInfo_Result">
@@ -2374,55 +2079,28 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <EntitySetMapping Name="vw_VistaPrestamo">
-            <EntityTypeMapping TypeName="BancoModel.vw_VistaPrestamo">
-              <MappingFragment StoreEntitySet="vw_VistaPrestamo">
-                <ScalarProperty Name="Fecha_Ultima_Modificacion" ColumnName="Fecha Ultima Modificacion" />
-                <ScalarProperty Name="Usuario_Ultima_Modificacion" ColumnName="Usuario Ultima Modificacion" />
-                <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
-                <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
-                <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
-                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
-                <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
-                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
-                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
-                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
-                <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
-                <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
-                <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
-                <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
-                <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
-                <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
-                <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
-                <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
-                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
-                <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
-                <ScalarProperty Name="Monto" ColumnName="Monto" />
-                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="usp_ListarPrestamos_Cli_Emp" FunctionName="BancoModel.Store.usp_ListarPrestamos_Cli_Emp">
+          <FunctionImportMapping FunctionImportName="usp_ListarAgencia" FunctionName="BancoModel.Store.usp_ListarAgencia">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="BancoModel.usp_ListarPrestamos_Cli_Emp_Result">
-                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-                <ScalarProperty Name="Monto" ColumnName="Monto" />
-                <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
-                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
-                <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
-                <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
-                <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
-                <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
-                <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
-                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
-                <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
-                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
-                <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
-                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
-                <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+              <ComplexTypeMapping TypeName="BancoModel.usp_ListarAgencia_Result">
+                <ScalarProperty Name="Codigo_Agencia" ColumnName="Codigo Agencia" />
+                <ScalarProperty Name="Nombre_Agencia" ColumnName="Nombre Agencia" />
+                <ScalarProperty Name="Direccion_Agencia" ColumnName="Direccion Agencia" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+                <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ActualizarCliente" FunctionName="BancoModel.Store.usp_ActualizarCliente" />
+          <FunctionImportMapping FunctionImportName="usp_ActualizarCuenta" FunctionName="BancoModel.Store.usp_ActualizarCuenta" />
+          <FunctionImportMapping FunctionImportName="usp_ActualizarEmpleado" FunctionName="BancoModel.Store.usp_ActualizarEmpleado" />
+          <FunctionImportMapping FunctionImportName="usp_EliminarCliente" FunctionName="BancoModel.Store.usp_EliminarCliente" />
+          <FunctionImportMapping FunctionImportName="usp_EliminarCuenta" FunctionName="BancoModel.Store.usp_EliminarCuenta" />
+          <FunctionImportMapping FunctionImportName="usp_EliminarEmpleado" FunctionName="BancoModel.Store.usp_EliminarEmpleado" />
+          <FunctionImportMapping FunctionImportName="usp_InsertarCliente" FunctionName="BancoModel.Store.usp_InsertarCliente" />
+          <FunctionImportMapping FunctionImportName="usp_InsertarCuenta" FunctionName="BancoModel.Store.usp_InsertarCuenta" />
+          <FunctionImportMapping FunctionImportName="usp_InsertarEmpleado" FunctionName="BancoModel.Store.usp_InsertarEmpleado" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2437,7 +2115,7 @@ warning 6002: The table/view 'Banco.dbo.vw_VistaPrestamo' does not have a primar
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -22,3 +22,15 @@ C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramewor
 C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.xml
 C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.csproj.CopyComplete
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.csproj.AssemblyReference.cache
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.csproj.CoreCompileInputs.cache
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.dll
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.pdb
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\bin\Debug\WCF_Banco.dll.config
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\bin\Debug\WCF_Banco.dll
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\bin\Debug\WCF_Banco.pdb
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.dll
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.SqlServer.dll
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.xml
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\bin\Debug\EntityFramework.SqlServer.xml
+D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\obj\Debug\WCF_Banco.csproj.CopyComplete

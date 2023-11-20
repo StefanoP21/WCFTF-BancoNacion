@@ -3019,19 +3019,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\omedi\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\omedi\\source\\repos\\WCFTF-BancoNacion\\ProyBanco_GUI\\ProyBanco_GUI.csproj",
+      "projectUniqueName": "D:\\ISIL\\Ciclo-IV\\DESARROLLO DE APLICACIONES II\\Semana 14\\WCFTF-BancoNacion\\ProyBanco_GUI\\ProyBanco_GUI.csproj",
       "projectName": "ProyBanco_GUI",
-      "projectPath": "C:\\Users\\omedi\\source\\repos\\WCFTF-BancoNacion\\ProyBanco_GUI\\ProyBanco_GUI.csproj",
-      "packagesPath": "C:\\Users\\omedi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\omedi\\source\\repos\\WCFTF-BancoNacion\\ProyBanco_GUI\\obj\\",
+      "projectPath": "D:\\ISIL\\Ciclo-IV\\DESARROLLO DE APLICACIONES II\\Semana 14\\WCFTF-BancoNacion\\ProyBanco_GUI\\ProyBanco_GUI.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "D:\\ISIL\\Ciclo-IV\\DESARROLLO DE APLICACIONES II\\Semana 14\\WCFTF-BancoNacion\\ProyBanco_GUI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\omedi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3039,6 +3044,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

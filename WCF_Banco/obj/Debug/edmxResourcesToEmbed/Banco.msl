@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BancoModelStoreContainer" CdmEntityContainer="BancoEntities">
+  <EntityContainerMapping StorageEntityContainer="BancoModelStoreContainer" CdmEntityContainer="BancoEntities1">
     <EntitySetMapping Name="Tb_Agencia">
       <EntityTypeMapping TypeName="BancoModel.Tb_Agencia">
         <MappingFragment StoreEntitySet="Tb_Agencia">
@@ -159,16 +159,34 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="usp_ActualizarAgencia" FunctionName="BancoModel.Store.usp_ActualizarAgencia" />
-    <FunctionImportMapping FunctionImportName="usp_ActualizarCliente" FunctionName="BancoModel.Store.usp_ActualizarCliente" />
-    <FunctionImportMapping FunctionImportName="usp_ActualizarCuenta" FunctionName="BancoModel.Store.usp_ActualizarCuenta" />
-    <FunctionImportMapping FunctionImportName="usp_ActualizarEmpleado" FunctionName="BancoModel.Store.usp_ActualizarEmpleado" />
-    <FunctionImportMapping FunctionImportName="usp_ActualizarPago" FunctionName="BancoModel.Store.usp_ActualizarPago" />
-    <FunctionImportMapping FunctionImportName="usp_ActualizarPrestamo" FunctionName="BancoModel.Store.usp_ActualizarPrestamo" />
-    <FunctionImportMapping FunctionImportName="usp_ActualizarSeguro" FunctionName="BancoModel.Store.usp_ActualizarSeguro" />
-    <FunctionImportMapping FunctionImportName="usp_ActualizarTransferencia" FunctionName="BancoModel.Store.usp_ActualizarTransferencia" />
-    <FunctionImportMapping FunctionImportName="usp_ActualizarUbigeo" FunctionName="BancoModel.Store.usp_ActualizarUbigeo" />
-    <FunctionImportMapping FunctionImportName="usp_ActualizarUsuario" FunctionName="BancoModel.Store.usp_ActualizarUsuario" />
+    <EntitySetMapping Name="vw_VistaPrestamo">
+      <EntityTypeMapping TypeName="BancoModel.vw_VistaPrestamo">
+        <MappingFragment StoreEntitySet="vw_VistaPrestamo">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+          <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
+          <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
+          <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
+          <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
+          <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
+          <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
+          <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
+          <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
+          <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+          <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+          <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+          <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
+          <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
+          <ScalarProperty Name="Usuario_Ultima_Modificacion" ColumnName="Usuario Ultima Modificacion" />
+          <ScalarProperty Name="Fecha_Ultima_Modificacion" ColumnName="Fecha Ultima Modificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="usp_ConsultarAgencia" FunctionName="BancoModel.Store.usp_ConsultarAgencia">
       <ResultMapping>
         <ComplexTypeMapping TypeName="BancoModel.usp_ConsultarAgencia_Result">
@@ -332,39 +350,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_EliminarAgencia" FunctionName="BancoModel.Store.usp_EliminarAgencia" />
-    <FunctionImportMapping FunctionImportName="usp_EliminarCliente" FunctionName="BancoModel.Store.usp_EliminarCliente" />
-    <FunctionImportMapping FunctionImportName="usp_EliminarCuenta" FunctionName="BancoModel.Store.usp_EliminarCuenta" />
-    <FunctionImportMapping FunctionImportName="usp_EliminarEmpleado" FunctionName="BancoModel.Store.usp_EliminarEmpleado" />
-    <FunctionImportMapping FunctionImportName="usp_EliminarPago" FunctionName="BancoModel.Store.usp_EliminarPago" />
-    <FunctionImportMapping FunctionImportName="usp_EliminarPrestamo" FunctionName="BancoModel.Store.usp_EliminarPrestamo" />
-    <FunctionImportMapping FunctionImportName="usp_EliminarSeguro" FunctionName="BancoModel.Store.usp_EliminarSeguro" />
-    <FunctionImportMapping FunctionImportName="usp_EliminarTransferencia" FunctionName="BancoModel.Store.usp_EliminarTransferencia" />
-    <FunctionImportMapping FunctionImportName="usp_EliminarUbigeo" FunctionName="BancoModel.Store.usp_EliminarUbigeo" />
-    <FunctionImportMapping FunctionImportName="usp_EliminarUsuario" FunctionName="BancoModel.Store.usp_EliminarUsuario" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarAgencia" FunctionName="BancoModel.Store.usp_InsertarAgencia" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarCliente" FunctionName="BancoModel.Store.usp_InsertarCliente" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarCuenta" FunctionName="BancoModel.Store.usp_InsertarCuenta" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarEmpleado" FunctionName="BancoModel.Store.usp_InsertarEmpleado" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarPago" FunctionName="BancoModel.Store.usp_InsertarPago" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarPrestamo" FunctionName="BancoModel.Store.usp_InsertarPrestamo" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarSeguro" FunctionName="BancoModel.Store.usp_InsertarSeguro" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarTransferencia" FunctionName="BancoModel.Store.usp_InsertarTransferencia" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarUbigeo" FunctionName="BancoModel.Store.usp_InsertarUbigeo" />
-    <FunctionImportMapping FunctionImportName="usp_InsertarUsuario" FunctionName="BancoModel.Store.usp_InsertarUsuario" />
-    <FunctionImportMapping FunctionImportName="usp_ListarAgencia" FunctionName="BancoModel.Store.usp_ListarAgencia">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="BancoModel.usp_ListarAgencia_Result">
-          <ScalarProperty Name="Codigo_Agencia" ColumnName="Codigo Agencia" />
-          <ScalarProperty Name="Nombre_Agencia" ColumnName="Nombre Agencia" />
-          <ScalarProperty Name="Direccion_Agencia" ColumnName="Direccion Agencia" />
-          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
-          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-          <ScalarProperty Name="Distrito" ColumnName="Distrito" />
-          <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="usp_ListarCliente" FunctionName="BancoModel.Store.usp_ListarCliente">
       <ResultMapping>
         <ComplexTypeMapping TypeName="BancoModel.usp_ListarCliente_Result">
@@ -488,6 +473,27 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ListarPrestamos_Cli_Emp" FunctionName="BancoModel.Store.usp_ListarPrestamos_Cli_Emp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoModel.usp_ListarPrestamos_Cli_Emp_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+          <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
+          <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
+          <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
+          <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
+          <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
+          <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
+          <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+          <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="usp_ListarPrestamos_Paginacion" FunctionName="BancoModel.Store.usp_ListarPrestamos_Paginacion">
       <ResultMapping>
         <ComplexTypeMapping TypeName="BancoModel.usp_ListarPrestamos_Paginacion_Result">
@@ -497,11 +503,8 @@
           <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
           <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
           <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
-          <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
           <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
-          <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
           <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
-          <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
           <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
           <ScalarProperty Name="Cliente" ColumnName="Cliente" />
           <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
@@ -509,10 +512,6 @@
           <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
           <ScalarProperty Name="Agencia" ColumnName="Agencia" />
           <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
-          <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
-          <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
-          <ScalarProperty Name="Usuario_Ultima_Modificacion" ColumnName="Usuario Ultima Modificacion" />
-          <ScalarProperty Name="Fecha_Ultima_Modificacion" ColumnName="Fecha Ultima Modificacion" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -568,9 +567,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_NumPag_ListarPrestamos_Paginacion" FunctionName="BancoModel.Store.usp_NumPag_ListarPrestamos_Paginacion" />
-    <FunctionImportMapping FunctionImportName="usp_ObtenerUbigeo" FunctionName="BancoModel.Store.usp_ObtenerUbigeo" />
-    <FunctionImportMapping FunctionImportName="usp_PrestamosCliente" FunctionName="BancoModel.Store.usp_PrestamosCliente" />
     <FunctionImportMapping FunctionImportName="usp_PrestamosInfo" FunctionName="BancoModel.Store.usp_PrestamosInfo">
       <ResultMapping>
         <ComplexTypeMapping TypeName="BancoModel.usp_PrestamosInfo_Result">
@@ -613,54 +609,27 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <EntitySetMapping Name="vw_VistaPrestamo">
-      <EntityTypeMapping TypeName="BancoModel.vw_VistaPrestamo">
-        <MappingFragment StoreEntitySet="vw_VistaPrestamo">
-          <ScalarProperty Name="Fecha_Ultima_Modificacion" ColumnName="Fecha Ultima Modificacion" />
-          <ScalarProperty Name="Usuario_Ultima_Modificacion" ColumnName="Usuario Ultima Modificacion" />
-          <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha Registro" />
-          <ScalarProperty Name="Usuario_Registro" ColumnName="Usuario Registro" />
-          <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
-          <ScalarProperty Name="Agencia" ColumnName="Agencia" />
-          <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
-          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
-          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
-          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
-          <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
-          <ScalarProperty Name="Est_Pre" ColumnName="Est_Pre" />
-          <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
-          <ScalarProperty Name="Com_Deu" ColumnName="Com_Deu" />
-          <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
-          <ScalarProperty Name="Pre_Est" ColumnName="Pre_Est" />
-          <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
-          <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
-          <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
-          <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
-          <ScalarProperty Name="Monto" ColumnName="Monto" />
-          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="usp_ListarPrestamos_Cli_Emp" FunctionName="BancoModel.Store.usp_ListarPrestamos_Cli_Emp">
+    <FunctionImportMapping FunctionImportName="usp_ListarAgencia" FunctionName="BancoModel.Store.usp_ListarAgencia">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="BancoModel.usp_ListarPrestamos_Cli_Emp_Result">
-          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-          <ScalarProperty Name="Monto" ColumnName="Monto" />
-          <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
-          <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha Solicitud" />
-          <ScalarProperty Name="Fecha_Rechazo" ColumnName="Fecha Rechazo" />
-          <ScalarProperty Name="Fecha_Cancelacion" ColumnName="Fecha Cancelacion" />
-          <ScalarProperty Name="Prestamo_Estudio" ColumnName="Prestamo Estudio" />
-          <ScalarProperty Name="Compra_Deuda" ColumnName="Compra Deuda" />
-          <ScalarProperty Name="Estado_Prestamo" ColumnName="Estado Prestamo" />
-          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
-          <ScalarProperty Name="Cod_Cli" ColumnName="Cod_Cli" />
-          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
-          <ScalarProperty Name="Cod_Emp" ColumnName="Cod_Emp" />
-          <ScalarProperty Name="Agencia" ColumnName="Agencia" />
-          <ScalarProperty Name="Cod_Age" ColumnName="Cod_Age" />
+        <ComplexTypeMapping TypeName="BancoModel.usp_ListarAgencia_Result">
+          <ScalarProperty Name="Codigo_Agencia" ColumnName="Codigo Agencia" />
+          <ScalarProperty Name="Nombre_Agencia" ColumnName="Nombre Agencia" />
+          <ScalarProperty Name="Direccion_Agencia" ColumnName="Direccion Agencia" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+          <ScalarProperty Name="Id_Ubigeo" ColumnName="Id_Ubigeo" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ActualizarCliente" FunctionName="BancoModel.Store.usp_ActualizarCliente" />
+    <FunctionImportMapping FunctionImportName="usp_ActualizarCuenta" FunctionName="BancoModel.Store.usp_ActualizarCuenta" />
+    <FunctionImportMapping FunctionImportName="usp_ActualizarEmpleado" FunctionName="BancoModel.Store.usp_ActualizarEmpleado" />
+    <FunctionImportMapping FunctionImportName="usp_EliminarCliente" FunctionName="BancoModel.Store.usp_EliminarCliente" />
+    <FunctionImportMapping FunctionImportName="usp_EliminarCuenta" FunctionName="BancoModel.Store.usp_EliminarCuenta" />
+    <FunctionImportMapping FunctionImportName="usp_EliminarEmpleado" FunctionName="BancoModel.Store.usp_EliminarEmpleado" />
+    <FunctionImportMapping FunctionImportName="usp_InsertarCliente" FunctionName="BancoModel.Store.usp_InsertarCliente" />
+    <FunctionImportMapping FunctionImportName="usp_InsertarCuenta" FunctionName="BancoModel.Store.usp_InsertarCuenta" />
+    <FunctionImportMapping FunctionImportName="usp_InsertarEmpleado" FunctionName="BancoModel.Store.usp_InsertarEmpleado" />
   </EntityContainerMapping>
 </Mapping>

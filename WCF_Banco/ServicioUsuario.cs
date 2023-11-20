@@ -10,7 +10,7 @@ namespace WCF_Banco
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ServicioUsuario" in both code and config file together.
     public class ServicioUsuario : IServicioUsuario
     {
-        BancoEntities Banco = new BancoEntities();
+        BancoEntities1 Banco = new BancoEntities1();
 
         public UsuarioDC ConsultarUsuario(string strLogin)
         {

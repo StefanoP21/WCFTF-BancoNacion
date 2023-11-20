@@ -10,7 +10,7 @@ namespace WCF_Banco
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ServicioPrestamo" in both code and config file together.
     public class ServicioPrestamo : IServicioPrestamo
     {
-        BancoEntities MisPrestamos = new BancoEntities();
+        BancoEntities1 MisPrestamos = new BancoEntities1();
         public List<PrestamoDC> ListarPrestamos_Cli_Emp(string cod_Cli, string cod_Emp)
         {
             try

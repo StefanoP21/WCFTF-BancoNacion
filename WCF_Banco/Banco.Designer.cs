@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\omedi\Source\Repos\WCFTF-BancoNacion\WCF_Banco\Banco.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\ISIL\Ciclo-IV\DESARROLLO DE APLICACIONES II\Semana 14\WCFTF-BancoNacion\WCF_Banco\Banco.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
